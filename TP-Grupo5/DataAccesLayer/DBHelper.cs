@@ -12,7 +12,7 @@ namespace TP_Grupo5.DataAccesLayer
         private static DBHelper instance = new DBHelper();
         private DBHelper()
         {
-            string_conexion = @"Data Source=\SQLEXPRESS;Initial Catalog=BugTracker;Integrated Security=True";
+            string_conexion = @"Data Source=.\SQLEXPRESS;Initial Catalog=BugTracker68187;Integrated Security=True";
         }
         public static DBHelper GetDBHelper()
         {
