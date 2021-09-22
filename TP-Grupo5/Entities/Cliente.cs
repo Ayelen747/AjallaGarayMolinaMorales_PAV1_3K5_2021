@@ -9,7 +9,7 @@ namespace TP_Grupo5.Entities
         public int Id_cliente { get; set;}
         public int Cuit { get; set; }
         public String Razon_social { get; set; }
-        public String Fecha_alta { get; set; }
+        public DateTime Fecha_alta { get; set; }
         public int Borrado { get; set; }
         public String Calle { get; set; }
         public int Numero { get; set; }

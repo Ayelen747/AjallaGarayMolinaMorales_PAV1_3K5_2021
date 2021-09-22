@@ -4,5 +4,11 @@
     <Compile Update="GUILayer\frmConsultarCliente.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="GUILayer\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GUILayer\frmPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>
