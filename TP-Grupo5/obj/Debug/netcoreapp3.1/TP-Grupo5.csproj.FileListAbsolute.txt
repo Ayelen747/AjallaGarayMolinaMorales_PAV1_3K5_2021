@@ -21,7 +21,6 @@ D:\Usuarios\Jonatan\Documents\Facultad 2021\PAV1\TrabajosPracticos\TP_PAV_Grupo5
 D:\Usuarios\Jonatan\Documents\Facultad 2021\PAV1\TrabajosPracticos\TP_PAV_Grupo5\TP-Grupo5\TP-Grupo5\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 D:\Usuarios\Jonatan\Documents\Facultad 2021\PAV1\TrabajosPracticos\TP_PAV_Grupo5\TP-Grupo5\TP-Grupo5\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 D:\Usuarios\Jonatan\Documents\Facultad 2021\PAV1\TrabajosPracticos\TP_PAV_Grupo5\TP-Grupo5\TP-Grupo5\obj\Debug\netcoreapp3.1\TP-Grupo5.csproj.CopyComplete
-C:\Users\santi\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\obj\Debug\netcoreapp3.1\TP-Grupo5.csproj.AssemblyReference.cache
 C:\Users\santi\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\obj\Debug\netcoreapp3.1\TP_Grupo5.frmConsultaCliente.resources
 C:\Users\santi\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\obj\Debug\netcoreapp3.1\TP_Grupo5.GUILayer.frmLogin.resources
 C:\Users\santi\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\obj\Debug\netcoreapp3.1\TP-Grupo5.csproj.GenerateResource.cache
@@ -45,3 +44,4 @@ C:\Users\santi\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\bin\Debug\netcor
 C:\Users\santi\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 C:\Users\santi\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\obj\Debug\netcoreapp3.1\TP-Grupo5.csproj.CopyComplete
 C:\Users\santi\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\obj\Debug\netcoreapp3.1\TP-Grupo5.genruntimeconfig.cache
+C:\Users\santi\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\obj\Debug\netcoreapp3.1\TP-Grupo5.csproj.AssemblyReference.cache

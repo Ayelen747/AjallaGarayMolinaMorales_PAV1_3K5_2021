@@ -54,13 +54,10 @@ namespace TP_Grupo5.GUILayer
                                                        "   FROM Usuarios ",
                                                        "  WHERE usuario =  '", pUsuario, "'");
 
-                    //Usando el método GetDBHelper obtenemos la instancia unica de DBHelper (Patrón Singleton) y ejecutamos el método ConsultaSQL()
                     DataTable resultado = DBHelper.GetDBHelper().ConsultaSQL(consultaSql);
 
-                    // Validamos que el resultado tenga al menos una fila.
                     if (resultado.Rows.Count >= 1)
                     {
-                        //En caso de que exista el usuario, validamos que password corresponda al usuario
                         if (resultado.Rows[0]["password"].ToString() == pPassword)
                         {
                             usuarioValido = true;
@@ -70,11 +67,8 @@ namespace TP_Grupo5.GUILayer
                 }
                 catch (SqlException ex)
                 {
-                    //Mostramos un mensaje de error indicando que hubo un error en la base de datos.
                     MessageBox.Show(string.Concat("Error de base de datos: ", ex.Message), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-
-                // Retornamos el valor de usuarioValido. 
                 return usuarioValido;
             }
 
