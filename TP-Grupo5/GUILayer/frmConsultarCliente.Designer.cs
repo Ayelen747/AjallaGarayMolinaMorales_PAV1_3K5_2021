@@ -50,6 +50,7 @@ namespace TP_Grupo5
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.grdClientes = new System.Windows.Forms.DataGridView();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.razonS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cuit = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,7 +59,6 @@ namespace TP_Grupo5
             this.fechaAlta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.barrio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contacto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.gbBuscarCliente.SuspendLayout();
             this.gbListaClientes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdClientes)).BeginInit();
@@ -135,6 +135,7 @@ namespace TP_Grupo5
             // 
             // cboBarrio
             // 
+            this.cboBarrio.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboBarrio.FormattingEnabled = true;
             this.cboBarrio.Location = new System.Drawing.Point(244, 41);
             this.cboBarrio.Name = "cboBarrio";
@@ -165,6 +166,7 @@ namespace TP_Grupo5
             this.txtCuit.Name = "txtCuit";
             this.txtCuit.Size = new System.Drawing.Size(100, 23);
             this.txtCuit.TabIndex = 2;
+            this.txtCuit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCuit_KeyPress);
             // 
             // lblRazonS
             // 
@@ -235,6 +237,7 @@ namespace TP_Grupo5
             this.btnAgregar.TabIndex = 4;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnActualizar
             // 
@@ -244,6 +247,7 @@ namespace TP_Grupo5
             this.btnActualizar.TabIndex = 3;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // btnCancelar
             // 
@@ -283,6 +287,7 @@ namespace TP_Grupo5
             this.grdClientes.Name = "grdClientes";
             this.grdClientes.ReadOnly = true;
             this.grdClientes.RowTemplate.Height = 25;
+            this.grdClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grdClientes.Size = new System.Drawing.Size(770, 206);
             this.grdClientes.TabIndex = 0;
             // 
@@ -291,6 +296,7 @@ namespace TP_Grupo5
             this.id.HeaderText = "ID";
             this.id.Name = "id";
             this.id.ReadOnly = true;
+            this.id.Visible = false;
             // 
             // razonS
             // 
@@ -365,14 +371,6 @@ namespace TP_Grupo5
         private System.Windows.Forms.TextBox txtRazonSocial;
         private System.Windows.Forms.GroupBox gbListaClientes;
         private System.Windows.Forms.DataGridView grdClientes;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.DataGridViewTextBoxColumn razonS;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cuit;
-        private System.Windows.Forms.DataGridViewTextBoxColumn calle;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nroCalle;
-        private System.Windows.Forms.DataGridViewTextBoxColumn fechaAlta;
-        private System.Windows.Forms.DataGridViewTextBoxColumn barrio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn contacto;
         private System.Windows.Forms.Label lblNombreBarrio;
         private System.Windows.Forms.DateTimePicker dtpFechaAlta;
         private System.Windows.Forms.ComboBox cboBarrio;
@@ -386,6 +384,14 @@ namespace TP_Grupo5
         private System.Windows.Forms.RadioButton rbDespues;
         private System.Windows.Forms.RadioButton rbActual;
         private System.Windows.Forms.RadioButton rbAntes;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
+        private System.Windows.Forms.DataGridViewTextBoxColumn razonS;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cuit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn calle;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nroCalle;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fechaAlta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn barrio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn contacto;
     }
 }
 

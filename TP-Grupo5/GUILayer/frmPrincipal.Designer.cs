@@ -32,13 +32,15 @@ namespace TP_Grupo5.GUILayer
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consularClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.soporteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.clientesToolStripMenuItem});
+            this.clientesToolStripMenuItem,
+            this.soporteToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
@@ -59,6 +61,12 @@ namespace TP_Grupo5.GUILayer
             this.consularClientesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.consularClientesToolStripMenuItem.Text = "Consular clientes";
             this.consularClientesToolStripMenuItem.Click += new System.EventHandler(this.consularClientesToolStripMenuItem_Click);
+            // 
+            // soporteToolStripMenuItem
+            // 
+            this.soporteToolStripMenuItem.Name = "soporteToolStripMenuItem";
+            this.soporteToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
+            this.soporteToolStripMenuItem.Text = "Soporte";
             // 
             // frmPrincipal
             // 
@@ -81,5 +89,6 @@ namespace TP_Grupo5.GUILayer
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consularClientesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem soporteToolStripMenuItem;
     }
 }

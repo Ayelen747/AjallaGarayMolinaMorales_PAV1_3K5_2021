@@ -102,7 +102,7 @@ namespace TP_Grupo5.GUILayer
             this.Controls.Add(this.txtContraseña);
             this.Controls.Add(this.btnSalir);
             this.Name = "frmLogin";
-            this.Text = "frmLogin";
+            this.Text = "Acceo de usuario";
             this.Load += new System.EventHandler(this.frmLogin_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
