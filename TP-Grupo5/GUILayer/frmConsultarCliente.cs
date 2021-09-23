@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using TP_Grupo5.DataAccesLayer;
 using TP_Grupo5.BusinesLayer;
 using TP_Grupo5.Entities;
+using TP_Grupo5.GUILayer;
 
 namespace TP_Grupo5
 {
@@ -129,6 +130,42 @@ namespace TP_Grupo5
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtCuit_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else 
+            if (Char.IsControl(e.KeyChar))
+            {
+                         e.Handled = false;
+            }
+            else if (Char.IsSeparator(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            frmABMCliente ofrmABMCliente = new frmABMCliente();
+            ofrmABMCliente.Text = "Nuevo cliente";
+            ofrmABMCliente.ShowDialog();
+        }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            if(grdClientes.CurrentRow==null)
+                MessageBox.Show("Seleccione una fila de la grilla");
+            else
+                MessageBox.Show("Te la creiste papá!!!");
         }
     }
 }

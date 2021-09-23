@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "G/nZ9T1FirEH+8UFbn1hTD0e1n3p9IXHPJ4ef3LEKfacjXXqCTjgHnVlNbJMJvGi+h889VkHkWBz0JJygQE+sw==",
+  "dgSpecHash": "dxK2D2gPTLpkttoB9pNn2dBwjP8AgYP1UbMZN1DUIzywhj/2mPJce6mLDlzzbA2K0VV3Okhjq5stF0ouP4GSqw==",
   "success": true,
-  "projectFilePath": "D:\\Usuarios\\Jonatan\\Documents\\Facultad 2021\\PAV1\\TrabajosPracticos\\Git\\AjallaGarayMolinaMorales_PAV1_3K5_2021\\TP-Grupo5\\TP-Grupo5.csproj",
+  "projectFilePath": "D:\\Usuarios\\Jonatan\\Documents\\Facultad 2021\\PAV1\\TrabajosPracticos\\Git\\santi\\AjallaGarayMolinaMorales_PAV1_3K5_2021\\TP-Grupo5\\TP-Grupo5.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Jonatan\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\Jonatan\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
