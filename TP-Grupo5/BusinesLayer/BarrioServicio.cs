@@ -13,5 +13,9 @@ namespace TP_Grupo5.BusinesLayer
         {
             return oBarrioDao.getAll();
         }
+        public IList<Barrio> consultaConFiltros(string filtro)
+        {
+            return oBarrioDao.consultWithFilter(filtro);
+        }
     }
 }

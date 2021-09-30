@@ -34,5 +34,23 @@ namespace TP_Grupo5.DataAccesLayer
             return oBarrio;
         }
 
+        public IList<Barrio> consultWithFilter(string filtro)
+        {
+            List<Barrio> listaBarrios = new List<Barrio>();
+
+            string consulta = string.Concat("SELECT ",
+                                            "b.id_barrio,",
+                                            "b.nombre as barrio",
+                                            " FROM Barrios b",
+                                            " WHERE b.borrado = 0");
+
+            consulta = consulta + filtro;
+            var resConsulta = DBHelper.GetDBHelper().ConsultaSQL(consulta);
+            foreach (DataRow row in resConsulta.Rows)
+            {
+                listaBarrios.Add(ObjectMapping(row));
+            }
+            return listaBarrios;
+        }
     }
 }

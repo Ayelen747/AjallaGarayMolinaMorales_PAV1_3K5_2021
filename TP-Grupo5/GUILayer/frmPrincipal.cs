@@ -27,5 +27,11 @@ namespace TP_Grupo5.GUILayer
             frmConsultaCliente ofrmConsultaCliente = new frmConsultaCliente();
             ofrmConsultaCliente.ShowDialog();
         }
+
+        private void consultarBarriosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmConsultarBarrio ofrmConsultaBarrio = new frmConsultarBarrio();
+            ofrmConsultaBarrio.ShowDialog();
+        }
     }
 }
