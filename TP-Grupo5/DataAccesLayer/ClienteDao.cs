@@ -94,5 +94,18 @@ namespace TP_Grupo5.DataAccesLayer
             };
             return oCliente;
         }
+
+        public bool Create(Cliente cliente)
+        {
+            string consulta = "INSERT INTO Clientes(cuit,razon_social,calle,numero,fecha_alta,id_barrio,id_contacto,borrado)" +
+                              " VALUES (" +
+                              "'" + cliente.Razon_social + "'," +
+                              "'" + cliente.Calle + "'," +
+                              cliente.Numero + "," +
+                              "GETDATE()," +
+                              cliente.Barrio.Id_Barrio + "," +
+                              cliente.Contacto.Id_Contacto + ",0)";
+            return (DBHelper.GetDBHelper().EjecutarSQL(consulta)==1);
+        }
     }
 }

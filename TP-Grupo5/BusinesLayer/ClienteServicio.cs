@@ -20,5 +20,10 @@ namespace TP_Grupo5.BusinesLayer
             return oClienteDao.consultWithFilter(filtro);
         }
 
+        public bool InsertarCliente(Cliente cliente)
+        {
+            return oClienteDao.Create(cliente);
+        }
+
     }
 }

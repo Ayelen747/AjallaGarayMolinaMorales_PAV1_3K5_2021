@@ -47,10 +47,9 @@ namespace TP_Grupo5
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.grdClientes = new System.Windows.Forms.DataGridView();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.razonS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cuit = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,6 +58,7 @@ namespace TP_Grupo5
             this.fechaAlta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.barrio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contacto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.gbBuscarCliente.SuspendLayout();
             this.gbListaClientes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdClientes)).BeginInit();
@@ -186,7 +186,7 @@ namespace TP_Grupo5
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(707, 137);
+            this.btnBuscar.Location = new System.Drawing.Point(707, 108);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(75, 23);
             this.btnBuscar.TabIndex = 5;
@@ -197,7 +197,7 @@ namespace TP_Grupo5
             // chkTodos
             // 
             this.chkTodos.AutoSize = true;
-            this.chkTodos.Location = new System.Drawing.Point(707, 112);
+            this.chkTodos.Location = new System.Drawing.Point(707, 79);
             this.chkTodos.Name = "chkTodos";
             this.chkTodos.Size = new System.Drawing.Size(58, 19);
             this.chkTodos.TabIndex = 4;
@@ -210,7 +210,6 @@ namespace TP_Grupo5
             this.gbListaClientes.Controls.Add(this.btnEliminar);
             this.gbListaClientes.Controls.Add(this.btnAgregar);
             this.gbListaClientes.Controls.Add(this.btnActualizar);
-            this.gbListaClientes.Controls.Add(this.btnCancelar);
             this.gbListaClientes.Controls.Add(this.btnSalir);
             this.gbListaClientes.Controls.Add(this.grdClientes);
             this.gbListaClientes.Location = new System.Drawing.Point(12, 166);
@@ -249,15 +248,15 @@ namespace TP_Grupo5
             this.btnActualizar.UseVisualStyleBackColor = true;
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
-            // btnCancelar
+            // btnLimpiar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(614, 243);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 2;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            this.btnLimpiar.Location = new System.Drawing.Point(707, 137);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(75, 23);
+            this.btnLimpiar.TabIndex = 2;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // btnSalir
             // 
@@ -348,6 +347,7 @@ namespace TP_Grupo5
             this.Controls.Add(this.gbListaClientes);
             this.Controls.Add(this.gbBuscarCliente);
             this.Controls.Add(this.btnBuscar);
+            this.Controls.Add(this.btnLimpiar);
             this.Controls.Add(this.chkTodos);
             this.Name = "frmConsultaCliente";
             this.Text = "Clientes";
@@ -378,7 +378,7 @@ namespace TP_Grupo5
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnActualizar;
-        private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.Button btnSalir;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.RadioButton rbDespues;

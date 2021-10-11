@@ -6,17 +6,27 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using TP_Grupo5.BusinesLayer;
+using TP_Grupo5.Entities;
 
 namespace TP_Grupo5.GUILayer
 {
     public partial class frmABMCliente : Form
     {
         private BarrioServicio oBarrioServicio;
+        
+        private FormMode formMode = FormMode.insert;
         public frmABMCliente()
         {
             InitializeComponent();
             oBarrioServicio = new BarrioServicio();
             LlenarCombo(cboBarrio, oBarrioServicio.dameTodo(), "Nombre", "Id_barrio");
+        }
+
+        public enum FormMode
+        { 
+            insert,
+            update,
+            delete,
         }
 
         private void LlenarCombo(ComboBox cbo, Object source, string display, String value)
@@ -34,8 +44,47 @@ namespace TP_Grupo5.GUILayer
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            if(validarCampos())
-                MessageBox.Show("Te la creiste papá!!!");
+            switch (formMode)
+            {
+                case FormMode.insert:
+                    {
+                        if (validarCampos())
+                        {
+                            var Cliente = new Cliente
+                            {
+                                Razon_social = txtRazonSocial.Text,
+                                Barrio = new Barrio
+                                {
+                                    Nombre = cboBarrio.Text
+                                },
+                                Calle = txtCalle.Text,
+                                Numero = Convert.ToInt32(txtNroCalle.Text),
+                                Contacto = new Contacto
+                                {
+                                    Id_Contacto = Convert.ToInt32(cboContacto.SelectedValue)
+                                },
+                                Fecha_alta = dtpFechaAlta.Value
+                            };
+
+                        }
+                        break;
+                    };
+                case FormMode.update:
+                    {
+                        MessageBox.Show("actualizado");
+                        break;
+                    };
+                case FormMode.delete:
+                    {
+                        MessageBox.Show("borrado");
+                        break;
+                    }
+
+
+
+
+
+            }
         }
 
         private bool validarCampos()
@@ -64,7 +113,17 @@ namespace TP_Grupo5.GUILayer
                 txtNroCalle.Focus();
                 return false;
             }
+            if (chkSinContacto.Checked==false)
+            {
+                if (cboContacto.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Seleccione un Contacto", "Notificación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    cboBarrio.Focus();
+                    return false;
+                }
+            }
             return true;
+
         }
         private void textBox3_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -85,6 +144,20 @@ namespace TP_Grupo5.GUILayer
             {
                 e.Handled = true;
             }
+        }
+
+        private void chkSinContacto_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkSinContacto.Checked)
+                cboContacto.Enabled = false;
+            else
+                cboContacto.SelectedIndex = -1;
+                cboContacto.Enabled = true;
+        }
+
+        private void frmABMCliente_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

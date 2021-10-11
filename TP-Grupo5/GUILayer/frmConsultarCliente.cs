@@ -122,7 +122,7 @@ namespace TP_Grupo5
                 gbBuscarCliente.Enabled = true;
         }
 
-        private void btnCancelar_Click(object sender, EventArgs e)
+        private void btnLimpiar_Click(object sender, EventArgs e)
         {
             habilitarCampos(true);
         }
