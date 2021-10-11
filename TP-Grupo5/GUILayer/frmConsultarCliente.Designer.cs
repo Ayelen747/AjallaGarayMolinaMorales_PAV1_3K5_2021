@@ -221,6 +221,22 @@ namespace TP_Grupo5
             this.txtRazonSocial.Size = new System.Drawing.Size(100, 23);
             this.txtRazonSocial.TabIndex = 0;
             // 
+            // lblRazonS
+            // 
+            this.lblRazonS.AutoSize = true;
+            this.lblRazonS.Location = new System.Drawing.Point(6, 44);
+            this.lblRazonS.Name = "lblRazonS";
+            this.lblRazonS.Size = new System.Drawing.Size(75, 15);
+            this.lblRazonS.TabIndex = 1;
+            this.lblRazonS.Text = "Razon social:";
+            // 
+            // txtRazonSocial
+            // 
+            this.txtRazonSocial.Location = new System.Drawing.Point(91, 41);
+            this.txtRazonSocial.Name = "txtRazonSocial";
+            this.txtRazonSocial.Size = new System.Drawing.Size(100, 23);
+            this.txtRazonSocial.TabIndex = 0;
+            // 
             // gbListaClientes
             // 
             this.gbListaClientes.Controls.Add(this.btnEliminar);
