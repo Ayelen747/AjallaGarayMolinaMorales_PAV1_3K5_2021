@@ -454,23 +454,39 @@
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
     "C:\\Users\\Jonatan\\.nuget\\packages\\": {},
+=======
+    "C:\\Users\\santi\\.nuget\\packages\\": {},
+>>>>>>> 3fe81ccef3c7d9fa9ed022096600c2b84e2f14a4
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
+<<<<<<< HEAD
       "projectUniqueName": "D:\\Usuarios\\Jonatan\\Documents\\Facultad 2021\\PAV1\\TrabajosPracticos\\Git\\santi\\AjallaGarayMolinaMorales_PAV1_3K5_2021\\TP-Grupo5\\TP-Grupo5.csproj",
       "projectName": "TP-Grupo5",
       "projectPath": "D:\\Usuarios\\Jonatan\\Documents\\Facultad 2021\\PAV1\\TrabajosPracticos\\Git\\santi\\AjallaGarayMolinaMorales_PAV1_3K5_2021\\TP-Grupo5\\TP-Grupo5.csproj",
       "packagesPath": "C:\\Users\\Jonatan\\.nuget\\packages\\",
       "outputPath": "D:\\Usuarios\\Jonatan\\Documents\\Facultad 2021\\PAV1\\TrabajosPracticos\\Git\\santi\\AjallaGarayMolinaMorales_PAV1_3K5_2021\\TP-Grupo5\\obj\\",
+=======
+      "projectUniqueName": "E:\\Santi_Descargas_al_disco_duro\\Compressed\\AjallaGarayMolinaMorales_PAV1_3K5_2021_2\\AjallaGarayMolinaMorales_PAV1_3K5_2021\\TP-Grupo5\\TP-Grupo5.csproj",
+      "projectName": "TP-Grupo5",
+      "projectPath": "E:\\Santi_Descargas_al_disco_duro\\Compressed\\AjallaGarayMolinaMorales_PAV1_3K5_2021_2\\AjallaGarayMolinaMorales_PAV1_3K5_2021\\TP-Grupo5\\TP-Grupo5.csproj",
+      "packagesPath": "C:\\Users\\santi\\.nuget\\packages\\",
+      "outputPath": "E:\\Santi_Descargas_al_disco_duro\\Compressed\\AjallaGarayMolinaMorales_PAV1_3K5_2021_2\\AjallaGarayMolinaMorales_PAV1_3K5_2021\\TP-Grupo5\\obj\\",
+>>>>>>> 3fe81ccef3c7d9fa9ed022096600c2b84e2f14a4
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
+<<<<<<< HEAD
         "C:\\Users\\Jonatan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+=======
+        "C:\\Users\\santi\\AppData\\Roaming\\NuGet\\NuGet.Config",
+>>>>>>> 3fe81ccef3c7d9fa9ed022096600c2b84e2f14a4
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],

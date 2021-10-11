@@ -74,6 +74,7 @@ E:\Santi_Descargas_al_disco_duro\Compressed\AjallaGarayMolinaMorales_PAV1_3K5_20
 E:\Santi_Descargas_al_disco_duro\Compressed\AjallaGarayMolinaMorales_PAV1_3K5_2021_2\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\obj\Debug\netcoreapp3.1\TP-Grupo5.dll
 E:\Santi_Descargas_al_disco_duro\Compressed\AjallaGarayMolinaMorales_PAV1_3K5_2021_2\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\obj\Debug\netcoreapp3.1\TP-Grupo5.pdb
 E:\Santi_Descargas_al_disco_duro\Compressed\AjallaGarayMolinaMorales_PAV1_3K5_2021_2\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\obj\Debug\netcoreapp3.1\TP-Grupo5.genruntimeconfig.cache
+<<<<<<< HEAD
 D:\Usuarios\Jonatan\Documents\Facultad 2021\PAV1\TrabajosPracticos\Git\santi\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\bin\Debug\netcoreapp3.1\TP-Grupo5.exe
 D:\Usuarios\Jonatan\Documents\Facultad 2021\PAV1\TrabajosPracticos\Git\santi\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\bin\Debug\netcoreapp3.1\TP-Grupo5.deps.json
 D:\Usuarios\Jonatan\Documents\Facultad 2021\PAV1\TrabajosPracticos\Git\santi\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\bin\Debug\netcoreapp3.1\TP-Grupo5.runtimeconfig.json
@@ -100,3 +101,5 @@ D:\Usuarios\Jonatan\Documents\Facultad 2021\PAV1\TrabajosPracticos\Git\santi\Aja
 D:\Usuarios\Jonatan\Documents\Facultad 2021\PAV1\TrabajosPracticos\Git\santi\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\obj\Debug\netcoreapp3.1\TP-Grupo5.dll
 D:\Usuarios\Jonatan\Documents\Facultad 2021\PAV1\TrabajosPracticos\Git\santi\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\obj\Debug\netcoreapp3.1\TP-Grupo5.pdb
 D:\Usuarios\Jonatan\Documents\Facultad 2021\PAV1\TrabajosPracticos\Git\santi\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\obj\Debug\netcoreapp3.1\TP-Grupo5.genruntimeconfig.cache
+=======
+>>>>>>> 3fe81ccef3c7d9fa9ed022096600c2b84e2f14a4

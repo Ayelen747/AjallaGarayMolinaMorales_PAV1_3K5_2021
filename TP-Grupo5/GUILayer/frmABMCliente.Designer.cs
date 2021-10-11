@@ -40,9 +40,12 @@ namespace TP_Grupo5.GUILayer
             this.cboBarrio = new System.Windows.Forms.ComboBox();
             this.lblBarrio = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+<<<<<<< HEAD
             this.chkSinContacto = new System.Windows.Forms.CheckBox();
             this.cboContacto = new System.Windows.Forms.ComboBox();
             this.lblContacto = new System.Windows.Forms.Label();
+=======
+>>>>>>> 3fe81ccef3c7d9fa9ed022096600c2b84e2f14a4
             this.lblFecha_Alta = new System.Windows.Forms.Label();
             this.dtpFechaAlta = new System.Windows.Forms.DateTimePicker();
             this.btnCancelar = new System.Windows.Forms.Button();
@@ -136,9 +139,12 @@ namespace TP_Grupo5.GUILayer
             // 
             // groupBox1
             // 
+<<<<<<< HEAD
             this.groupBox1.Controls.Add(this.chkSinContacto);
             this.groupBox1.Controls.Add(this.cboContacto);
             this.groupBox1.Controls.Add(this.lblContacto);
+=======
+>>>>>>> 3fe81ccef3c7d9fa9ed022096600c2b84e2f14a4
             this.groupBox1.Controls.Add(this.lblFecha_Alta);
             this.groupBox1.Controls.Add(this.dtpFechaAlta);
             this.groupBox1.Controls.Add(this.txtId);
@@ -153,11 +159,16 @@ namespace TP_Grupo5.GUILayer
             this.groupBox1.Controls.Add(this.txtCalle);
             this.groupBox1.Location = new System.Drawing.Point(12, 12);
             this.groupBox1.Name = "groupBox1";
+<<<<<<< HEAD
             this.groupBox1.Size = new System.Drawing.Size(338, 242);
+=======
+            this.groupBox1.Size = new System.Drawing.Size(326, 214);
+>>>>>>> 3fe81ccef3c7d9fa9ed022096600c2b84e2f14a4
             this.groupBox1.TabIndex = 10;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
             // 
+<<<<<<< HEAD
             // chkSinContacto
             // 
             this.chkSinContacto.AutoSize = true;
@@ -191,6 +202,12 @@ namespace TP_Grupo5.GUILayer
             // 
             this.lblFecha_Alta.AutoSize = true;
             this.lblFecha_Alta.Location = new System.Drawing.Point(29, 202);
+=======
+            // lblFecha_Alta
+            // 
+            this.lblFecha_Alta.AutoSize = true;
+            this.lblFecha_Alta.Location = new System.Drawing.Point(29, 174);
+>>>>>>> 3fe81ccef3c7d9fa9ed022096600c2b84e2f14a4
             this.lblFecha_Alta.Name = "lblFecha_Alta";
             this.lblFecha_Alta.Size = new System.Drawing.Size(79, 15);
             this.lblFecha_Alta.TabIndex = 11;
@@ -198,14 +215,22 @@ namespace TP_Grupo5.GUILayer
             // 
             // dtpFechaAlta
             // 
+<<<<<<< HEAD
             this.dtpFechaAlta.Location = new System.Drawing.Point(114, 196);
+=======
+            this.dtpFechaAlta.Location = new System.Drawing.Point(114, 168);
+>>>>>>> 3fe81ccef3c7d9fa9ed022096600c2b84e2f14a4
             this.dtpFechaAlta.Name = "dtpFechaAlta";
             this.dtpFechaAlta.Size = new System.Drawing.Size(200, 23);
             this.dtpFechaAlta.TabIndex = 10;
             // 
             // btnCancelar
             // 
+<<<<<<< HEAD
             this.btnCancelar.Location = new System.Drawing.Point(275, 260);
+=======
+            this.btnCancelar.Location = new System.Drawing.Point(263, 232);
+>>>>>>> 3fe81ccef3c7d9fa9ed022096600c2b84e2f14a4
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 11;
@@ -215,7 +240,11 @@ namespace TP_Grupo5.GUILayer
             // 
             // btnAceptar
             // 
+<<<<<<< HEAD
             this.btnAceptar.Location = new System.Drawing.Point(194, 260);
+=======
+            this.btnAceptar.Location = new System.Drawing.Point(182, 232);
+>>>>>>> 3fe81ccef3c7d9fa9ed022096600c2b84e2f14a4
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
             this.btnAceptar.TabIndex = 12;
@@ -227,13 +256,20 @@ namespace TP_Grupo5.GUILayer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+<<<<<<< HEAD
             this.ClientSize = new System.Drawing.Size(362, 294);
+=======
+            this.ClientSize = new System.Drawing.Size(356, 265);
+>>>>>>> 3fe81ccef3c7d9fa9ed022096600c2b84e2f14a4
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmABMCliente";
             this.Text = "frmABMCliente";
+<<<<<<< HEAD
             this.Load += new System.EventHandler(this.frmABMCliente_Load);
+=======
+>>>>>>> 3fe81ccef3c7d9fa9ed022096600c2b84e2f14a4
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -257,8 +293,11 @@ namespace TP_Grupo5.GUILayer
         private System.Windows.Forms.DateTimePicker dtpFechaAlta;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnAceptar;
+<<<<<<< HEAD
         private System.Windows.Forms.CheckBox chkSinContacto;
         private System.Windows.Forms.ComboBox cboContacto;
         private System.Windows.Forms.Label lblContacto;
+=======
+>>>>>>> 3fe81ccef3c7d9fa9ed022096600c2b84e2f14a4
     }
 }

@@ -50,6 +50,7 @@ namespace TP_Grupo5
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.grdClientes = new System.Windows.Forms.DataGridView();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.razonS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cuit = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -58,7 +59,6 @@ namespace TP_Grupo5
             this.fechaAlta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.barrio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contacto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.gbBuscarCliente.SuspendLayout();
             this.gbListaClientes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdClientes)).BeginInit();

@@ -6,15 +6,21 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using TP_Grupo5.BusinesLayer;
+<<<<<<< HEAD
 using TP_Grupo5.Entities;
+=======
+>>>>>>> 3fe81ccef3c7d9fa9ed022096600c2b84e2f14a4
 
 namespace TP_Grupo5.GUILayer
 {
     public partial class frmABMCliente : Form
     {
         private BarrioServicio oBarrioServicio;
+<<<<<<< HEAD
         
         private FormMode formMode = FormMode.insert;
+=======
+>>>>>>> 3fe81ccef3c7d9fa9ed022096600c2b84e2f14a4
         public frmABMCliente()
         {
             InitializeComponent();
@@ -22,6 +28,7 @@ namespace TP_Grupo5.GUILayer
             LlenarCombo(cboBarrio, oBarrioServicio.dameTodo(), "Nombre", "Id_barrio");
         }
 
+<<<<<<< HEAD
         public enum FormMode
         { 
             insert,
@@ -29,6 +36,8 @@ namespace TP_Grupo5.GUILayer
             delete,
         }
 
+=======
+>>>>>>> 3fe81ccef3c7d9fa9ed022096600c2b84e2f14a4
         private void LlenarCombo(ComboBox cbo, Object source, string display, String value)
         {
             cbo.DataSource = source;
@@ -44,6 +53,7 @@ namespace TP_Grupo5.GUILayer
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
+<<<<<<< HEAD
             switch (formMode)
             {
                 case FormMode.insert:
@@ -85,6 +95,10 @@ namespace TP_Grupo5.GUILayer
 
 
             }
+=======
+            if(validarCampos())
+                MessageBox.Show("Te la creiste papá!!!");
+>>>>>>> 3fe81ccef3c7d9fa9ed022096600c2b84e2f14a4
         }
 
         private bool validarCampos()
@@ -113,6 +127,7 @@ namespace TP_Grupo5.GUILayer
                 txtNroCalle.Focus();
                 return false;
             }
+<<<<<<< HEAD
             if (chkSinContacto.Checked==false)
             {
                 if (cboContacto.SelectedIndex == -1)
@@ -124,6 +139,9 @@ namespace TP_Grupo5.GUILayer
             }
             return true;
 
+=======
+            return true;
+>>>>>>> 3fe81ccef3c7d9fa9ed022096600c2b84e2f14a4
         }
         private void textBox3_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -145,6 +163,7 @@ namespace TP_Grupo5.GUILayer
                 e.Handled = true;
             }
         }
+<<<<<<< HEAD
 
         private void chkSinContacto_CheckedChanged(object sender, EventArgs e)
         {
@@ -159,5 +178,7 @@ namespace TP_Grupo5.GUILayer
         {
 
         }
+=======
+>>>>>>> 3fe81ccef3c7d9fa9ed022096600c2b84e2f14a4
     }
 }
