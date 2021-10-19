@@ -5,7 +5,7 @@ using TP_Grupo5.DataAccesLayer;
 using TP_Grupo5.Entities;
 namespace TP_Grupo5.BusinesLayer
 {
-    class BarrioServicio
+    public class BarrioServicio
     {
         private BarrioDao oBarrioDao = new BarrioDao();
 

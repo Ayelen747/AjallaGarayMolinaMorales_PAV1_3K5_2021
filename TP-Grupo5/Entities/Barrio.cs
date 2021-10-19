@@ -4,7 +4,7 @@ using System.Text;
 
 namespace TP_Grupo5.Entities
 {
-    class Barrio
+    public class Barrio
     {
         public int Id_Barrio { get; set; }
         public String Nombre { get; set; }

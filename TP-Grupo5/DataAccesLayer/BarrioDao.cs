@@ -5,7 +5,7 @@ using TP_Grupo5.Entities;
 using System.Data;
 namespace TP_Grupo5.DataAccesLayer
 {
-    class BarrioDao
+    public class BarrioDao
     {
         public IList<Barrio> getAll()
         {

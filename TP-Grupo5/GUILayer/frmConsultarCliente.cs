@@ -53,18 +53,7 @@ namespace TP_Grupo5
                 {
                     filtro = filtro + " AND c.cuit=" + Convert.ToInt32(txtCuit.Text);
                 }
-                if (rbAntes.Checked)
-                {
-                    filtro = filtro + " AND c.fecha_alta<=Convert(DateTime, " + "'" + dtpFechaAlta.Value.ToShortDateString() + "'" + ", 103)";
-                }
-                if (rbActual.Checked)
-                {
-                    filtro = filtro + " AND c.fecha_alta=Convert(DateTime, " + "'" + dtpFechaAlta.Value.ToShortDateString() + "'" + ", 103)";
-                }
-                if (rbDespues.Checked)
-                {
-                    filtro = filtro + " AND c.fecha_alta>=Convert(DateTime, " + "'" + dtpFechaAlta.Value.ToShortDateString() + "'" + ", 103)";
-                }
+                //fecha
 
                 llenarGrilla(grdClientes, oClienteServicio.consultaConFiltros(filtro));
             }
@@ -77,7 +66,6 @@ namespace TP_Grupo5
         {
             txtRazonSocial.Text = string.Empty;
             txtCuit.Text = string.Empty;
-            rbAntes.Checked = true;
             cboBarrio.SelectedIndex = -1;
             grdClientes.Rows.Clear();
             btnActualizar.Enabled = !valor;
@@ -95,10 +83,10 @@ namespace TP_Grupo5
                         lista[i].Id_cliente,
                         lista[i].Razon_social,
                         lista[i].Cuit,
+                        lista[i].Barrio.Nombre,
                         lista[i].Calle,
                         lista[i].Numero,
                         lista[i].Fecha_alta,
-                        lista[i].Barrio.Nombre,
                         lista[i].Contacto.Nombre
                         );
                 }
@@ -156,16 +144,32 @@ namespace TP_Grupo5
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             frmABMCliente ofrmABMCliente = new frmABMCliente();
-            ofrmABMCliente.Text = "Nuevo cliente";
             ofrmABMCliente.ShowDialog();
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
-            if(grdClientes.CurrentRow==null)
+            if (grdClientes.CurrentRow == null)
                 MessageBox.Show("Seleccione una fila de la grilla");
             else
-                MessageBox.Show("Te la creiste papá!!!");
+            {
+                frmABMCliente ofrmABMCliente = new frmABMCliente();
+                ofrmABMCliente.SeleccionarCliente(frmABMCliente.FormMode.update, (int)grdClientes.CurrentRow.Cells[0].Value);
+                ofrmABMCliente.ShowDialog();
+            }
         }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (grdClientes.CurrentRow == null)
+                MessageBox.Show("Seleccione una fila de la grilla");
+            else
+            {
+                frmABMCliente ofrmABMCliente = new frmABMCliente();
+                ofrmABMCliente.SeleccionarCliente(frmABMCliente.FormMode.delete, (int)grdClientes.CurrentRow.Cells[0].Value);
+                ofrmABMCliente.ShowDialog();
+            }
+        }
+
     }
 }

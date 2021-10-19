@@ -6,7 +6,7 @@ using TP_Grupo5.Entities;
 
 namespace TP_Grupo5.DataAccesLayer
 {
-    class ClienteDao
+    public class ClienteDao
     {
         
         public IList<Cliente> getAll()
@@ -77,6 +77,7 @@ namespace TP_Grupo5.DataAccesLayer
                 Razon_social = row["razon_social"].ToString(),
                 Cuit = Convert.ToInt32(row["cuit"].ToString()),
                 Fecha_alta = Convert.ToDateTime(row["fecha_alta"].ToString()),
+                Calle= row["calle"].ToString(),
                 Numero = Convert.ToInt32(row["numero"].ToString()),
                 Barrio = new Barrio
                 {
@@ -99,6 +100,7 @@ namespace TP_Grupo5.DataAccesLayer
         {
             string consulta = "INSERT INTO Clientes(cuit,razon_social,calle,numero,fecha_alta,id_barrio,id_contacto,borrado)" +
                               " VALUES (" +
+                              "'" + cliente.Cuit + "'," +
                               "'" + cliente.Razon_social + "'," +
                               "'" + cliente.Calle + "'," +
                               cliente.Numero + "," +
@@ -106,6 +108,27 @@ namespace TP_Grupo5.DataAccesLayer
                               cliente.Barrio.Id_Barrio + "," +
                               cliente.Contacto.Id_Contacto + ",0)";
             return (DBHelper.GetDBHelper().EjecutarSQL(consulta)==1);
+        }
+
+        public bool Update(Cliente cliente)
+        {
+            string consulta = "UPDATE Clientes " +
+                     "SET cuit='" + cliente.Cuit + "'," +
+                     "razon_social='" + cliente.Razon_social + "'," +
+                     "calle='" + cliente.Calle + "'," +
+                     "numero=" + cliente.Numero + "," +
+                     "id_barrio="+cliente.Barrio.Id_Barrio+","+
+                     "id_contacto="+cliente.Contacto.Id_Contacto+
+                     " WHERE id_cliente="+cliente.Id_cliente;
+            return (DBHelper.GetDBHelper().EjecutarSQL(consulta) == 1);
+        }
+
+        public bool Delete(Cliente cliente)
+        {
+            string consulta = "UPDATE Clientes " +
+                              "SET borrado=1" +
+                              " WHERE id_cliente=" + cliente.Id_cliente;
+            return (DBHelper.GetDBHelper().EjecutarSQL(consulta) == 1);
         }
     }
 }

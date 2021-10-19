@@ -4,7 +4,7 @@ using System.Text;
 
 namespace TP_Grupo5.Entities
 {
-    class Contacto
+    public class Contacto
     {
         public int Id_Contacto { get; set;}
         public String Nombre { get; set; }

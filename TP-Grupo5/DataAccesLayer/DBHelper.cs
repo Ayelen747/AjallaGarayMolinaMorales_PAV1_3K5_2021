@@ -6,7 +6,7 @@ using System.Data;
 
 namespace TP_Grupo5.DataAccesLayer
 {
-    class DBHelper
+    public class DBHelper
     {
         private string string_conexion;
         private static DBHelper instance = new DBHelper();

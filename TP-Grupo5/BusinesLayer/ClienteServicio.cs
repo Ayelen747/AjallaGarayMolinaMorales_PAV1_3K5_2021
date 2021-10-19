@@ -6,7 +6,7 @@ using TP_Grupo5.Entities;
 
 namespace TP_Grupo5.BusinesLayer
 {
-    class ClienteServicio
+    public class ClienteServicio
     {
         private ClienteDao oClienteDao = new ClienteDao();
 
@@ -25,5 +25,14 @@ namespace TP_Grupo5.BusinesLayer
             return oClienteDao.Create(cliente);
         }
 
+        public bool ActualizarCliente(Cliente cliente)
+        {
+            return oClienteDao.Update(cliente);
+        }
+
+        public bool EliminarCliente(Cliente cliente)
+        {
+            return oClienteDao.Delete(cliente);
+        }
     }
 }
