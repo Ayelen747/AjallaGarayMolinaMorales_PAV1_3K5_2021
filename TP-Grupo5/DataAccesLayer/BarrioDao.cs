@@ -52,5 +52,29 @@ namespace TP_Grupo5.DataAccesLayer
             }
             return listaBarrios;
         }
+
+        public bool Create(Barrio barrio)
+        {
+            string consulta = "INSERT INTO Barrios(nombre,borrado)" +
+                              " VALUES (" +
+                              "'" + barrio.Nombre + "','0')";
+            return (DBHelper.GetDBHelper().EjecutarSQL(consulta) == 1);
+        }
+
+        public bool Update(Barrio barrio)
+        {
+            string consulta = "UPDATE Barrios " +
+                     "SET nombre='" + barrio.Nombre + "'" +
+                     " WHERE id_barrio=" + barrio.Id_Barrio;
+            return (DBHelper.GetDBHelper().EjecutarSQL(consulta) == 1);
+        }
+
+        public bool Delete(Barrio barrio)
+        {
+            string consulta = "UPDATE Barrios " +
+                              "SET borrado=1" +
+                              " WHERE id_barrio=" + barrio.Id_Barrio; 
+            return (DBHelper.GetDBHelper().EjecutarSQL(consulta) == 1);
+        }
     }
 }
