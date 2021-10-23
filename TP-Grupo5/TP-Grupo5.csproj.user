@@ -16,5 +16,14 @@
     <Compile Update="GUILayer\frmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="GUILayer\frmProyecto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GUILayer\frmProyectoABM.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="GUILayer\frmTransaccionFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>

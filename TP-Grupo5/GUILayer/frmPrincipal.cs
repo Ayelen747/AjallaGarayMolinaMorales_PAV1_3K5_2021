@@ -22,16 +22,26 @@ namespace TP_Grupo5.GUILayer
             this.Text = "Nombre de usuario: "+ofrmLogin.Text;
         }
 
-        private void consularClientesToolStripMenuItem_Click(object sender, EventArgs e)
+        
+
+        
+
+        private void consultarProyectosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmConsultaCliente ofrmConsultaCliente = new frmConsultaCliente();
-            ofrmConsultaCliente.ShowDialog();
+            frmProyecto ofrmProyecto = new frmProyecto();
+            ofrmProyecto.ShowDialog();
         }
 
         private void consultarBarriosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmConsultarBarrio ofrmConsultaBarrio = new frmConsultarBarrio();
             ofrmConsultaBarrio.ShowDialog();
+        }
+
+        private void consularClientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmConsultaCliente ofrmConsultaCliente = new frmConsultaCliente();
+            ofrmConsultaCliente.ShowDialog();
         }
     }
 }

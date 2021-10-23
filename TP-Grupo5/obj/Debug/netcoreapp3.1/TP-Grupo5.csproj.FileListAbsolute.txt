@@ -103,3 +103,7 @@ D:\Usuarios\Jonatan\Documents\Facultad 2021\PAV1\TrabajosPracticos\Git\santi\Aja
 D:\Usuarios\Jonatan\Documents\Facultad 2021\PAV1\TrabajosPracticos\Git\santi\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\obj\Debug\netcoreapp3.1\TP-Grupo5.genruntimeconfig.cache
 =======
 >>>>>>> 3fe81ccef3c7d9fa9ed022096600c2b84e2f14a4
+D:\Usuarios\Jonatan\Documents\Facultad 2021\PAV1\TrabajosPracticos\Git\santi\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\obj\Debug\netcoreapp3.1\TP_Grupo5.GUILayer.frmProyecto.resources
+D:\Usuarios\Jonatan\Documents\Facultad 2021\PAV1\TrabajosPracticos\Git\santi\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\obj\Debug\netcoreapp3.1\TP_Grupo5.GUILayer.frmProyectoABM.resources
+D:\Usuarios\Jonatan\Documents\Facultad 2021\PAV1\TrabajosPracticos\Git\santi\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\obj\Debug\netcoreapp3.1\TP_Grupo5.GUILayer.frmFacturaDetallecs.resources
+D:\Usuarios\Jonatan\Documents\Facultad 2021\PAV1\TrabajosPracticos\Git\santi\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\obj\Debug\netcoreapp3.1\TP_Grupo5.GUILayer.frmTransaccionFactura.resources

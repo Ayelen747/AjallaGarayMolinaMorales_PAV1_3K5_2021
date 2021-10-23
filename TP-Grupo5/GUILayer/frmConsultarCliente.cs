@@ -53,8 +53,15 @@ namespace TP_Grupo5
                 {
                     filtro = filtro + " AND c.cuit=" + Convert.ToInt32(txtCuit.Text);
                 }
-                //fecha
-
+                //if (dtpFechaDesde.Value > dtpFechaHasta.Value)
+                //{
+                //    MessageBox.Show("La fecha desde es mayor a la fecha hasta", "Notificación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                //}
+                //else
+                //{
+                //    filtro += " AND c.fecha_alta  BETWEEN Convert(DateTime, " + "'" + dtpFechaDesde.Value.ToShortDateString() + "'" + ", 103)" +
+                //                  " AND Convert(DateTime, " + "'" + dtpFechaHasta.Value.ToShortDateString() + "'" + ", 103)";
+                //}
                 llenarGrilla(grdClientes, oClienteServicio.consultaConFiltros(filtro));
             }
             else
@@ -66,6 +73,8 @@ namespace TP_Grupo5
         {
             txtRazonSocial.Text = string.Empty;
             txtCuit.Text = string.Empty;
+            dtpFechaDesde.Value = DateTime.Today;
+            dtpFechaHasta.Value = DateTime.Today;
             cboBarrio.SelectedIndex = -1;
             grdClientes.Rows.Clear();
             btnActualizar.Enabled = !valor;
@@ -129,7 +138,7 @@ namespace TP_Grupo5
             else 
             if (Char.IsControl(e.KeyChar))
             {
-                         e.Handled = false;
+                e.Handled = false;
             }
             else if (Char.IsSeparator(e.KeyChar))
             {

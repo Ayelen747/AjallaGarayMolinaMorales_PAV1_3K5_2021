@@ -30,8 +30,12 @@ namespace TP_Grupo5
         private void InitializeComponent()
         {
             this.gbBuscarCliente = new System.Windows.Forms.GroupBox();
+            this.gbFechaAlta = new System.Windows.Forms.GroupBox();
+            this.lblHasta = new System.Windows.Forms.Label();
+            this.dtpFechaHasta = new System.Windows.Forms.DateTimePicker();
+            this.lblDesdeFechaA = new System.Windows.Forms.Label();
+            this.dtpFechaDesde = new System.Windows.Forms.DateTimePicker();
             this.lblNombreBarrio = new System.Windows.Forms.Label();
-            this.dtpFechaAlta = new System.Windows.Forms.DateTimePicker();
             this.cboBarrio = new System.Windows.Forms.ComboBox();
             this.lblCUIT = new System.Windows.Forms.Label();
             this.txtCuit = new System.Windows.Forms.TextBox();
@@ -45,12 +49,6 @@ namespace TP_Grupo5
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.grdClientes = new System.Windows.Forms.DataGridView();
-            this.btnLimpiar = new System.Windows.Forms.Button();
-            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            this.gbFechaAlta = new System.Windows.Forms.GroupBox();
-            this.lblDesdeFechaA = new System.Windows.Forms.Label();
-            this.lblHasta = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.razonS = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cuit = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,10 +57,12 @@ namespace TP_Grupo5
             this.nroCalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaAlta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contacto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnLimpiar = new System.Windows.Forms.Button();
+            this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.gbBuscarCliente.SuspendLayout();
+            this.gbFechaAlta.SuspendLayout();
             this.gbListaClientes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grdClientes)).BeginInit();
-            this.gbFechaAlta.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbBuscarCliente
@@ -81,6 +81,51 @@ namespace TP_Grupo5
             this.gbBuscarCliente.TabStop = false;
             this.gbBuscarCliente.Text = "Listar clientes";
             // 
+            // gbFechaAlta
+            // 
+            this.gbFechaAlta.Controls.Add(this.lblHasta);
+            this.gbFechaAlta.Controls.Add(this.dtpFechaHasta);
+            this.gbFechaAlta.Controls.Add(this.lblDesdeFechaA);
+            this.gbFechaAlta.Controls.Add(this.dtpFechaDesde);
+            this.gbFechaAlta.Location = new System.Drawing.Point(391, 22);
+            this.gbFechaAlta.Name = "gbFechaAlta";
+            this.gbFechaAlta.Size = new System.Drawing.Size(292, 86);
+            this.gbFechaAlta.TabIndex = 10;
+            this.gbFechaAlta.TabStop = false;
+            this.gbFechaAlta.Text = "Fecha alta";
+            // 
+            // lblHasta
+            // 
+            this.lblHasta.AutoSize = true;
+            this.lblHasta.Location = new System.Drawing.Point(40, 56);
+            this.lblHasta.Name = "lblHasta";
+            this.lblHasta.Size = new System.Drawing.Size(40, 15);
+            this.lblHasta.TabIndex = 12;
+            this.lblHasta.Text = "Hasta:";
+            // 
+            // dtpFechaHasta
+            // 
+            this.dtpFechaHasta.Location = new System.Drawing.Point(86, 51);
+            this.dtpFechaHasta.Name = "dtpFechaHasta";
+            this.dtpFechaHasta.Size = new System.Drawing.Size(200, 23);
+            this.dtpFechaHasta.TabIndex = 11;
+            // 
+            // lblDesdeFechaA
+            // 
+            this.lblDesdeFechaA.AutoSize = true;
+            this.lblDesdeFechaA.Location = new System.Drawing.Point(38, 22);
+            this.lblDesdeFechaA.Name = "lblDesdeFechaA";
+            this.lblDesdeFechaA.Size = new System.Drawing.Size(42, 15);
+            this.lblDesdeFechaA.TabIndex = 10;
+            this.lblDesdeFechaA.Text = "Desde:";
+            // 
+            // dtpFechaDesde
+            // 
+            this.dtpFechaDesde.Location = new System.Drawing.Point(86, 19);
+            this.dtpFechaDesde.Name = "dtpFechaDesde";
+            this.dtpFechaDesde.Size = new System.Drawing.Size(200, 23);
+            this.dtpFechaDesde.TabIndex = 9;
+            // 
             // lblNombreBarrio
             // 
             this.lblNombreBarrio.AutoSize = true;
@@ -89,13 +134,6 @@ namespace TP_Grupo5
             this.lblNombreBarrio.Size = new System.Drawing.Size(41, 15);
             this.lblNombreBarrio.TabIndex = 1;
             this.lblNombreBarrio.Text = "Barrio:";
-            // 
-            // dtpFechaAlta
-            // 
-            this.dtpFechaAlta.Location = new System.Drawing.Point(86, 19);
-            this.dtpFechaAlta.Name = "dtpFechaAlta";
-            this.dtpFechaAlta.Size = new System.Drawing.Size(200, 23);
-            this.dtpFechaAlta.TabIndex = 9;
             // 
             // cboBarrio
             // 
@@ -236,54 +274,6 @@ namespace TP_Grupo5
             this.grdClientes.Size = new System.Drawing.Size(770, 206);
             this.grdClientes.TabIndex = 0;
             // 
-            // btnLimpiar
-            // 
-            this.btnLimpiar.Location = new System.Drawing.Point(707, 137);
-            this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(75, 23);
-            this.btnLimpiar.TabIndex = 2;
-            this.btnLimpiar.Text = "Limpiar";
-            this.btnLimpiar.UseVisualStyleBackColor = true;
-            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
-            // 
-            // gbFechaAlta
-            // 
-            this.gbFechaAlta.Controls.Add(this.lblHasta);
-            this.gbFechaAlta.Controls.Add(this.dateTimePicker1);
-            this.gbFechaAlta.Controls.Add(this.lblDesdeFechaA);
-            this.gbFechaAlta.Controls.Add(this.dtpFechaAlta);
-            this.gbFechaAlta.Location = new System.Drawing.Point(391, 22);
-            this.gbFechaAlta.Name = "gbFechaAlta";
-            this.gbFechaAlta.Size = new System.Drawing.Size(292, 86);
-            this.gbFechaAlta.TabIndex = 10;
-            this.gbFechaAlta.TabStop = false;
-            this.gbFechaAlta.Text = "Fecha alta";
-            // 
-            // lblDesdeFechaA
-            // 
-            this.lblDesdeFechaA.AutoSize = true;
-            this.lblDesdeFechaA.Location = new System.Drawing.Point(38, 22);
-            this.lblDesdeFechaA.Name = "lblDesdeFechaA";
-            this.lblDesdeFechaA.Size = new System.Drawing.Size(42, 15);
-            this.lblDesdeFechaA.TabIndex = 10;
-            this.lblDesdeFechaA.Text = "Desde:";
-            // 
-            // lblHasta
-            // 
-            this.lblHasta.AutoSize = true;
-            this.lblHasta.Location = new System.Drawing.Point(40, 56);
-            this.lblHasta.Name = "lblHasta";
-            this.lblHasta.Size = new System.Drawing.Size(40, 15);
-            this.lblHasta.TabIndex = 12;
-            this.lblHasta.Text = "Hasta:";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(86, 51);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 23);
-            this.dateTimePicker1.TabIndex = 11;
-            // 
             // id
             // 
             this.id.HeaderText = "ID";
@@ -333,6 +323,16 @@ namespace TP_Grupo5
             this.contacto.Name = "contacto";
             this.contacto.ReadOnly = true;
             // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.Location = new System.Drawing.Point(707, 137);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(75, 23);
+            this.btnLimpiar.TabIndex = 2;
+            this.btnLimpiar.Text = "Limpiar";
+            this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
+            // 
             // frmConsultaCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -347,10 +347,10 @@ namespace TP_Grupo5
             this.Text = "Clientes";
             this.gbBuscarCliente.ResumeLayout(false);
             this.gbBuscarCliente.PerformLayout();
-            this.gbListaClientes.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.grdClientes)).EndInit();
             this.gbFechaAlta.ResumeLayout(false);
             this.gbFechaAlta.PerformLayout();
+            this.gbListaClientes.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.grdClientes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -368,7 +368,7 @@ namespace TP_Grupo5
         private System.Windows.Forms.GroupBox gbListaClientes;
         private System.Windows.Forms.DataGridView grdClientes;
         private System.Windows.Forms.Label lblNombreBarrio;
-        private System.Windows.Forms.DateTimePicker dtpFechaAlta;
+        private System.Windows.Forms.DateTimePicker dtpFechaDesde;
         private System.Windows.Forms.ComboBox cboBarrio;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnAgregar;
@@ -378,7 +378,7 @@ namespace TP_Grupo5
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.GroupBox gbFechaAlta;
         private System.Windows.Forms.Label lblHasta;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpFechaHasta;
         private System.Windows.Forms.Label lblDesdeFechaA;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.DataGridViewTextBoxColumn razonS;
