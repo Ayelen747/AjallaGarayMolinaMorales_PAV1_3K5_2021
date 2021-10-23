@@ -39,16 +39,13 @@ namespace TP_Grupo5.GUILayer
                 llenarGrilla(dgvBarrios, oBarrioServicio.consultaConFiltros(filtro));
             }
                 
-
-
-
             else
             {
                 llenarGrilla(dgvBarrios, oBarrioServicio.dameTodo());
             }
 
         }
-        
+
 
         private void llenarGrilla(DataGridView grilla, IList<Barrio> lista)
         {
@@ -77,7 +74,39 @@ namespace TP_Grupo5.GUILayer
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
+            if (dgvBarrios.CurrentRow == null)
+                MessageBox.Show("Seleccione una fila de la grilla");
+            else
+            {
+                frmABMBarrio ofrmABMBarrio = new frmABMBarrio();
+                ofrmABMBarrio.SeleccionarBarrio(frmABMBarrio.FormMode.update, (int)dgvBarrios.CurrentRow.Cells[0].Value);
+                ofrmABMBarrio.ShowDialog();
+            }
+        }
 
+
+        private void btnAgregar_Click_1(object sender, EventArgs e)
+        {
+            frmABMBarrio ofrmABMBarrio = new frmABMBarrio();
+            ofrmABMBarrio.ShowDialog();
+        }
+
+        private void btnEliminar_Click_1(object sender, EventArgs e)
+        {
+            if (dgvBarrios.CurrentRow == null)
+                MessageBox.Show("Seleccione una fila de la grilla");
+            else
+            {
+                frmABMBarrio ofrmABMBarrio = new frmABMBarrio();
+                ofrmABMBarrio.SeleccionarBarrio(frmABMBarrio.FormMode.delete, (int)dgvBarrios.CurrentRow.Cells[0].Value);
+                ofrmABMBarrio.borrar_barrio();
+                btnBuscar_Click(sender, e);
+            }
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            dgvBarrios.Rows.Clear();
         }
     }
 }

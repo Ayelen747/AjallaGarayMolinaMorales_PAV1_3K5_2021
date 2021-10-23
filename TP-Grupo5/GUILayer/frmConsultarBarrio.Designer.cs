@@ -85,13 +85,17 @@ namespace TP_Grupo5.GUILayer
             // 
             // dgvBarrios
             // 
+            this.dgvBarrios.AllowUserToAddRows = false;
+            this.dgvBarrios.AllowUserToDeleteRows = false;
             this.dgvBarrios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBarrios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
             this.Nombre});
             this.dgvBarrios.Location = new System.Drawing.Point(22, 163);
             this.dgvBarrios.Name = "dgvBarrios";
+            this.dgvBarrios.ReadOnly = true;
             this.dgvBarrios.RowTemplate.Height = 25;
+            this.dgvBarrios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvBarrios.Size = new System.Drawing.Size(270, 150);
             this.dgvBarrios.TabIndex = 1;
             // 
@@ -99,11 +103,13 @@ namespace TP_Grupo5.GUILayer
             // 
             this.ID.HeaderText = "ID";
             this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
             // 
             // Nombre
             // 
             this.Nombre.HeaderText = "Nombre";
             this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
             // 
             // btnSalir
             // 
@@ -123,6 +129,7 @@ namespace TP_Grupo5.GUILayer
             this.btnEliminar.TabIndex = 3;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click_1);
             // 
             // btnLimpiar
             // 
@@ -132,6 +139,7 @@ namespace TP_Grupo5.GUILayer
             this.btnLimpiar.TabIndex = 4;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = true;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // btnAgregar
             // 
@@ -141,6 +149,7 @@ namespace TP_Grupo5.GUILayer
             this.btnAgregar.TabIndex = 5;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click_1);
             // 
             // btnActualizar
             // 
@@ -156,7 +165,7 @@ namespace TP_Grupo5.GUILayer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(397, 364);
+            this.ClientSize = new System.Drawing.Size(397, 373);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.btnLimpiar);
@@ -165,7 +174,7 @@ namespace TP_Grupo5.GUILayer
             this.Controls.Add(this.dgvBarrios);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmConsultarBarrio";
-            this.Text = "frmConsultarBarrio";
+            this.Text = "Consultar Barrios";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBarrios)).EndInit();
