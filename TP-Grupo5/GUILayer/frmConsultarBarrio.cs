@@ -39,12 +39,9 @@ namespace TP_Grupo5.GUILayer
                 llenarGrilla(dgvBarrios, oBarrioServicio.consultaConFiltros(filtro));
             }
                 
-<<<<<<< HEAD
-=======
 
 
 
->>>>>>> 4b7d4a5553e316d9810018732cb2a9ee2106991b
             else
             {
                 llenarGrilla(dgvBarrios, oBarrioServicio.dameTodo());
