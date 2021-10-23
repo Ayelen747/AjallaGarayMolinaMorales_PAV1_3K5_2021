@@ -33,9 +33,14 @@ namespace TP_Grupo5.GUILayer
             this.soporteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consularClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+<<<<<<< HEAD
             this.consultarBarriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarProyectosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+=======
+            this.soporteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultarBarriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+>>>>>>> 4b7d4a5553e316d9810018732cb2a9ee2106991b
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -61,8 +66,12 @@ namespace TP_Grupo5.GUILayer
             // 
             this.clientesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.consularClientesToolStripMenuItem,
+<<<<<<< HEAD
             this.consultarBarriosToolStripMenuItem,
             this.consultarProyectosToolStripMenuItem});
+=======
+            this.consultarBarriosToolStripMenuItem});
+>>>>>>> 4b7d4a5553e316d9810018732cb2a9ee2106991b
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
             this.clientesToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.clientesToolStripMenuItem.Text = "Soporte";
@@ -94,6 +103,13 @@ namespace TP_Grupo5.GUILayer
             this.reportesToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
             this.reportesToolStripMenuItem.Text = "Reportes";
             // 
+            // consultarBarriosToolStripMenuItem
+            // 
+            this.consultarBarriosToolStripMenuItem.Name = "consultarBarriosToolStripMenuItem";
+            this.consultarBarriosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.consultarBarriosToolStripMenuItem.Text = "Consultar Barrios";
+            this.consultarBarriosToolStripMenuItem.Click += new System.EventHandler(this.consultarBarriosToolStripMenuItem_Click);
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -116,8 +132,13 @@ namespace TP_Grupo5.GUILayer
         private System.Windows.Forms.ToolStripMenuItem soporteToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem clientesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consularClientesToolStripMenuItem;
+<<<<<<< HEAD
         private System.Windows.Forms.ToolStripMenuItem consultarBarriosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultarProyectosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
+=======
+        private System.Windows.Forms.ToolStripMenuItem soporteToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem consultarBarriosToolStripMenuItem;
+>>>>>>> 4b7d4a5553e316d9810018732cb2a9ee2106991b
     }
 }

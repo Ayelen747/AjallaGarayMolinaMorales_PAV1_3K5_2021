@@ -52,6 +52,7 @@ namespace TP_Grupo5.DataAccesLayer
             }
             return listaBarrios;
         }
+<<<<<<< HEAD
 
         public bool Create(Barrio barrio)
         {
@@ -76,5 +77,7 @@ namespace TP_Grupo5.DataAccesLayer
                               " WHERE id_barrio=" + barrio.Id_Barrio; 
             return (DBHelper.GetDBHelper().EjecutarSQL(consulta) == 1);
         }
+=======
+>>>>>>> 4b7d4a5553e316d9810018732cb2a9ee2106991b
     }
 }
