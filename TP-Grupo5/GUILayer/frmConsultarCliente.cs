@@ -53,16 +53,17 @@ namespace TP_Grupo5
                 {
                     filtro = filtro + " AND c.cuit=" + Convert.ToInt32(txtCuit.Text);
                 }
-                //if (dtpFechaDesde.Value > dtpFechaHasta.Value)
-                //{
-                //    MessageBox.Show("La fecha desde es mayor a la fecha hasta", "Notificación", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                //}
-                //else
-                //{
-                //    filtro += " AND c.fecha_alta  BETWEEN Convert(DateTime, " + "'" + dtpFechaDesde.Value.ToShortDateString() + "'" + ", 103)" +
-                //                  " AND Convert(DateTime, " + "'" + dtpFechaHasta.Value.ToShortDateString() + "'" + ", 103)";
-                //}
-                llenarGrilla(grdClientes, oClienteServicio.consultaConFiltros(filtro));
+                if (dtpFechaDesde.Value > dtpFechaHasta.Value)
+                {
+                    MessageBox.Show("La fecha desde es mayor a la fecha hasta", "Notificación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    filtro += " AND c.fecha_alta  BETWEEN Convert(DateTime, " + "'" + dtpFechaDesde.Value.ToShortDateString() + "'" + ", 103)" +
+                                  " AND Convert(DateTime, " + "'" + dtpFechaHasta.Value.ToShortDateString() + "'" + ", 103)";
+                    llenarGrilla(grdClientes, oClienteServicio.consultaConFiltros(filtro));
+                }
+                
             }
             else
                 llenarGrilla(grdClientes, oClienteServicio.dameTodo());
