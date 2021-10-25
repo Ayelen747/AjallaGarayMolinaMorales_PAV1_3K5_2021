@@ -25,10 +25,7 @@ namespace TP_Grupo5.GUILayer
             cbo.ValueMember = value;
             cbo.SelectedIndex = -1;
         }
-        private void frmTransaccionFactura_Load(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {

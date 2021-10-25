@@ -76,5 +76,7 @@ namespace TP_Grupo5.DataAccesLayer
                               " WHERE id_barrio=" + barrio.Id_Barrio; 
             return (DBHelper.GetDBHelper().EjecutarSQL(consulta) == 1);
         }
+
+        
     }
 }

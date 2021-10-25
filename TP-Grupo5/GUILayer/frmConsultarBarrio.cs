@@ -75,12 +75,13 @@ namespace TP_Grupo5.GUILayer
         private void btnActualizar_Click(object sender, EventArgs e)
         {
             if (dgvBarrios.CurrentRow == null)
-                MessageBox.Show("Seleccione una fila de la grilla");
+                MessageBox.Show("Seleccione una fila de la grilla", "Notificación", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
             {
                 frmABMBarrio ofrmABMBarrio = new frmABMBarrio();
                 ofrmABMBarrio.SeleccionarBarrio(frmABMBarrio.FormMode.update, (int)dgvBarrios.CurrentRow.Cells[0].Value);
                 ofrmABMBarrio.ShowDialog();
+                btnBuscar_Click(sender, e);
             }
         }
 
@@ -89,12 +90,13 @@ namespace TP_Grupo5.GUILayer
         {
             frmABMBarrio ofrmABMBarrio = new frmABMBarrio();
             ofrmABMBarrio.ShowDialog();
+            btnBuscar_Click(sender,e);
         }
 
         private void btnEliminar_Click_1(object sender, EventArgs e)
         {
             if (dgvBarrios.CurrentRow == null)
-                MessageBox.Show("Seleccione una fila de la grilla");
+                MessageBox.Show("Seleccione una fila de la grilla", "Notificación", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
             {
                 frmABMBarrio ofrmABMBarrio = new frmABMBarrio();

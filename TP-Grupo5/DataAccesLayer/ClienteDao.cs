@@ -28,8 +28,9 @@ namespace TP_Grupo5.DataAccesLayer
                                             "cont.email, ",
                                             "cont.telefono ",
                                             " FROM Clientes c ",
-                                            " INNER JOIN Barrios b ON (c.id_barrio=b.id_barrio) JOIN Contactos cont ON (cont.id_contacto=c.id_contacto) ",
-                                            " WHERE C.borrado=0");
+                                            " INNER JOIN Barrios b ON (c.id_barrio=b.id_barrio) left JOIN Contactos cont ON (cont.id_contacto=c.id_contacto) ",
+                                            " WHERE C.borrado=0",
+                                            " ORDER BY c.razon_social");
 
             var resConsulta=DBHelper.GetDBHelper().ConsultaSQL(consulta);
             foreach (DataRow row in resConsulta.Rows)
@@ -58,9 +59,9 @@ namespace TP_Grupo5.DataAccesLayer
                                             "cont.email, ",
                                             "cont.telefono ",
                                             " FROM Clientes c ",
-                                            " INNER JOIN Barrios b ON (c.id_barrio=b.id_barrio) JOIN Contactos cont ON (cont.id_contacto=c.id_contacto) ",
+                                            " INNER JOIN Barrios b ON (c.id_barrio=b.id_barrio) left JOIN Contactos cont ON (cont.id_contacto=c.id_contacto) ",
                                             " WHERE C.borrado=0");
-            consulta = consulta + filtro;
+            consulta = consulta + filtro+ " ORDER BY c.razon_social";
             var resConsulta = DBHelper.GetDBHelper().ConsultaSQL(consulta);
             foreach (DataRow row in resConsulta.Rows)
             {
@@ -77,27 +78,35 @@ namespace TP_Grupo5.DataAccesLayer
                 Razon_social = row["razon_social"].ToString(),
                 Cuit = Convert.ToInt32(row["cuit"].ToString()),
                 Fecha_alta = Convert.ToDateTime(row["fecha_alta"].ToString()),
-                Calle= row["calle"].ToString(),
+                Calle = row["calle"].ToString(),
                 Numero = Convert.ToInt32(row["numero"].ToString()),
                 Barrio = new Barrio
                 {
                     Id_Barrio = Convert.ToInt32(row["id_barrio"].ToString()),
-                    Nombre = row["barrio"].ToString(),
-                },
-                Contacto = new Contacto
+                    Nombre = row["barrio"].ToString()
+                }
+                
+            };
+            if (row["id_contacto"].ToString() != "")
+            {
+                oCliente.Contacto = new Contacto
                 {
                     Id_Contacto = Convert.ToInt32(row["id_contacto"].ToString()),
                     Nombre = row["nombre"].ToString(),
-                    Apellido=row["apellido"].ToString(),
-                    Email=row["email"].ToString(),
-                    Telefono=row["telefono"].ToString(),
-                }
-            };
+                    Apellido = row["apellido"].ToString(),
+                    Email = row["email"].ToString(),
+                    Telefono = row["telefono"].ToString()
+                };
+            }
             return oCliente;
         }
 
         public bool Create(Cliente cliente)
         {
+            string contacto="NULL";
+            if (cliente.Contacto != null)
+                contacto = cliente.Contacto.Id_Contacto.ToString();
+
             string consulta = "INSERT INTO Clientes(cuit,razon_social,calle,numero,fecha_alta,id_barrio,id_contacto,borrado)" +
                               " VALUES (" +
                               "'" + cliente.Cuit + "'," +
@@ -106,19 +115,24 @@ namespace TP_Grupo5.DataAccesLayer
                               cliente.Numero + "," +
                               "GETDATE()," +
                               cliente.Barrio.Id_Barrio + "," +
-                              cliente.Contacto.Id_Contacto + ",0)";
+                              contacto + ",0)";
+            
             return (DBHelper.GetDBHelper().EjecutarSQL(consulta)==1);
         }
 
         public bool Update(Cliente cliente)
         {
+            string contacto = "NULL";
+            if (cliente.Contacto != null)
+                contacto = cliente.Contacto.Id_Contacto.ToString();
+
             string consulta = "UPDATE Clientes " +
                      "SET cuit='" + cliente.Cuit + "'," +
                      "razon_social='" + cliente.Razon_social + "'," +
                      "calle='" + cliente.Calle + "'," +
                      "numero=" + cliente.Numero + "," +
                      "id_barrio="+cliente.Barrio.Id_Barrio+","+
-                     "id_contacto="+cliente.Contacto.Id_Contacto+
+                     "id_contacto="+contacto+
                      " WHERE id_cliente="+cliente.Id_cliente;
             return (DBHelper.GetDBHelper().EjecutarSQL(consulta) == 1);
         }

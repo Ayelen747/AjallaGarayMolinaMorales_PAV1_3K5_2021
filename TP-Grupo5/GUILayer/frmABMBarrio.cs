@@ -35,7 +35,141 @@ namespace TP_Grupo5.GUILayer
             id_barrio = id;
         }
 
-        private void ABMBarrio_Load(object sender, EventArgs e)
+        private void LlenarCombo(ComboBox cbo, Object source, string display, String value)
+        {
+            cbo.DataSource = source;
+            cbo.DisplayMember = display;
+            cbo.ValueMember = value;
+            cbo.SelectedIndex = -1;
+        }
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            switch (formMode)
+            {
+                case FormMode.insert:
+                    {
+                        if (validarCampos())
+                        {
+                            Barrio oBarrio = new Barrio
+                            {
+                                Nombre = txtNombreBarrio.Text,
+                            };
+                            bool valor = oBarrioServicio.InsertarBarrio(oBarrio);
+                            if (valor)
+                            {
+                                MessageBox.Show("Creado","Información",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                                this.Close();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Error", "Información", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                        break;
+                    };
+                case FormMode.update:
+                    {
+                        if (validarCampos())
+                        {
+                            Barrio oBarrio = new Barrio
+                            {
+                                Nombre = txtNombreBarrio.Text,
+                                Id_Barrio = id_barrio
+                            };
+                            bool valor = oBarrioServicio.ActualizarBarrio(oBarrio);
+                            if (valor)
+                            {
+                                MessageBox.Show("Actualizado", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                this.Close();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Error", "Información", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                        break;
+                    };
+                case FormMode.delete:
+                    { 
+                        {
+                            Barrio oBarrio = new Barrio
+                            {
+                                Id_Barrio = id_barrio
+                            };
+                            bool valor = oBarrioServicio.EliminarBarrio(oBarrio);
+                            if (valor)
+                            {
+                                MessageBox.Show("Eliminado", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                this.Close();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Error", "Información", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                            break;
+
+                        }
+                    }
+            }
+        }
+        private void LlenarCampos()
+        {
+            Barrio oBarrio = oBarrioServicio.consultaConFiltros(" AND b.id_barrio="+id_barrio)[0];
+            txtIDBarrio.Text = oBarrio.Id_Barrio.ToString();
+            txtNombreBarrio.Text = oBarrio.Nombre;
+        }
+        private bool validarCampos()
+        {
+            if (txtNombreBarrio.Text == string.Empty)
+            {
+                txtNombreBarrio.BackColor = Color.LightPink;
+                txtNombreBarrio.Focus();
+                return false;
+            }
+            if (existeBarrio(txtNombreBarrio.Text))
+            {
+                MessageBox.Show("Ese nombre ya existe", "Notificación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return false;
+            }
+
+            return true;
+        }
+
+        private bool existeBarrio(string nombre)
+        {
+            IList<Barrio> lista = oBarrioServicio.consultaConFiltros(" AND b.nombre = '" + nombre+"'");
+            if (lista.Count > 0)
+                return true;
+            return false;
+        }
+        
+
+        public void borrar_barrio()
+        
+        {
+            Barrio oBarrio = new Barrio
+            {
+                Id_Barrio = id_barrio
+            };
+            var info = MessageBox.Show("¿Esta seguro que desea eliminar este barrio?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (info == DialogResult.Yes)
+            {
+                bool valor = oBarrioServicio.EliminarBarrio(oBarrio);
+                if (valor)
+                {
+                    MessageBox.Show("Eliminado", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("Error", "Información", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            
+        }
+
+        private void frmABMBarrio_Load(object sender, EventArgs e)
         {
             switch (formMode)
             {
@@ -58,126 +192,11 @@ namespace TP_Grupo5.GUILayer
                     }
             }
         }
-        private void LlenarCombo(ComboBox cbo, Object source, string display, String value)
-        {
-            cbo.DataSource = source;
-            cbo.DisplayMember = display;
-            cbo.ValueMember = value;
-            cbo.SelectedIndex = -1;
-        }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-
-        private void btnAceptar_Click(object sender, EventArgs e)
-        {
-            switch (formMode)
-            {
-                case FormMode.insert:
-                    {
-                        if (validarCampos())
-                        {
-                            Barrio oBarrio = new Barrio
-                            {
-                                Nombre = txtNombreBarrio.Text,
-                            };
-                            bool valor = oBarrioServicio.InsertarBarrio(oBarrio);
-                            if (valor)
-                            {
-                                MessageBox.Show("Creado");
-                                this.Close();
-                            }
-                            else
-                            {
-                                MessageBox.Show("Error");
-                            }
-                        }
-                        break;
-                    };
-                case FormMode.update:
-                    {
-                        if (validarCampos())
-                        {
-                            Barrio oBarrio = new Barrio
-                            {
-                                Nombre = txtNombreBarrio.Text,
-                                Id_Barrio = id_barrio
-                            };
-                            bool valor = oBarrioServicio.ActualizarBarrio(oBarrio);
-                            if (valor)
-                            {
-                                MessageBox.Show("Actualizado");
-                                this.Close();
-                            }
-                            else
-                            {
-                                MessageBox.Show("Error");
-                            }
-                        }
-                        break;
-                    };
-                case FormMode.delete:
-                    { 
-                        {
-                            Barrio oBarrio = new Barrio
-                            {
-                                Id_Barrio = id_barrio
-                            };
-                            bool valor = oBarrioServicio.EliminarBarrio(oBarrio);
-                            if (valor)
-                            {
-                                MessageBox.Show("Eliminado");
-                                this.Close();
-                            }
-                            else
-                            {
-                                MessageBox.Show("Error");
-                            }
-                            break;
-
-                        }
-                    }
-            }
-        }
-        private void LlenarCampos()
-        {
-            Barrio oBarrio = oBarrioServicio.dameTodo()[0];
-            txtIDBarrio.Text = oBarrio.Id_Barrio.ToString();
-            txtNombreBarrio.Text = oBarrio.Nombre;
-        }
-        private bool validarCampos()
-        {
-            if (txtNombreBarrio.Text == string.Empty)
-            {
-                txtNombreBarrio.BackColor = Color.LightPink;
-                txtNombreBarrio.Focus();
-                return false;
-            }
-
-            return true;
-        }
-
-        public void borrar_barrio()
-        
-        {
-            Barrio oBarrio = new Barrio
-            {
-                Id_Barrio = id_barrio
-            };
-            bool valor = oBarrioServicio.EliminarBarrio(oBarrio);
-            if (valor)
-            {
-                MessageBox.Show("¿Esta seguro que desea eliminar este barrio?","Advertencia",MessageBoxButtons.OKCancel,MessageBoxIcon.Warning);
-                this.Close();
-            }
-            else
-            {
-                MessageBox.Show("Error");
-            }
-        }
-        
     }
 }
 

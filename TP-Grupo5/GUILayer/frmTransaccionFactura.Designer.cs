@@ -39,9 +39,6 @@ namespace TP_Grupo5.GUILayer
             this.gbGrilla = new System.Windows.Forms.GroupBox();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.grbFacturaDetalle = new System.Windows.Forms.DataGridView();
-            this.nroOrden = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbDetalle = new System.Windows.Forms.GroupBox();
             this.txtPrecio = new System.Windows.Forms.TextBox();
             this.lblProducto = new System.Windows.Forms.Label();
@@ -52,6 +49,10 @@ namespace TP_Grupo5.GUILayer
             this.cboProyecto = new System.Windows.Forms.ComboBox();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.nroOrden = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.proyecto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbFacturaDetalle.SuspendLayout();
             this.gbGrilla.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.grbFacturaDetalle)).BeginInit();
@@ -144,6 +145,7 @@ namespace TP_Grupo5.GUILayer
             this.grbFacturaDetalle.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.grbFacturaDetalle.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nroOrden,
+            this.proyecto,
             this.producto,
             this.precio});
             this.grbFacturaDetalle.Location = new System.Drawing.Point(6, 22);
@@ -152,24 +154,6 @@ namespace TP_Grupo5.GUILayer
             this.grbFacturaDetalle.RowTemplate.Height = 25;
             this.grbFacturaDetalle.Size = new System.Drawing.Size(452, 165);
             this.grbFacturaDetalle.TabIndex = 7;
-            // 
-            // nroOrden
-            // 
-            this.nroOrden.HeaderText = "Nro de orden";
-            this.nroOrden.Name = "nroOrden";
-            this.nroOrden.ReadOnly = true;
-            // 
-            // producto
-            // 
-            this.producto.HeaderText = "Descripción";
-            this.producto.Name = "producto";
-            this.producto.ReadOnly = true;
-            // 
-            // precio
-            // 
-            this.precio.HeaderText = "Precio";
-            this.precio.Name = "precio";
-            this.precio.ReadOnly = true;
             // 
             // gbDetalle
             // 
@@ -267,6 +251,30 @@ namespace TP_Grupo5.GUILayer
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
             // 
+            // nroOrden
+            // 
+            this.nroOrden.HeaderText = "Nro de orden";
+            this.nroOrden.Name = "nroOrden";
+            this.nroOrden.ReadOnly = true;
+            // 
+            // proyecto
+            // 
+            this.proyecto.HeaderText = "Proyecto";
+            this.proyecto.Name = "proyecto";
+            this.proyecto.ReadOnly = true;
+            // 
+            // producto
+            // 
+            this.producto.HeaderText = "Producto";
+            this.producto.Name = "producto";
+            this.producto.ReadOnly = true;
+            // 
+            // precio
+            // 
+            this.precio.HeaderText = "Precio";
+            this.precio.Name = "precio";
+            this.precio.ReadOnly = true;
+            // 
             // frmTransaccionFactura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -283,7 +291,6 @@ namespace TP_Grupo5.GUILayer
             this.Controls.Add(this.NroFactura);
             this.Name = "frmTransaccionFactura";
             this.Text = "frmTransaccionFactura";
-            this.Load += new System.EventHandler(this.frmTransaccionFactura_Load);
             this.gbFacturaDetalle.ResumeLayout(false);
             this.gbGrilla.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.grbFacturaDetalle)).EndInit();
@@ -312,12 +319,13 @@ namespace TP_Grupo5.GUILayer
         private System.Windows.Forms.GroupBox gbGrilla;
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.DataGridView grbFacturaDetalle;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nroOrden;
-        private System.Windows.Forms.DataGridViewTextBoxColumn producto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn precio;
         private System.Windows.Forms.TextBox txtPrecio;
         private System.Windows.Forms.Label lblProducto;
         private System.Windows.Forms.Label lblPrecio;
         private System.Windows.Forms.ComboBox cboProducto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nroOrden;
+        private System.Windows.Forms.DataGridViewTextBoxColumn proyecto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn producto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn precio;
     }
 }
