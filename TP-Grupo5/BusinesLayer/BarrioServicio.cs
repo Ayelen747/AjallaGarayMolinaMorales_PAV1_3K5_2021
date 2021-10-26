@@ -17,5 +17,18 @@ namespace TP_Grupo5.BusinesLayer
         {
             return oBarrioDao.consultWithFilter(filtro);
         }
+        public bool InsertarBarrio(Barrio barrio)
+        {
+            return oBarrioDao.Create(barrio);
+        }
+        public bool ActualizarBarrio(Barrio barrio)
+        {
+            return oBarrioDao.Update(barrio);
+        }
+
+        public bool EliminarBarrio(Barrio barrio)
+        {
+            return oBarrioDao.Delete(barrio);
+        }
     }
 }
