@@ -218,6 +218,7 @@ namespace TP_Grupo5.GUILayer
             // 
             // dtpFechaAlta
             // 
+            this.dtpFechaAlta.Enabled = false;
             this.dtpFechaAlta.Location = new System.Drawing.Point(114, 223);
             this.dtpFechaAlta.Name = "dtpFechaAlta";
             this.dtpFechaAlta.Size = new System.Drawing.Size(228, 23);

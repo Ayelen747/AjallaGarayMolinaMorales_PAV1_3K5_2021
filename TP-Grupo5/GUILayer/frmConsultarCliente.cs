@@ -89,6 +89,7 @@ namespace TP_Grupo5
             {
                 for (int i = 0; i < lista.Count; i++)
                 {
+                    
                     grdClientes.Rows.Add(
                         lista[i].Id_cliente,
                         lista[i].Razon_social,
@@ -97,9 +98,10 @@ namespace TP_Grupo5
                         lista[i].Calle,
                         lista[i].Numero,
                         lista[i].Fecha_alta,
-                        lista[i].Contacto.Nombre
+                        lista[i].Contacto
                         );
                 }
+                grdClientes.CurrentRow.Selected = false;
                 btnActualizar.Enabled = true;
                 btnEliminar.Enabled = true;
             }
@@ -155,29 +157,44 @@ namespace TP_Grupo5
         {
             frmABMCliente ofrmABMCliente = new frmABMCliente();
             ofrmABMCliente.ShowDialog();
+            btnBuscar_Click(sender,e);
         }
 
         private void btnActualizar_Click(object sender, EventArgs e)
         {
             if (grdClientes.CurrentRow == null)
-                MessageBox.Show("Seleccione una fila de la grilla");
+            {
+
+                MessageBox.Show("Seleccione una fila de la grilla", "Notificación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
             else
             {
                 frmABMCliente ofrmABMCliente = new frmABMCliente();
-                ofrmABMCliente.SeleccionarCliente(frmABMCliente.FormMode.update, (int)grdClientes.CurrentRow.Cells[0].Value);
+                int id = (int)grdClientes.CurrentRow.Cells[0].Value;
+                ofrmABMCliente.SeleccionarCliente(frmABMCliente.FormMode.update, id);
                 ofrmABMCliente.ShowDialog();
+                btnBuscar_Click(sender, e);
+                for (int i = 0; i < grdClientes.Rows.Count; i++)
+                {
+                    if ((int)grdClientes.Rows[i].Cells[0].Value == id)
+                    {
+                        grdClientes.Rows[i].DefaultCellStyle.BackColor = Color.LightGreen;
+                        break;
+                    }
+                }
             }
         }
 
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             if (grdClientes.CurrentRow == null)
-                MessageBox.Show("Seleccione una fila de la grilla");
+                MessageBox.Show("Seleccione una fila de la grilla", "Notificación", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
             {
                 frmABMCliente ofrmABMCliente = new frmABMCliente();
                 ofrmABMCliente.SeleccionarCliente(frmABMCliente.FormMode.delete, (int)grdClientes.CurrentRow.Cells[0].Value);
                 ofrmABMCliente.ShowDialog();
+                btnBuscar_Click(sender,e);
             }
         }
 

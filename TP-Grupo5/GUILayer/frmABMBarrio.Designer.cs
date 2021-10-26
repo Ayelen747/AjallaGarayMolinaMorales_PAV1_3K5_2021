@@ -88,6 +88,7 @@ namespace TP_Grupo5.GUILayer
             this.btnCancelar.TabIndex = 5;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // frmABMBarrio
             // 
@@ -101,6 +102,7 @@ namespace TP_Grupo5.GUILayer
             this.Controls.Add(this.txtIDBarrio);
             this.Controls.Add(this.lblID);
             this.Name = "frmABMBarrio";
+            this.Load += new System.EventHandler(this.frmABMBarrio_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

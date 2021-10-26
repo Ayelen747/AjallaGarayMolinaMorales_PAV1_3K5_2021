@@ -96,21 +96,24 @@ namespace TP_Grupo5.GUILayer
                                 },
                                 Calle = txtCalle.Text,
                                 Numero = Convert.ToInt32(txtNroCalle.Text),
-                                Contacto = new Contacto
-                                {
-                                    Id_Contacto = Convert.ToInt32(cboContacto.SelectedValue)
-                                },
                                 Fecha_alta = dtpFechaAlta.Value
                             };
+                            if (cboContacto.SelectedIndex != -1)
+                            {
+                                oCliente.Contacto = new Contacto
+                                {
+                                    Id_Contacto = Convert.ToInt32(cboContacto.SelectedValue)
+                                };
+                            }
                             bool valor = oClienteServicio.InsertarCliente(oCliente);
                             if (valor)
                             {
-                                MessageBox.Show("Creado");
+                                MessageBox.Show("Creado", "Notificación", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 this.Close();
                             }
                             else
                             {
-                                MessageBox.Show("Error");
+                                MessageBox.Show("Error", "Notificación", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                         }
                         break;
@@ -130,20 +133,26 @@ namespace TP_Grupo5.GUILayer
                                 },
                                 Calle = txtCalle.Text,
                                 Numero = Convert.ToInt32(txtNroCalle.Text),
-                                Contacto = new Contacto
+                            };
+                            if (cboContacto.SelectedIndex != -1)
+                            {
+                                oCliente.Contacto = new Contacto
                                 {
                                     Id_Contacto = Convert.ToInt32(cboContacto.SelectedValue)
-                                }
-                            };
+                                };
+                            }
+                            else
+                                oCliente.Contacto = null;
+
                             bool valor = oClienteServicio.ActualizarCliente(oCliente);
                             if (valor)
                             {
-                                MessageBox.Show("Actualizado");
+                                MessageBox.Show("Actualizado", "Notificación", MessageBoxButtons.OK, MessageBoxIcon.Information);
                                 this.Close();
                             }
                             else
                             {
-                                MessageBox.Show("Error");
+                                MessageBox.Show("Error", "Notificación", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                         }
                         break;
@@ -157,12 +166,12 @@ namespace TP_Grupo5.GUILayer
                         bool valor = oClienteServicio.EliminarCliente(oCliente);
                         if (valor)
                         {
-                            MessageBox.Show("Eliminado");
+                            MessageBox.Show("Eliminado","Notificación", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             this.Close();
                         }
                         else
                         {
-                            MessageBox.Show("Error");
+                            MessageBox.Show("Error", "Notificación", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                         break;
                     }
@@ -178,7 +187,8 @@ namespace TP_Grupo5.GUILayer
             cboBarrio.SelectedValue = oCliente.Barrio.Id_Barrio;
             txtCalle.Text = oCliente.Calle;
             txtNroCalle.Text = oCliente.Numero.ToString();
-            cboContacto.SelectedValue = oCliente.Contacto.Id_Contacto;
+            if(oCliente.Contacto!=null)
+                cboContacto.SelectedValue = oCliente.Contacto.Id_Contacto;
             dtpFechaAlta.Value = oCliente.Fecha_alta;
         }
         private bool validarCampos()
@@ -187,6 +197,17 @@ namespace TP_Grupo5.GUILayer
             {
                 txtRazonSocial.BackColor = Color.LightPink;
                 txtRazonSocial.Focus();
+                return false;
+            }
+            if (txtCuit.Text == string.Empty)
+            {
+                txtCuit.BackColor = Color.LightPink;
+                txtCuit.Focus();
+                return false;
+            }
+            if (buscarCuitDistinto(txtCuit.Text, txtId.Text))
+            {
+                MessageBox.Show("EL Nrumero de CUIT ya existe", "Notificación", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return false;
             }
             if (cboBarrio.SelectedIndex == -1)
@@ -207,7 +228,7 @@ namespace TP_Grupo5.GUILayer
                 txtNroCalle.Focus();
                 return false;
             }
-            if (chkSinContacto.Checked==false)
+            if (!chkSinContacto.Checked)
             {
                 if (cboContacto.SelectedIndex == -1)
                 {
@@ -217,6 +238,18 @@ namespace TP_Grupo5.GUILayer
                 }
             }
             return true;
+        }
+
+        private bool buscarCuitDistinto(string cuit,string id)
+        {
+            if (id != string.Empty)
+            {
+                id = " AND c.id_cliente !=" + id;
+            }
+            IList<Cliente> lista = oClienteServicio.consultaConFiltros(" AND c.cuit=" + cuit+id);
+            if (lista.Count > 0)
+                return true;
+            return false;
         }
 
         private void chkSinContacto_CheckedChanged(object sender, EventArgs e)

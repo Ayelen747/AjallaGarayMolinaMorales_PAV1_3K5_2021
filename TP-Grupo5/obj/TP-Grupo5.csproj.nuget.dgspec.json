@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\santi\\Desktop\\TP\\AjallaGarayMolinaMorales_PAV1_3K5_2021\\TP-Grupo5\\TP-Grupo5.csproj": {}
+    "C:\\Users\\santi\\Desktop\\TP- PAV\\AjallaGarayMolinaMorales_PAV1_3K5_2021\\AjallaGarayMolinaMorales_PAV1_3K5_2021\\TP-Grupo5\\TP-Grupo5.csproj": {}
   },
   "projects": {
-    "C:\\Users\\santi\\Desktop\\TP\\AjallaGarayMolinaMorales_PAV1_3K5_2021\\TP-Grupo5\\TP-Grupo5.csproj": {
+    "C:\\Users\\santi\\Desktop\\TP- PAV\\AjallaGarayMolinaMorales_PAV1_3K5_2021\\AjallaGarayMolinaMorales_PAV1_3K5_2021\\TP-Grupo5\\TP-Grupo5.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\santi\\Desktop\\TP\\AjallaGarayMolinaMorales_PAV1_3K5_2021\\TP-Grupo5\\TP-Grupo5.csproj",
+        "projectUniqueName": "C:\\Users\\santi\\Desktop\\TP- PAV\\AjallaGarayMolinaMorales_PAV1_3K5_2021\\AjallaGarayMolinaMorales_PAV1_3K5_2021\\TP-Grupo5\\TP-Grupo5.csproj",
         "projectName": "TP-Grupo5",
-        "projectPath": "C:\\Users\\santi\\Desktop\\TP\\AjallaGarayMolinaMorales_PAV1_3K5_2021\\TP-Grupo5\\TP-Grupo5.csproj",
+        "projectPath": "C:\\Users\\santi\\Desktop\\TP- PAV\\AjallaGarayMolinaMorales_PAV1_3K5_2021\\AjallaGarayMolinaMorales_PAV1_3K5_2021\\TP-Grupo5\\TP-Grupo5.csproj",
         "packagesPath": "C:\\Users\\santi\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\santi\\Desktop\\TP\\AjallaGarayMolinaMorales_PAV1_3K5_2021\\TP-Grupo5\\obj\\",
+        "outputPath": "C:\\Users\\santi\\Desktop\\TP- PAV\\AjallaGarayMolinaMorales_PAV1_3K5_2021\\AjallaGarayMolinaMorales_PAV1_3K5_2021\\TP-Grupo5\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

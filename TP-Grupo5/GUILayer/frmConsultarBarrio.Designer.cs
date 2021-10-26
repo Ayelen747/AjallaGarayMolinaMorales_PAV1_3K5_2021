@@ -85,24 +85,17 @@ namespace TP_Grupo5.GUILayer
             // 
             // dgvBarrios
             // 
-<<<<<<< HEAD
             this.dgvBarrios.AllowUserToAddRows = false;
             this.dgvBarrios.AllowUserToDeleteRows = false;
-=======
->>>>>>> 4b7d4a5553e316d9810018732cb2a9ee2106991b
             this.dgvBarrios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBarrios.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
             this.Nombre});
             this.dgvBarrios.Location = new System.Drawing.Point(22, 163);
             this.dgvBarrios.Name = "dgvBarrios";
-<<<<<<< HEAD
             this.dgvBarrios.ReadOnly = true;
             this.dgvBarrios.RowTemplate.Height = 25;
             this.dgvBarrios.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-=======
-            this.dgvBarrios.RowTemplate.Height = 25;
->>>>>>> 4b7d4a5553e316d9810018732cb2a9ee2106991b
             this.dgvBarrios.Size = new System.Drawing.Size(270, 150);
             this.dgvBarrios.TabIndex = 1;
             // 
@@ -110,19 +103,13 @@ namespace TP_Grupo5.GUILayer
             // 
             this.ID.HeaderText = "ID";
             this.ID.Name = "ID";
-<<<<<<< HEAD
             this.ID.ReadOnly = true;
-=======
->>>>>>> 4b7d4a5553e316d9810018732cb2a9ee2106991b
             // 
             // Nombre
             // 
             this.Nombre.HeaderText = "Nombre";
             this.Nombre.Name = "Nombre";
-<<<<<<< HEAD
             this.Nombre.ReadOnly = true;
-=======
->>>>>>> 4b7d4a5553e316d9810018732cb2a9ee2106991b
             // 
             // btnSalir
             // 
@@ -142,10 +129,7 @@ namespace TP_Grupo5.GUILayer
             this.btnEliminar.TabIndex = 3;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
-<<<<<<< HEAD
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click_1);
-=======
->>>>>>> 4b7d4a5553e316d9810018732cb2a9ee2106991b
             // 
             // btnLimpiar
             // 
@@ -155,10 +139,7 @@ namespace TP_Grupo5.GUILayer
             this.btnLimpiar.TabIndex = 4;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = true;
-<<<<<<< HEAD
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
-=======
->>>>>>> 4b7d4a5553e316d9810018732cb2a9ee2106991b
             // 
             // btnAgregar
             // 
@@ -168,10 +149,7 @@ namespace TP_Grupo5.GUILayer
             this.btnAgregar.TabIndex = 5;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
-<<<<<<< HEAD
             this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click_1);
-=======
->>>>>>> 4b7d4a5553e316d9810018732cb2a9ee2106991b
             // 
             // btnActualizar
             // 
@@ -187,11 +165,7 @@ namespace TP_Grupo5.GUILayer
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-<<<<<<< HEAD
             this.ClientSize = new System.Drawing.Size(397, 373);
-=======
-            this.ClientSize = new System.Drawing.Size(397, 364);
->>>>>>> 4b7d4a5553e316d9810018732cb2a9ee2106991b
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.btnLimpiar);
@@ -200,11 +174,7 @@ namespace TP_Grupo5.GUILayer
             this.Controls.Add(this.dgvBarrios);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmConsultarBarrio";
-<<<<<<< HEAD
             this.Text = "Consultar Barrios";
-=======
-            this.Text = "frmConsultarBarrio";
->>>>>>> 4b7d4a5553e316d9810018732cb2a9ee2106991b
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBarrios)).EndInit();
