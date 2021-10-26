@@ -13,5 +13,10 @@ namespace TP_Grupo5.BusinesLayer
         {
             return oContactoDao.getAll();
         }
+
+        public IList<Contacto> consultaConFiltros(string filtro)
+        {
+            return oContactoDao.consultWithFilter(filtro);
+        }
     }
 }

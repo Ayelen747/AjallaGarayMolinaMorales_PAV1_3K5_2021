@@ -16,6 +16,9 @@
     <Compile Update="GUILayer\frmConsultarCliente.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="GUILayer\frmContacto.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="GUILayer\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
