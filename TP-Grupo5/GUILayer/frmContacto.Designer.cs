@@ -1,7 +1,7 @@
 ﻿
 namespace TP_Grupo5.GUILayer
 {
-    partial class frmContacto
+    partial class Contactos
     {
         /// <summary>
         /// Required designer variable.
@@ -32,10 +32,10 @@ namespace TP_Grupo5.GUILayer
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtApellido = new System.Windows.Forms.TextBox();
             this.grbContactos = new System.Windows.Forms.GroupBox();
-            this.btnBuscar = new System.Windows.Forms.Button();
-            this.chbTodos = new System.Windows.Forms.CheckBox();
             this.lblApellido = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
+            this.chbTodos = new System.Windows.Forms.CheckBox();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.dgvContactos = new System.Windows.Forms.DataGridView();
             this.Id_contacto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -55,50 +55,28 @@ namespace TP_Grupo5.GUILayer
             // 
             this.txtNombre.Location = new System.Drawing.Point(78, 29);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(100, 23);
+            this.txtNombre.Size = new System.Drawing.Size(162, 23);
             this.txtNombre.TabIndex = 0;
             // 
             // txtApellido
             // 
             this.txtApellido.Location = new System.Drawing.Point(78, 74);
             this.txtApellido.Name = "txtApellido";
-            this.txtApellido.Size = new System.Drawing.Size(100, 23);
+            this.txtApellido.Size = new System.Drawing.Size(162, 23);
             this.txtApellido.TabIndex = 1;
             // 
             // grbContactos
             // 
-            this.grbContactos.Controls.Add(this.chbTodos);
             this.grbContactos.Controls.Add(this.lblApellido);
             this.grbContactos.Controls.Add(this.lblNombre);
             this.grbContactos.Controls.Add(this.txtNombre);
             this.grbContactos.Controls.Add(this.txtApellido);
             this.grbContactos.Location = new System.Drawing.Point(12, 12);
             this.grbContactos.Name = "grbContactos";
-            this.grbContactos.Size = new System.Drawing.Size(269, 151);
+            this.grbContactos.Size = new System.Drawing.Size(269, 123);
             this.grbContactos.TabIndex = 2;
             this.grbContactos.TabStop = false;
             this.grbContactos.Text = "Contactos";
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.Location = new System.Drawing.Point(90, 169);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(96, 37);
-            this.btnBuscar.TabIndex = 9;
-            this.btnBuscar.Text = "Buscar";
-            this.btnBuscar.UseVisualStyleBackColor = true;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
-            // 
-            // chbTodos
-            // 
-            this.chbTodos.AutoSize = true;
-            this.chbTodos.Location = new System.Drawing.Point(78, 120);
-            this.chbTodos.Name = "chbTodos";
-            this.chbTodos.Size = new System.Drawing.Size(57, 19);
-            this.chbTodos.TabIndex = 8;
-            this.chbTodos.Text = "Todos";
-            this.chbTodos.UseVisualStyleBackColor = true;
-            this.chbTodos.CheckedChanged += new System.EventHandler(this.chbTodos_CheckedChanged);
             // 
             // lblApellido
             // 
@@ -118,8 +96,31 @@ namespace TP_Grupo5.GUILayer
             this.lblNombre.TabIndex = 4;
             this.lblNombre.Text = "Nombre:";
             // 
+            // chbTodos
+            // 
+            this.chbTodos.AutoSize = true;
+            this.chbTodos.Location = new System.Drawing.Point(34, 172);
+            this.chbTodos.Name = "chbTodos";
+            this.chbTodos.Size = new System.Drawing.Size(57, 19);
+            this.chbTodos.TabIndex = 8;
+            this.chbTodos.Text = "Todos";
+            this.chbTodos.UseVisualStyleBackColor = true;
+            this.chbTodos.CheckedChanged += new System.EventHandler(this.chbTodos_CheckedChanged);
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Location = new System.Drawing.Point(121, 155);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(131, 51);
+            this.btnBuscar.TabIndex = 9;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
             // dgvContactos
             // 
+            this.dgvContactos.AllowUserToAddRows = false;
+            this.dgvContactos.AllowUserToDeleteRows = false;
             this.dgvContactos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvContactos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Id_contacto,
@@ -129,6 +130,7 @@ namespace TP_Grupo5.GUILayer
             this.Telefono});
             this.dgvContactos.Location = new System.Drawing.Point(287, 12);
             this.dgvContactos.Name = "dgvContactos";
+            this.dgvContactos.ReadOnly = true;
             this.dgvContactos.RowTemplate.Height = 25;
             this.dgvContactos.Size = new System.Drawing.Size(543, 194);
             this.dgvContactos.TabIndex = 3;
@@ -205,11 +207,12 @@ namespace TP_Grupo5.GUILayer
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // frmContacto
+            // Contactos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(841, 326);
+            this.Controls.Add(this.chbTodos);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnLimpiar);
@@ -218,12 +221,13 @@ namespace TP_Grupo5.GUILayer
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.dgvContactos);
             this.Controls.Add(this.grbContactos);
-            this.Name = "frmContacto";
+            this.Name = "Contactos";
             this.Text = "frmContacto";
             this.grbContactos.ResumeLayout(false);
             this.grbContactos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvContactos)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 

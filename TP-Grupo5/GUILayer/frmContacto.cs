@@ -11,10 +11,10 @@ using TP_Grupo5.Entities;
 
 namespace TP_Grupo5.GUILayer
 {
-    public partial class frmContacto : Form
+    public partial class Contactos : Form
     {
         private ContactoServicio oContactoServicio;
-        public frmContacto()
+        public Contactos()
         {
             InitializeComponent();
             oContactoServicio = new ContactoServicio();
@@ -46,6 +46,7 @@ namespace TP_Grupo5.GUILayer
 
         private void habilitarCampos(Boolean valor)
         {
+            grbContactos.Enabled = true;
             txtNombre.Text = string.Empty;
             txtApellido.Text = string.Empty;
             dgvContactos.Rows.Clear();
