@@ -139,26 +139,31 @@ namespace TP_Grupo5.GUILayer
             // 
             this.Id_contacto.HeaderText = "Id";
             this.Id_contacto.Name = "Id_contacto";
+            this.Id_contacto.ReadOnly = true;
             // 
             // Nombre
             // 
             this.Nombre.HeaderText = "Nombre";
             this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
             // 
             // Apellido
             // 
             this.Apellido.HeaderText = "Apellido";
             this.Apellido.Name = "Apellido";
+            this.Apellido.ReadOnly = true;
             // 
             // Email
             // 
             this.Email.HeaderText = "Email";
             this.Email.Name = "Email";
+            this.Email.ReadOnly = true;
             // 
             // Telefono
             // 
             this.Telefono.HeaderText = "Telefono";
             this.Telefono.Name = "Telefono";
+            this.Telefono.ReadOnly = true;
             // 
             // btnAgregar
             // 
@@ -168,6 +173,7 @@ namespace TP_Grupo5.GUILayer
             this.btnAgregar.TabIndex = 4;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnActualizar
             // 
@@ -177,6 +183,7 @@ namespace TP_Grupo5.GUILayer
             this.btnActualizar.TabIndex = 5;
             this.btnActualizar.Text = "Actualizar";
             this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // btnEliminar
             // 
@@ -186,6 +193,7 @@ namespace TP_Grupo5.GUILayer
             this.btnEliminar.TabIndex = 6;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnLimpiar
             // 
@@ -222,7 +230,7 @@ namespace TP_Grupo5.GUILayer
             this.Controls.Add(this.dgvContactos);
             this.Controls.Add(this.grbContactos);
             this.Name = "Contactos";
-            this.Text = "frmContacto";
+            this.Text = "Contactos";
             this.grbContactos.ResumeLayout(false);
             this.grbContactos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvContactos)).EndInit();

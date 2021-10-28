@@ -18,5 +18,20 @@ namespace TP_Grupo5.BusinesLayer
         {
             return oContactoDao.consultWithFilter(filtro);
         }
+
+        public bool InsertarContacto(Contacto contacto)
+        {
+            return oContactoDao.Create(contacto);
+        }
+
+        public bool ActualizarContacto(Contacto contacto)
+        {
+            return oContactoDao.Update(contacto);
+        }
+
+        public bool EliminarContacto(Contacto contacto)
+        {
+            return oContactoDao.Delete(contacto);
+        }
     }
 }

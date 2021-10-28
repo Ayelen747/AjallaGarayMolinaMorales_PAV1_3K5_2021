@@ -62,5 +62,39 @@ namespace TP_Grupo5.DataAccesLayer
             return oContacto;
         }
 
+        public bool Create(Contacto contacto)
+        {
+
+            string consulta = "INSERT INTO Contactos(nombre,apellido,email,telefono,borrado)" +
+                            " VALUES (" +
+                            "'" + contacto.Nombre + "'," +
+                            "'" + contacto.Apellido + "'," +
+                            "'" + contacto.Email + "'," +
+                            "'" + contacto.Telefono + "'," +
+                            "0)";
+
+            return (DBHelper.GetDBHelper().EjecutarSQL(consulta) == 1);
+        }
+
+        public bool Update(Contacto contacto)
+        {
+            string consulta = "UPDATE Contactos" +
+                                " SET " +
+                                "nombre='" + contacto.Nombre + "'," +
+                                "apellido='" + contacto.Apellido + "'," +
+                                "email='" + contacto.Email + "'," +
+                                "telefono='" + contacto.Telefono + "'" +
+                               " WHERE id_contacto=" + contacto.Id_Contacto;
+            return (DBHelper.GetDBHelper().EjecutarSQL(consulta) == 1);
+        }
+
+        public bool Delete(Contacto contacto)
+        {
+            string consulta = "UPDATE Contactos " +
+                              "SET borrado=1" +
+                              " WHERE id_contacto=" + contacto.Id_Contacto;
+            return (DBHelper.GetDBHelper().EjecutarSQL(consulta) == 1);
+        }
+
     }
 }

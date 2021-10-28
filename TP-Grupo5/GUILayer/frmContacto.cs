@@ -6,7 +6,6 @@ using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
 using TP_Grupo5.BusinesLayer;
-using TP_Grupo5.DataAccesLayer;
 using TP_Grupo5.Entities;
 
 namespace TP_Grupo5.GUILayer
@@ -27,16 +26,26 @@ namespace TP_Grupo5.GUILayer
 
             if (!chbTodos.Checked)
             {
-                if (txtNombre.Text != string.Empty)
+                if (txtNombre.Text == string.Empty && txtApellido.Text == string.Empty)
                 {
-                    filtro = filtro + " AND c.nombre LIKE '%" + txtNombre.Text + "%'";
-                    llenarGrilla(dgvContactos, oContactoServicio.consultaConFiltros(filtro));
+                    MessageBox.Show("ingrese datos", "adv");
                 }
-                if (txtApellido.Text != string.Empty)
+                else
                 {
-                    filtro = filtro + " AND c.apellido LIKE '%" + txtApellido.Text + "%'";
-                    llenarGrilla(dgvContactos, oContactoServicio.consultaConFiltros(filtro));
+                    if (txtNombre.Text != string.Empty)
+                    {
+                        filtro = filtro + " AND c.nombre LIKE '%" + txtNombre.Text + "%'";
+                        llenarGrilla(dgvContactos, oContactoServicio.consultaConFiltros(filtro));
+                    }
+
+                    if (txtApellido.Text != string.Empty)
+                    {
+                        filtro = filtro + " AND c.apellido LIKE '%" + txtApellido.Text + "%'";
+                        llenarGrilla(dgvContactos, oContactoServicio.consultaConFiltros(filtro));
+                    }
                 }
+                
+
             }
             else
             {
@@ -87,19 +96,64 @@ namespace TP_Grupo5.GUILayer
         private void chbTodos_CheckedChanged(object sender, EventArgs e)
         {
             if (chbTodos.Checked)
+            {
+                txtNombre.Text = string.Empty;
+                txtApellido.Text = string.Empty;
                 grbContactos.Enabled = false;
+            }
+
             else
                 grbContactos.Enabled = true;
         }
 
+
+
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
+            chbTodos.Checked = false;
             habilitarCampos(true);
+
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            frmABMContacto ofrmABMContacto = new frmABMContacto();
+            ofrmABMContacto.ShowDialog();
+            chbTodos.Checked = true;
+            btnBuscar_Click(sender, e);
+        }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            if (dgvContactos.CurrentRow == null)
+                MessageBox.Show("Seleccione una fila de la grilla", "Notificación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            else
+            {
+                frmABMContacto ofrmABMContacto = new frmABMContacto();
+                ofrmABMContacto.SeleccionarContacto(frmABMContacto.FormMode.update, (int)dgvContactos.CurrentRow.Cells[0].Value);
+                ofrmABMContacto.ShowDialog();
+                chbTodos.Checked = true;
+                btnBuscar_Click(sender, e);
+            }
+        }
+
+        private void btnEliminar_Click(object sender, EventArgs e)
+        {
+            if (dgvContactos.CurrentRow == null)
+                MessageBox.Show("Seleccione una fila de la grilla", "Notificación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            else
+            {
+                frmABMContacto ofrmABMContacto = new frmABMContacto();
+                ofrmABMContacto.SeleccionarContacto(frmABMContacto.FormMode.delete, (int)dgvContactos.CurrentRow.Cells[0].Value);
+                ofrmABMContacto.borrar_contacto();
+                chbTodos.Checked = true;
+                btnBuscar_Click(sender, e);
+            }
         }
     }
 }

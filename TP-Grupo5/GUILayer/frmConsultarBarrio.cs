@@ -20,13 +20,6 @@ namespace TP_Grupo5.GUILayer
             oBarrioServicio = new BarrioServicio();
         }
 
-        private void LlenarCombo(ComboBox cbo, Object source, string display, String value)
-        {
-            cbo.DataSource = source;
-            cbo.DisplayMember = display;
-            cbo.ValueMember = value;
-            cbo.SelectedIndex = -1;
-        }
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
