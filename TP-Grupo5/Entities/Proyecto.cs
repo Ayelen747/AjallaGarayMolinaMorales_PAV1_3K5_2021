@@ -12,7 +12,11 @@ namespace TP_Grupo5.Entities
         public string Version { get; set; }
         public string Alcance { get; set; }
         public Usuario Responsable { get; set; }
-
         public int Borrado { get; set; }
+
+        public override string ToString()
+        {
+            return Descripcion;
+        }
     }
 }

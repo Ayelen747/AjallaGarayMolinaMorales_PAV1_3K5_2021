@@ -149,7 +149,7 @@ namespace TP_Grupo5
             this.lblCUIT.AutoSize = true;
             this.lblCUIT.Location = new System.Drawing.Point(49, 73);
             this.lblCUIT.Name = "lblCUIT";
-            this.lblCUIT.Size = new System.Drawing.Size(35, 15);
+            this.lblCUIT.Size = new System.Drawing.Size(36, 15);
             this.lblCUIT.TabIndex = 3;
             this.lblCUIT.Text = "CUIT:";
             // 
@@ -197,38 +197,6 @@ namespace TP_Grupo5
             this.chkTodos.Text = "Todos";
             this.chkTodos.UseVisualStyleBackColor = true;
             this.chkTodos.CheckedChanged += new System.EventHandler(this.chkTodos_CheckedChanged);
-            // 
-            // lblRazonS
-            // 
-            this.lblRazonS.AutoSize = true;
-            this.lblRazonS.Location = new System.Drawing.Point(6, 44);
-            this.lblRazonS.Name = "lblRazonS";
-            this.lblRazonS.Size = new System.Drawing.Size(75, 15);
-            this.lblRazonS.TabIndex = 1;
-            this.lblRazonS.Text = "Razon social:";
-            // 
-            // txtRazonSocial
-            // 
-            this.txtRazonSocial.Location = new System.Drawing.Point(91, 41);
-            this.txtRazonSocial.Name = "txtRazonSocial";
-            this.txtRazonSocial.Size = new System.Drawing.Size(100, 23);
-            this.txtRazonSocial.TabIndex = 0;
-            // 
-            // lblRazonS
-            // 
-            this.lblRazonS.AutoSize = true;
-            this.lblRazonS.Location = new System.Drawing.Point(6, 44);
-            this.lblRazonS.Name = "lblRazonS";
-            this.lblRazonS.Size = new System.Drawing.Size(75, 15);
-            this.lblRazonS.TabIndex = 1;
-            this.lblRazonS.Text = "Razon social:";
-            // 
-            // txtRazonSocial
-            // 
-            this.txtRazonSocial.Location = new System.Drawing.Point(91, 41);
-            this.txtRazonSocial.Name = "txtRazonSocial";
-            this.txtRazonSocial.Size = new System.Drawing.Size(100, 23);
-            this.txtRazonSocial.TabIndex = 0;
             // 
             // gbListaClientes
             // 

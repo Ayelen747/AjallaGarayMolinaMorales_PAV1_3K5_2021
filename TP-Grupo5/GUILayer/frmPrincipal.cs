@@ -44,6 +44,11 @@ namespace TP_Grupo5.GUILayer
             ofrmConsultaCliente.ShowDialog();
         }
 
-
+        private void nuevaFacturaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmTransaccionFactura fm = new frmTransaccionFactura();
+            fm.Text = "Nueva Factura";
+            fm.ShowDialog();
+        }
     }
 }

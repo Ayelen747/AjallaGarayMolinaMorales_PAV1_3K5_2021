@@ -11,8 +11,6 @@ namespace TP_Grupo5.Entities
         public String Apellido { get; set; }
         public String Email { get; set; }
         public String Telefono { get; set; }
- 
-        public int Borrado { get; set; }
 
         public override String ToString()
         { 

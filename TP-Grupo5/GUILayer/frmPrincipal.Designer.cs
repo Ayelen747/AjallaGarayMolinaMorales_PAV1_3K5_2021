@@ -36,6 +36,7 @@ namespace TP_Grupo5.GUILayer
             this.consultarBarriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarProyectosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nuevaFacturaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,6 +54,8 @@ namespace TP_Grupo5.GUILayer
             // 
             // soporteToolStripMenuItem
             // 
+            this.soporteToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.nuevaFacturaToolStripMenuItem});
             this.soporteToolStripMenuItem.Name = "soporteToolStripMenuItem";
             this.soporteToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.soporteToolStripMenuItem.Text = "Archivo";
@@ -94,12 +97,12 @@ namespace TP_Grupo5.GUILayer
             this.reportesToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
             this.reportesToolStripMenuItem.Text = "Reportes";
             // 
-            // consultarBarriosToolStripMenuItem
+            // nuevaFacturaToolStripMenuItem
             // 
-            this.consultarBarriosToolStripMenuItem.Name = "consultarBarriosToolStripMenuItem";
-            this.consultarBarriosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.consultarBarriosToolStripMenuItem.Text = "Consultar Barrios";
-            this.consultarBarriosToolStripMenuItem.Click += new System.EventHandler(this.consultarBarriosToolStripMenuItem_Click);
+            this.nuevaFacturaToolStripMenuItem.Name = "nuevaFacturaToolStripMenuItem";
+            this.nuevaFacturaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.nuevaFacturaToolStripMenuItem.Text = "Nueva Factura";
+            this.nuevaFacturaToolStripMenuItem.Click += new System.EventHandler(this.nuevaFacturaToolStripMenuItem_Click);
             // 
             // frmPrincipal
             // 
@@ -126,5 +129,6 @@ namespace TP_Grupo5.GUILayer
         private System.Windows.Forms.ToolStripMenuItem consultarBarriosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem consultarProyectosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem nuevaFacturaToolStripMenuItem;
     }
 }

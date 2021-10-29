@@ -11,8 +11,7 @@ namespace TP_Grupo5.Entities
         public int NroOrden{ get; set; }
         public Producto Producto { get; set; }
         public Proyecto Proyecto { get; set; }
-        public float precio { get; set; }
-
-
+        public double precio { get; set; }
+        public int Borrado { get; set; }
     }
 }

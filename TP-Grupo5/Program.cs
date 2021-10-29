@@ -19,9 +19,9 @@ namespace TP_Grupo5
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new frmTransaccionFactura());
-            Application.Run(new Contactos());
+            //Application.Run(new frmConsultaCliente());
             //Application.Run(new frmLogin());
-            //Application.Run(new frmPrincipal());
+            Application.Run(new frmPrincipal());
             //Application.Run(new frmConsultarBarrio());
         }
     }
