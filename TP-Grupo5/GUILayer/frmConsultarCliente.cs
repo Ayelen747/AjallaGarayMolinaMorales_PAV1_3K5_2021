@@ -197,6 +197,5 @@ namespace TP_Grupo5
                 btnBuscar_Click(sender,e);
             }
         }
-
     }
 }

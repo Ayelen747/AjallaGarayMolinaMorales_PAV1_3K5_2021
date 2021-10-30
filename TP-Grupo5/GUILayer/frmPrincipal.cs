@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Text;
 using System.Windows.Forms;
+using TP_Grupo5.GUILayer;
 
 namespace TP_Grupo5.GUILayer
 {
@@ -19,12 +20,12 @@ namespace TP_Grupo5.GUILayer
         {
             frmLogin ofrmLogin = new frmLogin();
             ofrmLogin.ShowDialog();
-            this.Text = "Nombre de usuario: "+ofrmLogin.Text;
+            this.Text = "Nombre de usuario: " + ofrmLogin.Text;
         }
 
-        
 
-        
+
+
 
         private void consultarProyectosToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -48,6 +49,12 @@ namespace TP_Grupo5.GUILayer
         {
             frmTransaccionFactura fm = new frmTransaccionFactura();
             fm.Text = "Nueva Factura";
+            fm.ShowDialog();
+        }
+
+        private void consultarContactosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmConsultarContactocs fm = new frmConsultarContactocs();
             fm.ShowDialog();
         }
     }

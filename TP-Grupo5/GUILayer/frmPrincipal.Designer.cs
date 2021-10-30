@@ -31,12 +31,13 @@ namespace TP_Grupo5.GUILayer
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.soporteToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nuevaFacturaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consularClientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarBarriosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.consultarProyectosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.consultarContactosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.nuevaFacturaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,12 +61,20 @@ namespace TP_Grupo5.GUILayer
             this.soporteToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.soporteToolStripMenuItem.Text = "Archivo";
             // 
+            // nuevaFacturaToolStripMenuItem
+            // 
+            this.nuevaFacturaToolStripMenuItem.Name = "nuevaFacturaToolStripMenuItem";
+            this.nuevaFacturaToolStripMenuItem.Size = new System.Drawing.Size(150, 22);
+            this.nuevaFacturaToolStripMenuItem.Text = "Nueva Factura";
+            this.nuevaFacturaToolStripMenuItem.Click += new System.EventHandler(this.nuevaFacturaToolStripMenuItem_Click);
+            // 
             // clientesToolStripMenuItem
             // 
             this.clientesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.consularClientesToolStripMenuItem,
             this.consultarBarriosToolStripMenuItem,
-            this.consultarProyectosToolStripMenuItem});
+            this.consultarProyectosToolStripMenuItem,
+            this.consultarContactosToolStripMenuItem});
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
             this.clientesToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.clientesToolStripMenuItem.Text = "Soporte";
@@ -73,36 +82,36 @@ namespace TP_Grupo5.GUILayer
             // consularClientesToolStripMenuItem
             // 
             this.consularClientesToolStripMenuItem.Name = "consularClientesToolStripMenuItem";
-            this.consularClientesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.consularClientesToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.consularClientesToolStripMenuItem.Text = "Consular Clientes";
             this.consularClientesToolStripMenuItem.Click += new System.EventHandler(this.consularClientesToolStripMenuItem_Click);
             // 
             // consultarBarriosToolStripMenuItem
             // 
             this.consultarBarriosToolStripMenuItem.Name = "consultarBarriosToolStripMenuItem";
-            this.consultarBarriosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.consultarBarriosToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.consultarBarriosToolStripMenuItem.Text = "Consultar Barrios";
             this.consultarBarriosToolStripMenuItem.Click += new System.EventHandler(this.consultarBarriosToolStripMenuItem_Click);
             // 
             // consultarProyectosToolStripMenuItem
             // 
             this.consultarProyectosToolStripMenuItem.Name = "consultarProyectosToolStripMenuItem";
-            this.consultarProyectosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.consultarProyectosToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
             this.consultarProyectosToolStripMenuItem.Text = "Consultar Proyectos";
             this.consultarProyectosToolStripMenuItem.Click += new System.EventHandler(this.consultarProyectosToolStripMenuItem_Click);
+            // 
+            // consultarContactosToolStripMenuItem
+            // 
+            this.consultarContactosToolStripMenuItem.Name = "consultarContactosToolStripMenuItem";
+            this.consultarContactosToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.consultarContactosToolStripMenuItem.Text = "Consultar Contactos";
+            this.consultarContactosToolStripMenuItem.Click += new System.EventHandler(this.consultarContactosToolStripMenuItem_Click);
             // 
             // reportesToolStripMenuItem
             // 
             this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
             this.reportesToolStripMenuItem.Size = new System.Drawing.Size(65, 20);
             this.reportesToolStripMenuItem.Text = "Reportes";
-            // 
-            // nuevaFacturaToolStripMenuItem
-            // 
-            this.nuevaFacturaToolStripMenuItem.Name = "nuevaFacturaToolStripMenuItem";
-            this.nuevaFacturaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.nuevaFacturaToolStripMenuItem.Text = "Nueva Factura";
-            this.nuevaFacturaToolStripMenuItem.Click += new System.EventHandler(this.nuevaFacturaToolStripMenuItem_Click);
             // 
             // frmPrincipal
             // 
@@ -130,5 +139,6 @@ namespace TP_Grupo5.GUILayer
         private System.Windows.Forms.ToolStripMenuItem consultarProyectosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nuevaFacturaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem consultarContactosToolStripMenuItem;
     }
 }

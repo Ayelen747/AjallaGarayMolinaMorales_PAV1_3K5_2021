@@ -345,6 +345,7 @@ namespace TP_Grupo5
             this.Controls.Add(this.chkTodos);
             this.Name = "frmConsultaCliente";
             this.Text = "Clientes";
+            
             this.gbBuscarCliente.ResumeLayout(false);
             this.gbBuscarCliente.PerformLayout();
             this.gbFechaAlta.ResumeLayout(false);

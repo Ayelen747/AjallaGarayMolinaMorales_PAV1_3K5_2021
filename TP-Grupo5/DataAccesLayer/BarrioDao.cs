@@ -15,7 +15,8 @@ namespace TP_Grupo5.DataAccesLayer
                                             "b.id_barrio,",
                                             "b.nombre as barrio",
                                             " FROM Barrios b",
-                                            " WHERE b.borrado = 0");
+                                            " WHERE b.borrado = 0",
+                                            " ORDER BY b.nombre");
             var resConsulta = DBHelper.GetDBHelper().ConsultaSQL(consulta);
             foreach (DataRow row in resConsulta.Rows)
             {
@@ -44,7 +45,7 @@ namespace TP_Grupo5.DataAccesLayer
                                             " FROM Barrios b",
                                             " WHERE b.borrado = 0");
 
-            consulta = consulta + filtro;
+            consulta = consulta + filtro+ " ORDER BY b.nombre";
             var resConsulta = DBHelper.GetDBHelper().ConsultaSQL(consulta);
             foreach (DataRow row in resConsulta.Rows)
             {

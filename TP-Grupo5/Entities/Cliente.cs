@@ -15,7 +15,6 @@ namespace TP_Grupo5.Entities
         public int Numero { get; set; }
         public Barrio Barrio { get; set; }
         public Contacto Contacto { get; set; }
-
         public override string ToString()
         {
             return Razon_social;

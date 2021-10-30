@@ -28,3 +28,5 @@ D:\Usuarios\Jonatan\Documents\Facultad 2021\PAV1\TrabajosPracticos\Git\santi\Aja
 D:\Usuarios\Jonatan\Documents\Facultad 2021\PAV1\TrabajosPracticos\Git\santi\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\obj\Debug\netcoreapp3.1\TP-Grupo5.dll
 D:\Usuarios\Jonatan\Documents\Facultad 2021\PAV1\TrabajosPracticos\Git\santi\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\obj\Debug\netcoreapp3.1\TP-Grupo5.pdb
 D:\Usuarios\Jonatan\Documents\Facultad 2021\PAV1\TrabajosPracticos\Git\santi\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\obj\Debug\netcoreapp3.1\TP-Grupo5.genruntimeconfig.cache
+D:\Usuarios\Jonatan\Documents\Facultad 2021\PAV1\TrabajosPracticos\Git\santi\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\obj\Debug\netcoreapp3.1\TP_Grupo5.GUILayer.frmABMContacto.resources
+D:\Usuarios\Jonatan\Documents\Facultad 2021\PAV1\TrabajosPracticos\Git\santi\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\obj\Debug\netcoreapp3.1\TP_Grupo5.GUILayer.frmConsultarContactocs.resources
