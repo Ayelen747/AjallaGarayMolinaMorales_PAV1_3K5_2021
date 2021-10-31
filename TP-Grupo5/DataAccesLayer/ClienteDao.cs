@@ -20,6 +20,7 @@ namespace TP_Grupo5.DataAccesLayer
                                             "c.fecha_alta, ",
                                             "c.calle, ",
                                             "c.numero, ",
+                                            "c.borrado, ",
                                             "b.id_barrio, ",
                                             "b.nombre AS barrio, ",
                                             "cont.id_contacto, ",
@@ -29,7 +30,7 @@ namespace TP_Grupo5.DataAccesLayer
                                             "cont.telefono ",
                                             " FROM Clientes c ",
                                             " INNER JOIN Barrios b ON (c.id_barrio=b.id_barrio) left JOIN Contactos cont ON (cont.id_contacto=c.id_contacto) ",
-                                            " WHERE C.borrado=0",
+                                            " WHERE C.borrado=0 OR C.borrado=1",
                                             " ORDER BY c.razon_social");
 
             var resConsulta=DBHelper.GetDBHelper().ConsultaSQL(consulta);
@@ -51,6 +52,7 @@ namespace TP_Grupo5.DataAccesLayer
                                             "c.fecha_alta, ",
                                             "c.calle, ",
                                             "c.numero, ",
+                                            "c.borrado, ",
                                             "b.id_barrio, ",
                                             "b.nombre AS barrio, ",
                                             "cont.id_contacto, ",
@@ -84,7 +86,8 @@ namespace TP_Grupo5.DataAccesLayer
                 {
                     Id_Barrio = Convert.ToInt32(row["id_barrio"].ToString()),
                     Nombre = row["barrio"].ToString()
-                }
+                },
+                Borrado = Convert.ToBoolean(row["borrado"].ToString())
                 
             };
             if (row["id_contacto"].ToString() != "")
@@ -142,6 +145,14 @@ namespace TP_Grupo5.DataAccesLayer
             string consulta = "UPDATE Clientes " +
                               "SET borrado=1" +
                               " WHERE id_cliente=" + cliente.Id_cliente;
+            return (DBHelper.GetDBHelper().EjecutarSQL(consulta) == 1);
+        }
+
+        public bool Restore(Cliente cliente)
+        {
+            string consulta = "UPDATE Clientes " +
+                                  "SET borrado=0" +
+                                  " WHERE id_cliente=" + cliente.Id_cliente;
             return (DBHelper.GetDBHelper().EjecutarSQL(consulta) == 1);
         }
     }

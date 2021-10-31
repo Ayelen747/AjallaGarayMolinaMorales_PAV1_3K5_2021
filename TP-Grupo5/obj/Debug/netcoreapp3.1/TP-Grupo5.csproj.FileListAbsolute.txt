@@ -27,6 +27,7 @@ C:\Users\santi\Desktop\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\obj\Debu
 C:\Users\santi\Desktop\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\obj\Debug\netcoreapp3.1\TP-Grupo5.AssemblyInfoInputs.cache
 C:\Users\santi\Desktop\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\obj\Debug\netcoreapp3.1\TP-Grupo5.AssemblyInfo.cs
 C:\Users\santi\Desktop\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\obj\Debug\netcoreapp3.1\TP-Grupo5.csproj.CoreCompileInputs.cache
+C:\Users\santi\Desktop\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\obj\Debug\netcoreapp3.1\TP-Grupo5.csproj.CopyComplete
 C:\Users\santi\Desktop\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\obj\Debug\netcoreapp3.1\TP-Grupo5.dll
 C:\Users\santi\Desktop\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\obj\Debug\netcoreapp3.1\TP-Grupo5.pdb
 C:\Users\santi\Desktop\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\obj\Debug\netcoreapp3.1\TP-Grupo5.genruntimeconfig.cache

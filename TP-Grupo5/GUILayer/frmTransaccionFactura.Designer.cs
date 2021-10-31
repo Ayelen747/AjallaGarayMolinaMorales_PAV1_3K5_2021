@@ -77,7 +77,6 @@ namespace TP_Grupo5.GUILayer
             this.txtNroFactura.Name = "txtNroFactura";
             this.txtNroFactura.Size = new System.Drawing.Size(89, 23);
             this.txtNroFactura.TabIndex = 1;
-            this.txtNroFactura.TextChanged += new System.EventHandler(this.txtNroFactura_TextChanged);
             // 
             // lblFecha
             // 
@@ -179,6 +178,7 @@ namespace TP_Grupo5.GUILayer
             this.grbFacturaDetalle.Size = new System.Drawing.Size(376, 165);
             this.grbFacturaDetalle.TabIndex = 7;
             this.grbFacturaDetalle.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.grbFacturaDetalle_RowPostPaint);
+            
             // 
             // descripcion
             // 

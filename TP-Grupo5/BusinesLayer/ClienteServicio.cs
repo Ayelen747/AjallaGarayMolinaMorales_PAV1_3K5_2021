@@ -34,5 +34,10 @@ namespace TP_Grupo5.BusinesLayer
         {
             return oClienteDao.Delete(cliente);
         }
+
+        public bool RecuperarCliente(Cliente cliente)
+        {
+            return oClienteDao.Restore(cliente);
+        }
     }
 }
