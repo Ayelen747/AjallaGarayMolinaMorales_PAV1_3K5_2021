@@ -214,7 +214,7 @@ namespace TP_Grupo5.GUILayer
 
         private void LlenarCampos()
         {
-            Cliente oCliente = oClienteServicio.consultaConFiltros(" OR c.borrado=1 AND c.id_cliente=" + idCliente)[0];
+            Cliente oCliente = oClienteServicio.ClientePorId(idCliente.ToString());
             txtId.Text = oCliente.Id_cliente.ToString();
             txtRazonSocial.Text = oCliente.Razon_social;
             txtCuit.Text = oCliente.Cuit.ToString();
@@ -280,7 +280,7 @@ namespace TP_Grupo5.GUILayer
             {
                 id = " AND c.id_cliente !=" + id;
             }
-            IList<Cliente> lista = oClienteServicio.consultaConFiltros(" AND c.cuit=" + cuit+id);
+            IList<Cliente> lista = oClienteServicio.consultaConFiltros(" c.cuit=" + cuit+id);
             if (lista.Count > 0)
                 return true;
             return false;
