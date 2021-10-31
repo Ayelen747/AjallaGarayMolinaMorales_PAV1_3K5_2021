@@ -19,7 +19,7 @@ namespace TP_Grupo5.DataAccesLayer
                                             "c.telefono,",
                                             "c.borrado",
                                             " FROM Contactos c ",
-                                            " WHERE c.borrado=0");
+                                            " WHERE c.borrado=0 OR c.borrado=1");
             var resConsulta=DBHelper.GetDBHelper().ConsultaSQL(consulta);
             foreach (DataRow row in resConsulta.Rows)
             {
@@ -57,6 +57,7 @@ namespace TP_Grupo5.DataAccesLayer
                 Email = row["email"].ToString(),
                 Nombre= row["nombre"].ToString(),
                 Telefono=row["telefono"].ToString(),
+                Borrado = Convert.ToBoolean(row["borrado"].ToString())
             };
             return oContacto;
         }

@@ -15,6 +15,7 @@ namespace TP_Grupo5.GUILayer
         private ContactoServicio oContactoServicio;
         private int idContacto;
         private FormMode formMode = FormMode.insert;
+        public bool bandera { get; set; }
         public frmABMContacto()
         {
             InitializeComponent();
@@ -131,7 +132,7 @@ namespace TP_Grupo5.GUILayer
 
         private void btnAceptar_Click_1(object sender, EventArgs e)
         {
-
+            bandera = true;
             switch (formMode)
             {
                 case FormMode.insert:
@@ -210,7 +211,9 @@ namespace TP_Grupo5.GUILayer
         private void btnCancelar_Click_1(object sender, EventArgs e)
         {
             this.Close();
+            bandera = false;
         }
+
     }
 }
 

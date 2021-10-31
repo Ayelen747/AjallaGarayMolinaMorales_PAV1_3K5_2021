@@ -10,10 +10,10 @@ using TP_Grupo5.Entities;
 
 namespace TP_Grupo5.GUILayer
 {
-    public partial class frmConsultarContactocs : Form
+    public partial class frmConsultarContacto : Form
     {
         private ContactoServicio oContactoServicio;
-        public frmConsultarContactocs()
+        public frmConsultarContacto()
         {
             InitializeComponent();
             oContactoServicio = new ContactoServicio();
@@ -44,8 +44,11 @@ namespace TP_Grupo5.GUILayer
                         lista[i].Nombre,
                         lista[i].Apellido,
                         lista[i].Email,
-                        lista[i].Telefono
+                        lista[i].Telefono,
+                        lista[i].Borrado
                         );
+                    if (lista[i].Borrado == true)
+                        dgvContactos.Rows[i].DefaultCellStyle.BackColor = Color.LightPink;
                 }
                 dgvContactos.CurrentRow.Selected = false;
                 btnActualizar.Enabled = true;
@@ -79,7 +82,7 @@ namespace TP_Grupo5.GUILayer
             {
                 if (txtNombre.Text == string.Empty && txtApellido.Text == string.Empty)
                 {
-                    MessageBox.Show("ingrese datos", "adv");
+                    MessageBox.Show("Porfavor, ingrese Nombre y/o Apellido para realizar la busqueda", "Advertencia",MessageBoxButtons.OK,MessageBoxIcon.Information);
                 }
                 else
                 {
@@ -140,6 +143,7 @@ namespace TP_Grupo5.GUILayer
                 ofrmABMContacto.ShowDialog();
                 chbTodos.Checked = true;
                 btnBuscar_Click(sender, e);
+
             }
         }
         private void btnLimpiar_Click(object sender, EventArgs e)
@@ -158,8 +162,13 @@ namespace TP_Grupo5.GUILayer
         {
             frmABMContacto ofrmABMContacto = new frmABMContacto();
             ofrmABMContacto.ShowDialog();
-            chbTodos.Checked = true;
-            btnBuscar_Click(sender, e);
+            if (ofrmABMContacto.bandera)
+            {
+                chbTodos.Checked = true;
+                btnBuscar_Click(sender, e);
+            }
+
+            ofrmABMContacto.bandera = true;
         }
     }
 }

@@ -1,7 +1,7 @@
 ﻿
 namespace TP_Grupo5.GUILayer
 {
-    partial class frmConsultarContactocs
+    partial class frmConsultarContacto
     {
         /// <summary>
         /// Required designer variable.
@@ -42,6 +42,7 @@ namespace TP_Grupo5.GUILayer
             this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.borrado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grbContactos = new System.Windows.Forms.GroupBox();
             this.lblApellido = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
@@ -56,7 +57,7 @@ namespace TP_Grupo5.GUILayer
             this.chbTodos.AutoSize = true;
             this.chbTodos.Location = new System.Drawing.Point(36, 172);
             this.chbTodos.Name = "chbTodos";
-            this.chbTodos.Size = new System.Drawing.Size(58, 19);
+            this.chbTodos.Size = new System.Drawing.Size(57, 19);
             this.chbTodos.TabIndex = 16;
             this.chbTodos.Text = "Todos";
             this.chbTodos.UseVisualStyleBackColor = true;
@@ -132,11 +133,13 @@ namespace TP_Grupo5.GUILayer
             this.Nombre,
             this.Apellido,
             this.Email,
-            this.Telefono});
+            this.Telefono,
+            this.borrado});
             this.dgvContactos.Location = new System.Drawing.Point(289, 12);
             this.dgvContactos.Name = "dgvContactos";
             this.dgvContactos.ReadOnly = true;
             this.dgvContactos.RowTemplate.Height = 25;
+            this.dgvContactos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvContactos.Size = new System.Drawing.Size(543, 194);
             this.dgvContactos.TabIndex = 11;
             // 
@@ -145,6 +148,7 @@ namespace TP_Grupo5.GUILayer
             this.Id_contacto.HeaderText = "Id";
             this.Id_contacto.Name = "Id_contacto";
             this.Id_contacto.ReadOnly = true;
+            this.Id_contacto.Visible = false;
             // 
             // Nombre
             // 
@@ -169,6 +173,12 @@ namespace TP_Grupo5.GUILayer
             this.Telefono.HeaderText = "Telefono";
             this.Telefono.Name = "Telefono";
             this.Telefono.ReadOnly = true;
+            // 
+            // borrado
+            // 
+            this.borrado.HeaderText = "Borrado";
+            this.borrado.Name = "borrado";
+            this.borrado.ReadOnly = true;
             // 
             // grbContactos
             // 
@@ -215,7 +225,7 @@ namespace TP_Grupo5.GUILayer
             this.txtApellido.Size = new System.Drawing.Size(162, 23);
             this.txtApellido.TabIndex = 1;
             // 
-            // frmConsultarContactocs
+            // frmConsultarContacto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -229,7 +239,7 @@ namespace TP_Grupo5.GUILayer
             this.Controls.Add(this.btnAgregar);
             this.Controls.Add(this.dgvContactos);
             this.Controls.Add(this.grbContactos);
-            this.Name = "frmConsultarContactocs";
+            this.Name = "frmConsultarContacto";
             this.Text = "frmConsultarContactocs";
             this.Load += new System.EventHandler(this.frmConsultarContactocs_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvContactos)).EndInit();
@@ -250,15 +260,16 @@ namespace TP_Grupo5.GUILayer
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.DataGridView dgvContactos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Id_contacto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Telefono;
         private System.Windows.Forms.GroupBox grbContactos;
         private System.Windows.Forms.Label lblApellido;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtApellido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id_contacto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Telefono;
+        private System.Windows.Forms.DataGridViewTextBoxColumn borrado;
     }
 }
