@@ -57,6 +57,7 @@ namespace TP_Grupo5
             this.nroCalle = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.fechaAlta = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.contacto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.borrado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.gbBuscarCliente.SuspendLayout();
@@ -265,7 +266,8 @@ namespace TP_Grupo5
             this.calle,
             this.nroCalle,
             this.fechaAlta,
-            this.contacto});
+            this.contacto,
+            this.borrado});
             this.grdClientes.Location = new System.Drawing.Point(0, 22);
             this.grdClientes.Name = "grdClientes";
             this.grdClientes.ReadOnly = true;
@@ -273,6 +275,7 @@ namespace TP_Grupo5
             this.grdClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.grdClientes.Size = new System.Drawing.Size(770, 206);
             this.grdClientes.TabIndex = 0;
+            this.grdClientes.SelectionChanged += new System.EventHandler(this.grdClientes_SelectionChanged);
             // 
             // id
             // 
@@ -323,6 +326,13 @@ namespace TP_Grupo5
             this.contacto.Name = "contacto";
             this.contacto.ReadOnly = true;
             // 
+            // borrado
+            // 
+            this.borrado.HeaderText = "Borrado";
+            this.borrado.Name = "borrado";
+            this.borrado.ReadOnly = true;
+            this.borrado.Visible = false;
+            // 
             // btnLimpiar
             // 
             this.btnLimpiar.Location = new System.Drawing.Point(707, 137);
@@ -345,7 +355,6 @@ namespace TP_Grupo5
             this.Controls.Add(this.chkTodos);
             this.Name = "frmConsultaCliente";
             this.Text = "Clientes";
-            
             this.gbBuscarCliente.ResumeLayout(false);
             this.gbBuscarCliente.PerformLayout();
             this.gbFechaAlta.ResumeLayout(false);
@@ -389,6 +398,7 @@ namespace TP_Grupo5
         private System.Windows.Forms.DataGridViewTextBoxColumn nroCalle;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaAlta;
         private System.Windows.Forms.DataGridViewTextBoxColumn contacto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn borrado;
     }
 }
 

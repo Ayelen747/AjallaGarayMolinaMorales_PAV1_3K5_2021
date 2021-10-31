@@ -1,32 +1,33 @@
-D:\Usuarios\Jonatan\Documents\Facultad 2021\PAV1\TrabajosPracticos\Git\santi\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\bin\Debug\netcoreapp3.1\TP-Grupo5.exe
-D:\Usuarios\Jonatan\Documents\Facultad 2021\PAV1\TrabajosPracticos\Git\santi\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\bin\Debug\netcoreapp3.1\TP-Grupo5.deps.json
-D:\Usuarios\Jonatan\Documents\Facultad 2021\PAV1\TrabajosPracticos\Git\santi\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\bin\Debug\netcoreapp3.1\TP-Grupo5.runtimeconfig.json
-D:\Usuarios\Jonatan\Documents\Facultad 2021\PAV1\TrabajosPracticos\Git\santi\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\bin\Debug\netcoreapp3.1\TP-Grupo5.runtimeconfig.dev.json
-D:\Usuarios\Jonatan\Documents\Facultad 2021\PAV1\TrabajosPracticos\Git\santi\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\bin\Debug\netcoreapp3.1\TP-Grupo5.dll
-D:\Usuarios\Jonatan\Documents\Facultad 2021\PAV1\TrabajosPracticos\Git\santi\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\bin\Debug\netcoreapp3.1\TP-Grupo5.pdb
-D:\Usuarios\Jonatan\Documents\Facultad 2021\PAV1\TrabajosPracticos\Git\santi\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
-D:\Usuarios\Jonatan\Documents\Facultad 2021\PAV1\TrabajosPracticos\Git\santi\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
-D:\Usuarios\Jonatan\Documents\Facultad 2021\PAV1\TrabajosPracticos\Git\santi\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
-D:\Usuarios\Jonatan\Documents\Facultad 2021\PAV1\TrabajosPracticos\Git\santi\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
-D:\Usuarios\Jonatan\Documents\Facultad 2021\PAV1\TrabajosPracticos\Git\santi\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
-D:\Usuarios\Jonatan\Documents\Facultad 2021\PAV1\TrabajosPracticos\Git\santi\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
-D:\Usuarios\Jonatan\Documents\Facultad 2021\PAV1\TrabajosPracticos\Git\santi\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\obj\Debug\netcoreapp3.1\TP-Grupo5.csproj.AssemblyReference.cache
-D:\Usuarios\Jonatan\Documents\Facultad 2021\PAV1\TrabajosPracticos\Git\santi\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\obj\Debug\netcoreapp3.1\TP_Grupo5.GUILayer.frmABMBarrio.resources
-D:\Usuarios\Jonatan\Documents\Facultad 2021\PAV1\TrabajosPracticos\Git\santi\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\obj\Debug\netcoreapp3.1\TP_Grupo5.GUILayer.frmABMCliente.resources
-D:\Usuarios\Jonatan\Documents\Facultad 2021\PAV1\TrabajosPracticos\Git\santi\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\obj\Debug\netcoreapp3.1\TP_Grupo5.GUILayer.frmConsultarBarrio.resources
-D:\Usuarios\Jonatan\Documents\Facultad 2021\PAV1\TrabajosPracticos\Git\santi\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\obj\Debug\netcoreapp3.1\TP_Grupo5.frmConsultaCliente.resources
-D:\Usuarios\Jonatan\Documents\Facultad 2021\PAV1\TrabajosPracticos\Git\santi\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\obj\Debug\netcoreapp3.1\TP_Grupo5.GUILayer.frmLogin.resources
-D:\Usuarios\Jonatan\Documents\Facultad 2021\PAV1\TrabajosPracticos\Git\santi\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\obj\Debug\netcoreapp3.1\TP_Grupo5.GUILayer.frmPrincipal.resources
-D:\Usuarios\Jonatan\Documents\Facultad 2021\PAV1\TrabajosPracticos\Git\santi\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\obj\Debug\netcoreapp3.1\TP_Grupo5.GUILayer.frmProyecto.resources
-D:\Usuarios\Jonatan\Documents\Facultad 2021\PAV1\TrabajosPracticos\Git\santi\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\obj\Debug\netcoreapp3.1\TP_Grupo5.GUILayer.frmProyectoABM.resources
-D:\Usuarios\Jonatan\Documents\Facultad 2021\PAV1\TrabajosPracticos\Git\santi\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\obj\Debug\netcoreapp3.1\TP_Grupo5.GUILayer.frmTransaccionFactura.resources
-D:\Usuarios\Jonatan\Documents\Facultad 2021\PAV1\TrabajosPracticos\Git\santi\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\obj\Debug\netcoreapp3.1\TP-Grupo5.csproj.GenerateResource.cache
-D:\Usuarios\Jonatan\Documents\Facultad 2021\PAV1\TrabajosPracticos\Git\santi\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\obj\Debug\netcoreapp3.1\TP-Grupo5.GeneratedMSBuildEditorConfig.editorconfig
-D:\Usuarios\Jonatan\Documents\Facultad 2021\PAV1\TrabajosPracticos\Git\santi\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\obj\Debug\netcoreapp3.1\TP-Grupo5.AssemblyInfoInputs.cache
-D:\Usuarios\Jonatan\Documents\Facultad 2021\PAV1\TrabajosPracticos\Git\santi\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\obj\Debug\netcoreapp3.1\TP-Grupo5.AssemblyInfo.cs
-D:\Usuarios\Jonatan\Documents\Facultad 2021\PAV1\TrabajosPracticos\Git\santi\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\obj\Debug\netcoreapp3.1\TP-Grupo5.csproj.CoreCompileInputs.cache
-D:\Usuarios\Jonatan\Documents\Facultad 2021\PAV1\TrabajosPracticos\Git\santi\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\obj\Debug\netcoreapp3.1\TP-Grupo5.dll
-D:\Usuarios\Jonatan\Documents\Facultad 2021\PAV1\TrabajosPracticos\Git\santi\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\obj\Debug\netcoreapp3.1\TP-Grupo5.pdb
-D:\Usuarios\Jonatan\Documents\Facultad 2021\PAV1\TrabajosPracticos\Git\santi\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\obj\Debug\netcoreapp3.1\TP-Grupo5.genruntimeconfig.cache
-D:\Usuarios\Jonatan\Documents\Facultad 2021\PAV1\TrabajosPracticos\Git\santi\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\obj\Debug\netcoreapp3.1\TP_Grupo5.GUILayer.frmABMContacto.resources
-D:\Usuarios\Jonatan\Documents\Facultad 2021\PAV1\TrabajosPracticos\Git\santi\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\obj\Debug\netcoreapp3.1\TP_Grupo5.GUILayer.frmConsultarContactocs.resources
+C:\Users\santi\Desktop\joni\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\bin\Debug\netcoreapp3.1\TP-Grupo5.exe
+C:\Users\santi\Desktop\joni\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\bin\Debug\netcoreapp3.1\TP-Grupo5.deps.json
+C:\Users\santi\Desktop\joni\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\bin\Debug\netcoreapp3.1\TP-Grupo5.runtimeconfig.json
+C:\Users\santi\Desktop\joni\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\bin\Debug\netcoreapp3.1\TP-Grupo5.runtimeconfig.dev.json
+C:\Users\santi\Desktop\joni\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\bin\Debug\netcoreapp3.1\TP-Grupo5.dll
+C:\Users\santi\Desktop\joni\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\bin\Debug\netcoreapp3.1\TP-Grupo5.pdb
+C:\Users\santi\Desktop\joni\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
+C:\Users\santi\Desktop\joni\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+C:\Users\santi\Desktop\joni\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+C:\Users\santi\Desktop\joni\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+C:\Users\santi\Desktop\joni\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\santi\Desktop\joni\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\santi\Desktop\joni\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\obj\Debug\netcoreapp3.1\TP-Grupo5.csproj.AssemblyReference.cache
+C:\Users\santi\Desktop\joni\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\obj\Debug\netcoreapp3.1\TP_Grupo5.GUILayer.frmABMBarrio.resources
+C:\Users\santi\Desktop\joni\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\obj\Debug\netcoreapp3.1\TP_Grupo5.GUILayer.frmABMCliente.resources
+C:\Users\santi\Desktop\joni\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\obj\Debug\netcoreapp3.1\TP_Grupo5.GUILayer.frmABMContacto.resources
+C:\Users\santi\Desktop\joni\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\obj\Debug\netcoreapp3.1\TP_Grupo5.GUILayer.frmConsultarBarrio.resources
+C:\Users\santi\Desktop\joni\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\obj\Debug\netcoreapp3.1\TP_Grupo5.frmConsultaCliente.resources
+C:\Users\santi\Desktop\joni\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\obj\Debug\netcoreapp3.1\TP_Grupo5.GUILayer.frmConsultarContactocs.resources
+C:\Users\santi\Desktop\joni\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\obj\Debug\netcoreapp3.1\TP_Grupo5.GUILayer.frmLogin.resources
+C:\Users\santi\Desktop\joni\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\obj\Debug\netcoreapp3.1\TP_Grupo5.GUILayer.frmPrincipal.resources
+C:\Users\santi\Desktop\joni\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\obj\Debug\netcoreapp3.1\TP_Grupo5.GUILayer.frmProyecto.resources
+C:\Users\santi\Desktop\joni\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\obj\Debug\netcoreapp3.1\TP_Grupo5.GUILayer.frmProyectoABM.resources
+C:\Users\santi\Desktop\joni\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\obj\Debug\netcoreapp3.1\TP_Grupo5.GUILayer.frmTransaccionFactura.resources
+C:\Users\santi\Desktop\joni\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\obj\Debug\netcoreapp3.1\TP-Grupo5.csproj.GenerateResource.cache
+C:\Users\santi\Desktop\joni\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\obj\Debug\netcoreapp3.1\TP-Grupo5.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\santi\Desktop\joni\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\obj\Debug\netcoreapp3.1\TP-Grupo5.AssemblyInfoInputs.cache
+C:\Users\santi\Desktop\joni\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\obj\Debug\netcoreapp3.1\TP-Grupo5.AssemblyInfo.cs
+C:\Users\santi\Desktop\joni\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\obj\Debug\netcoreapp3.1\TP-Grupo5.csproj.CoreCompileInputs.cache
+C:\Users\santi\Desktop\joni\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\obj\Debug\netcoreapp3.1\TP-Grupo5.csproj.CopyComplete
+C:\Users\santi\Desktop\joni\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\obj\Debug\netcoreapp3.1\TP-Grupo5.dll
+C:\Users\santi\Desktop\joni\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\obj\Debug\netcoreapp3.1\TP-Grupo5.pdb
+C:\Users\santi\Desktop\joni\AjallaGarayMolinaMorales_PAV1_3K5_2021\TP-Grupo5\obj\Debug\netcoreapp3.1\TP-Grupo5.genruntimeconfig.cache
