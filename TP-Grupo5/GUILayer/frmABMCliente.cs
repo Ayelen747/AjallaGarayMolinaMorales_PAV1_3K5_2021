@@ -32,6 +32,7 @@ namespace TP_Grupo5.GUILayer
             insert,
             update,
             delete,
+            restored
         }
 
         public void SeleccionarCliente(FormMode op, int id)
@@ -61,7 +62,15 @@ namespace TP_Grupo5.GUILayer
                         LlenarCampos();
                         grbCliente.Enabled = false;
                         break;
+                    };
+                case FormMode.restored:
+                    {
+                        this.Text = "Restaurar Cliente";
+                        LlenarCampos();
+                        grbCliente.Enabled = false;
+                        break;
                     }
+                    
             }
         }
 
@@ -163,24 +172,49 @@ namespace TP_Grupo5.GUILayer
                         {
                             Id_cliente = idCliente
                         };
-                        bool valor = oClienteServicio.EliminarCliente(oCliente);
+                        var info = MessageBox.Show("¿Esta seguro que desea eliminar este cliente?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                        if (info == DialogResult.Yes)
+                        {
+                            bool valor = oClienteServicio.EliminarCliente(oCliente);
+                            if (valor)
+                            {
+                                MessageBox.Show("Eliminado", "Notificación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                this.Close();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Error", "Notificación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                        break;
+                    };
+                case FormMode.restored:
+                    {
+                        Cliente oCliente = new Cliente
+                        {
+                            Id_cliente = idCliente
+                        };
+                        bool valor = oClienteServicio.RecuperarCliente(oCliente);
                         if (valor)
                         {
-                            MessageBox.Show("Eliminado","Notificación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            MessageBox.Show("Recuperado", "Notificación", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             this.Close();
                         }
                         else
                         {
                             MessageBox.Show("Error", "Notificación", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
+
                         break;
                     }
+
             }
         }
 
         private void LlenarCampos()
         {
-            Cliente oCliente = oClienteServicio.consultaConFiltros(" AND c.id_cliente=" + idCliente)[0];
+            Cliente oCliente = oClienteServicio.consultaConFiltros(" OR c.borrado=1 AND c.id_cliente=" + idCliente)[0];
             txtId.Text = oCliente.Id_cliente.ToString();
             txtRazonSocial.Text = oCliente.Razon_social;
             txtCuit.Text = oCliente.Cuit.ToString();

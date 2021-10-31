@@ -25,11 +25,11 @@ namespace TP_Grupo5.GUILayer
             oProductoServicio = new ProductoServicio();
             oProyectoServicio = new ProyectoServicio();
             oFacturaServicio = new FacturaServicio();
-            LlenarCombo(cboCliente,oClienteServicio.dameTodo(), "Razon_social", "Id_cliente");
-            LlenarCombo(cboUCreador,oUsuarioServicio.ObtenerTodos(),"Nombre","Id_Usuario");
-            LlenarCombo(cboProyecto,oProyectoServicio.ObtenerTodos(), "Descripcion","Id_proyecto");
-            LlenarCombo(cboProducto,oProductoServicio.ObtenerTodos(),"Nombre", "Id_Producto");
-            
+            LlenarCombo(cboCliente, oClienteServicio.dameTodo(), "Razon_social", "Id_cliente");
+            LlenarCombo(cboUCreador, oUsuarioServicio.ObtenerTodos(), "Nombre", "Id_Usuario");
+            LlenarCombo(cboProyecto, oProyectoServicio.ObtenerTodos(), "Descripcion", "Id_proyecto");
+            LlenarCombo(cboProducto, oProductoServicio.ObtenerTodos(), "Nombre", "Id_Producto");
+
         }
         private void LlenarCombo(ComboBox cbo, Object source, string display, String value)
         {
@@ -38,7 +38,7 @@ namespace TP_Grupo5.GUILayer
             cbo.ValueMember = value;
             cbo.SelectedIndex = -1;
         }
-        
+
 
         private void btnAgregar_Click(object sender, EventArgs e)
         {
@@ -77,7 +77,7 @@ namespace TP_Grupo5.GUILayer
             {
                 if (cboProducto.SelectedIndex == -1)
                 {
-                    MessageBox.Show("Sleccecione un Producto o un Proyecto","Información",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    MessageBox.Show("Sleccecione un Producto o un Proyecto", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     cboProyecto.Focus();
                     return false;
                 }
@@ -96,7 +96,7 @@ namespace TP_Grupo5.GUILayer
         {
             cboProyecto.SelectedIndex = -1;
             cboProducto.SelectedIndex = -1;
-            txtPrecio.Text=string.Empty;
+            txtPrecio.Text = string.Empty;
             txtPrecio.BackColor = Color.White;
         }
 
@@ -183,7 +183,7 @@ namespace TP_Grupo5.GUILayer
         {
             if (txtNroFactura.Text == string.Empty)
             {
-                MessageBox.Show("Ingrese el numero de Factura ","Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Ingrese el numero de Factura ", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 txtNroFactura.BackColor = Color.LightPink;
                 txtNroFactura.Focus();
                 return false;
@@ -203,7 +203,7 @@ namespace TP_Grupo5.GUILayer
 
             if (grbFacturaDetalle.RowCount == 0)
             {
-                MessageBox.Show("Ingrese algún valor al detalle de la fatcura", "Inforamción",MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Ingrese algún valor al detalle de la fatcura", "Inforamción", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 cboCliente.Focus();
                 return false;
             }
@@ -217,15 +217,5 @@ namespace TP_Grupo5.GUILayer
             LlenarCombo(cboCliente, oClienteServicio.dameTodo(), "Razon_social", "Id_cliente");
         }
 
-        private int asignarNroFactura()
-        {
-            
-            return 0;
-        }
-
-        private void txtNroFactura_TextChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 }

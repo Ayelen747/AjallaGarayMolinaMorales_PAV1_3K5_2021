@@ -89,7 +89,6 @@ namespace TP_Grupo5
             {
                 for (int i = 0; i < lista.Count; i++)
                 {
-                    
                     grdClientes.Rows.Add(
                         lista[i].Id_cliente,
                         lista[i].Razon_social,
@@ -98,8 +97,12 @@ namespace TP_Grupo5
                         lista[i].Calle,
                         lista[i].Numero,
                         lista[i].Fecha_alta,
-                        lista[i].Contacto
+                        lista[i].Contacto,
+                        lista[i].Borrado
                         );
+
+                    if(lista[i].Borrado)
+                        grdClientes.Rows[i].DefaultCellStyle.BackColor = Color.LightPink;
                 }
                 grdClientes.CurrentRow.Selected = false;
                 btnActualizar.Enabled = true;
@@ -192,10 +195,21 @@ namespace TP_Grupo5
             else
             {
                 frmABMCliente ofrmABMCliente = new frmABMCliente();
-                ofrmABMCliente.SeleccionarCliente(frmABMCliente.FormMode.delete, (int)grdClientes.CurrentRow.Cells[0].Value);
+                if ((bool)grdClientes.CurrentRow.Cells["borrado"].Value)
+                    ofrmABMCliente.SeleccionarCliente(frmABMCliente.FormMode.restored, (int)grdClientes.CurrentRow.Cells[0].Value);
+                else
+                    ofrmABMCliente.SeleccionarCliente(frmABMCliente.FormMode.delete, (int)grdClientes.CurrentRow.Cells[0].Value);
                 ofrmABMCliente.ShowDialog();
                 btnBuscar_Click(sender,e);
             }
+        }
+
+        private void grdClientes_SelectionChanged(object sender, EventArgs e)
+        {
+            if ((bool)grdClientes.CurrentRow.Cells["borrado"].Value)
+                btnEliminar.Text = "Recuperar";
+            else
+                btnEliminar.Text = "Eliminar";
         }
     }
 }

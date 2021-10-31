@@ -10,7 +10,7 @@ namespace TP_Grupo5.Entities
         public int Cuit { get; set; }
         public String Razon_social { get; set; }
         public DateTime Fecha_alta { get; set; }
-        public int Borrado { get; set; }
+        public bool Borrado { get; set; }
         public string Calle { get; set; }
         public int Numero { get; set; }
         public Barrio Barrio { get; set; }

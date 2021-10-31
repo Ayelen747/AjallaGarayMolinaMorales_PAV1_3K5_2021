@@ -19,10 +19,11 @@ namespace TP_Grupo5
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new frmABMContacto());
-            //Application.Run(new frmConsultaCliente());
+            Application.Run(new frmConsultaCliente());
             //Application.Run(new frmLogin());
-            Application.Run(new frmPrincipal());
+            //Application.Run(new frmPrincipal());
             //Application.Run(new frmConsultarBarrio());
+            //Application.Run(new frmTransaccionFactura());
         }
     }
 }
