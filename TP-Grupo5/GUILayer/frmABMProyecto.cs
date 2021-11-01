@@ -13,17 +13,23 @@ using System.Windows.Forms;
 
 namespace TP_Grupo5.GUILayer
 {
-    public partial class frmProyectoABM : Form
+    public partial class frmABMProyecto : Form
     {
         private Proyecto oProyecto;
         private ProyectoServicio oProyectoServicio;
         private ProductoServicio oProductoServicio;
         private UsuarioServicio oUsuarioServicio;
-        private int op,idProyecto,idProducto;
-        
-        public int Op { get => op; set => op = value; }
+        private int idProyecto;
+        private FormMode op = FormMode.insert;
+        public enum FormMode
+        {
+            insert,
+            update,
+            delete,
+            restore
+        }
 
-        public frmProyectoABM()
+        public frmABMProyecto()
         {
             InitializeComponent();
             this.oProyecto = new Proyecto();
@@ -32,16 +38,11 @@ namespace TP_Grupo5.GUILayer
             this.oUsuarioServicio = new UsuarioServicio();
         }
 
-        public frmProyectoABM(int idProyecto)
+        public void SeleccionarProyecto(FormMode opcion, int id)
         {
-            InitializeComponent();
-            this.idProyecto = idProyecto;
-            this.oProyectoServicio = new ProyectoServicio();
-            this.oProductoServicio = new ProductoServicio();
-            this.oUsuarioServicio = new UsuarioServicio();
-            
+            this.op = opcion;
+            this.idProyecto = id;
         }
-
         private void frmProyectoABM_Load(object sender, EventArgs e)
         {
             txtID.Enabled = false;
@@ -49,27 +50,28 @@ namespace TP_Grupo5.GUILayer
             LlenarCombo(cboResponsable, oUsuarioServicio.ObtenerTodos(), "Nombre", "Id_usuario");
             switch (op)
             {
-                case 1:
+                case FormMode.insert:
                     {
                         this.Text = "Nuevo Proyecto";
-                        if (idProducto!=0)
-                        {
-                            LlenarCombo(cboProducto,oProductoServicio.ConsultarConFiltrosSinParametros(" AND id_producto=" + idProducto), "Nombre", "Id_producto");
-                            cboProducto.SelectedIndex = 0;
-                            cboProducto.Enabled = false;
-                        }
                     }
                     break;
-                case 2:
+                case FormMode.update:
                     {
                         this.Text = "Editar Proyecto";
                         llenarCampos();
                         habilitarCampos(true);
                     }
                     break;
-                case 3:
+                case FormMode.delete:
                     {
                         this.Text = "Eliminar Proyecto";
+                        llenarCampos();
+                        habilitarCampos(false);
+                    }
+                    break;
+                case FormMode.restore:
+                    {
+                        this.Text = "Recuperar Proyecto";
                         llenarCampos();
                         habilitarCampos(false);
                     }
@@ -88,23 +90,14 @@ namespace TP_Grupo5.GUILayer
         public void llenarCampos()
         {
             this.oProyecto =  oProyectoServicio.ObtenerProyectoPorID(this.idProyecto.ToString());
-            if (oProyecto!=null)
-            {   
-                txtID.Text = oProyecto.Id_proyecto.ToString();
-                cboProducto.SelectedValue = oProyecto.Producto.Id_Producto;
-                cboResponsable.SelectedValue = oProyecto.Responsable.Id_Usuario;
-                txtDescripcion.Text = oProyecto.Descripcion;
-                txtVersion.Text = oProyecto.Version;
-                txtAlcance.Text = oProyecto.Alcance;
-            }
-        }
 
-        public void SegunProducto(int id)
-        {
-            if (id > 0)
-                this.idProducto = id;
-            else
-                this.idProducto = 0;
+            txtID.Text = oProyecto.Id_proyecto.ToString();
+            cboProducto.SelectedValue = oProyecto.Producto.Id_Producto;
+            cboResponsable.SelectedValue = oProyecto.Responsable.Id_Usuario;
+            txtDescripcion.Text = oProyecto.Descripcion;
+            txtVersion.Text = oProyecto.Version;
+            txtAlcance.Text = oProyecto.Alcance;
+            
         }
 
         private void habilitarCampos(bool x)
@@ -123,9 +116,9 @@ namespace TP_Grupo5.GUILayer
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            switch (Op)
+            switch (op)
             {
-                case 1:
+                case FormMode.insert:
                     {
                         if (validarCampos())
                         {
@@ -142,14 +135,14 @@ namespace TP_Grupo5.GUILayer
                             {
 
                                 MessageBox.Show("Proyecto creado", "Notificación", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                this.Close();
+                                this.Dispose();
                             }
                             else
                                 MessageBox.Show("Falló la creación del proyecto","Error",MessageBoxButtons.OK,MessageBoxIcon.Error);
                         }
                         break;
                     }
-                case 2:
+                case FormMode.update:
                     {
                         if (validarCampos())
                         {
@@ -164,24 +157,40 @@ namespace TP_Grupo5.GUILayer
                             if (oProyectoServicio.ActualizarProyecto(oProyecto))
                             {
                                 MessageBox.Show("Proyecto actualizado","Notificación", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                this.Close();
+                                this.Dispose();
                             }
                             else
                                 MessageBox.Show("Falló la actualización del proyecto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                         break;
                     }
-                case 3: 
+                case FormMode.delete: 
                     {
-                        if (oProyectoServicio.EliminarProyecto(oProyecto))
+                        var resp = MessageBox.Show("¿Está seguro que desea eliminar este proyecto?","Advertencia",MessageBoxButtons.OKCancel,MessageBoxIcon.Warning);
+                        if (resp == DialogResult.OK)
                         {
-                            MessageBox.Show("Proyecto eliminado", "Notificación", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            this.Close();
-                        }   
-                        else
-                            MessageBox.Show("Falló la eliminación del proyecto","Error",MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        break;
+                            if (oProyectoServicio.EliminarProyecto(oProyecto))
+                            {
+                                MessageBox.Show("Proyecto eliminado", "Notificación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                this.Dispose();
+                            }
+                            else
+                                MessageBox.Show("Falló la eliminación del proyecto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        
                     }
+                    break;
+                case FormMode.restore:
+                    {
+                        if (oProyectoServicio.RestaurarProyecto(oProyecto))
+                        {
+                            MessageBox.Show("Proyecto recuperado", "Notificación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.Dispose();
+                        }
+                        else
+                            MessageBox.Show("Falló la eliminación del proyecto", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    break;
                     
             }
 

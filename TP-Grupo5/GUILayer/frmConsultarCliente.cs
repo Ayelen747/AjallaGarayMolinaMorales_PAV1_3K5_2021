@@ -39,8 +39,16 @@ namespace TP_Grupo5
         {
             string filtro = string.Empty;
 
-            if (!chkTodos.Checked)
+            if (!rbTodos.Checked)
             {
+                if (rbEliminado.Checked)
+                {
+                    filtro = filtro + " c.borrado=1";
+                }
+                if (rbActivos.Checked)
+                {
+                    filtro = filtro + " c.borrado=0";
+                }
                 if (txtRazonSocial.Text != string.Empty)
                 {
                     filtro = filtro + " AND c.razon_social LIKE '%" + txtRazonSocial.Text + "%'";
@@ -72,6 +80,8 @@ namespace TP_Grupo5
 
         private void habilitarCampos(Boolean valor)
         {
+            rbActivos.Checked = true;
+            rbActivos.Checked = valor;
             txtRazonSocial.Text = string.Empty;
             txtCuit.Text = string.Empty;
             dtpFechaDesde.Value = DateTime.Today;
@@ -115,14 +125,6 @@ namespace TP_Grupo5
                 btnActualizar.Enabled = false;
             }
                 
-        }
-
-        private void chkTodos_CheckedChanged(object sender, EventArgs e)
-        {
-            if (chkTodos.Checked)
-                gbBuscarCliente.Enabled = false;
-            else
-                gbBuscarCliente.Enabled = true;
         }
 
         private void btnLimpiar_Click(object sender, EventArgs e)
@@ -177,14 +179,6 @@ namespace TP_Grupo5
                 ofrmABMCliente.SeleccionarCliente(frmABMCliente.FormMode.update, id);
                 ofrmABMCliente.ShowDialog();
                 btnBuscar_Click(sender, e);
-                for (int i = 0; i < grdClientes.Rows.Count; i++)
-                {
-                    if ((int)grdClientes.Rows[i].Cells[0].Value == id)
-                    {
-                        grdClientes.Rows[i].DefaultCellStyle.BackColor = Color.LightGreen;
-                        break;
-                    }
-                }
             }
         }
 
@@ -207,9 +201,25 @@ namespace TP_Grupo5
         private void grdClientes_SelectionChanged(object sender, EventArgs e)
         {
             if ((bool)grdClientes.CurrentRow.Cells["borrado"].Value)
+            {
                 btnEliminar.Text = "Recuperar";
+                btnActualizar.Enabled = false;
+            }
+
             else
+            {
                 btnEliminar.Text = "Eliminar";
+                btnActualizar.Enabled = true;
+            }
+            
+        }
+
+        private void rbTodos_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbTodos.Checked)
+                gbBuscarCliente.Enabled = false;
+            else
+                gbBuscarCliente.Enabled = true;
         }
     }
 }

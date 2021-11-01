@@ -39,5 +39,10 @@ namespace TP_Grupo5.BusinesLayer
         {
             return oClienteDao.Restored(cliente);
         }
+
+        public Cliente ClientePorId(string id)
+        {
+            return oClienteDao.ClienteForId(id);
+        }
     }
 }

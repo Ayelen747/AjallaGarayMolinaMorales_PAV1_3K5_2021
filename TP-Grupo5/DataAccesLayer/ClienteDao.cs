@@ -8,7 +8,6 @@ namespace TP_Grupo5.DataAccesLayer
 {
     public class ClienteDao
     {
-        
         public IList<Cliente> getAll()
         {
             List<Cliente> listaClientes = new List<Cliente>();
@@ -30,7 +29,7 @@ namespace TP_Grupo5.DataAccesLayer
                                             "cont.telefono ",
                                             " FROM Clientes c ",
                                             " INNER JOIN Barrios b ON (c.id_barrio=b.id_barrio) left JOIN Contactos cont ON (cont.id_contacto=c.id_contacto) ",
-                                            " WHERE C.borrado=0 OR C.borrado=1",
+                                            " WHERE (C.borrado=0 OR C.borrado=1)",
                                             " ORDER BY c.razon_social");
 
             var resConsulta=DBHelper.GetDBHelper().ConsultaSQL(consulta);
@@ -39,6 +38,30 @@ namespace TP_Grupo5.DataAccesLayer
                 listaClientes.Add(ObjectMapping(row));
             }
             return listaClientes;
+        }
+
+        public Cliente ClienteForId(string id)
+        {
+            string consulta = string.Concat("SELECT ",
+                                            "c.id_cliente, ",
+                                            "c.razon_social, ",
+                                            "c.cuit, ",
+                                            "c.fecha_alta, ",
+                                            "c.calle, ",
+                                            "c.numero, ",
+                                            "c.borrado, ",
+                                            "b.id_barrio, ",
+                                            "b.nombre AS barrio, ",
+                                            "cont.id_contacto, ",
+                                            "cont.nombre, ",
+                                            "cont.apellido, ",
+                                            "cont.email, ",
+                                            "cont.telefono ",
+                                            " FROM Clientes c INNER JOIN Barrios b ON (c.id_barrio=b.id_barrio) left JOIN Contactos cont ON (cont.id_contacto=c.id_contacto)",
+                                            " WHERE c.id_cliente=");
+            consulta = consulta + id;
+            var resConsulta = DBHelper.GetDBHelper().ConsultaSQL(consulta);
+            return ObjectMapping(resConsulta.Rows[0]);
         }
 
         public IList<Cliente> consultWithFilter(string filtro)
@@ -61,9 +84,9 @@ namespace TP_Grupo5.DataAccesLayer
                                             "cont.email, ",
                                             "cont.telefono ",
                                             " FROM Clientes c ",
-                                            " INNER JOIN Barrios b ON (c.id_barrio=b.id_barrio) left JOIN Contactos cont ON (cont.id_contacto=c.id_contacto) ",
-                                            " WHERE C.borrado=0");
-            consulta = consulta + filtro+ " ORDER BY c.razon_social";
+                                            " INNER JOIN Barrios b ON (c.id_barrio=b.id_barrio) left JOIN Contactos cont ON (cont.id_contacto=c.id_contacto) ");
+
+            consulta = consulta + " WHERE " + filtro+ " ORDER BY c.razon_social";
             var resConsulta = DBHelper.GetDBHelper().ConsultaSQL(consulta);
             foreach (DataRow row in resConsulta.Rows)
             {

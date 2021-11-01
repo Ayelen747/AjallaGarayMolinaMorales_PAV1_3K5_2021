@@ -42,7 +42,6 @@ namespace TP_Grupo5
             this.lblRazonS = new System.Windows.Forms.Label();
             this.txtRazonSocial = new System.Windows.Forms.TextBox();
             this.btnBuscar = new System.Windows.Forms.Button();
-            this.chkTodos = new System.Windows.Forms.CheckBox();
             this.gbListaClientes = new System.Windows.Forms.GroupBox();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
@@ -60,6 +59,9 @@ namespace TP_Grupo5
             this.borrado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
+            this.rbEliminado = new System.Windows.Forms.RadioButton();
+            this.rbActivos = new System.Windows.Forms.RadioButton();
+            this.rbTodos = new System.Windows.Forms.RadioButton();
             this.gbBuscarCliente.SuspendLayout();
             this.gbFechaAlta.SuspendLayout();
             this.gbListaClientes.SuspendLayout();
@@ -188,17 +190,6 @@ namespace TP_Grupo5
             this.btnBuscar.UseVisualStyleBackColor = true;
             this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
-            // chkTodos
-            // 
-            this.chkTodos.AutoSize = true;
-            this.chkTodos.Location = new System.Drawing.Point(707, 79);
-            this.chkTodos.Name = "chkTodos";
-            this.chkTodos.Size = new System.Drawing.Size(58, 19);
-            this.chkTodos.TabIndex = 4;
-            this.chkTodos.Text = "Todos";
-            this.chkTodos.UseVisualStyleBackColor = true;
-            this.chkTodos.CheckedChanged += new System.EventHandler(this.chkTodos_CheckedChanged);
-            // 
             // gbListaClientes
             // 
             this.gbListaClientes.Controls.Add(this.btnEliminar);
@@ -208,7 +199,7 @@ namespace TP_Grupo5
             this.gbListaClientes.Controls.Add(this.grdClientes);
             this.gbListaClientes.Location = new System.Drawing.Point(12, 166);
             this.gbListaClientes.Name = "gbListaClientes";
-            this.gbListaClientes.Size = new System.Drawing.Size(776, 272);
+            this.gbListaClientes.Size = new System.Drawing.Size(775, 272);
             this.gbListaClientes.TabIndex = 1;
             this.gbListaClientes.TabStop = false;
             this.gbListaClientes.Text = "Lista de clientes";
@@ -273,7 +264,7 @@ namespace TP_Grupo5
             this.grdClientes.ReadOnly = true;
             this.grdClientes.RowTemplate.Height = 25;
             this.grdClientes.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.grdClientes.Size = new System.Drawing.Size(770, 206);
+            this.grdClientes.Size = new System.Drawing.Size(769, 206);
             this.grdClientes.TabIndex = 0;
             this.grdClientes.SelectionChanged += new System.EventHandler(this.grdClientes_SelectionChanged);
             // 
@@ -343,16 +334,52 @@ namespace TP_Grupo5
             this.btnLimpiar.UseVisualStyleBackColor = true;
             this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
+            // rbEliminado
+            // 
+            this.rbEliminado.AutoSize = true;
+            this.rbEliminado.Location = new System.Drawing.Point(707, 56);
+            this.rbEliminado.Name = "rbEliminado";
+            this.rbEliminado.Size = new System.Drawing.Size(83, 19);
+            this.rbEliminado.TabIndex = 6;
+            this.rbEliminado.TabStop = true;
+            this.rbEliminado.Text = "Eliminados";
+            this.rbEliminado.UseVisualStyleBackColor = true;
+            // 
+            // rbActivos
+            // 
+            this.rbActivos.AutoSize = true;
+            this.rbActivos.Location = new System.Drawing.Point(707, 31);
+            this.rbActivos.Name = "rbActivos";
+            this.rbActivos.Size = new System.Drawing.Size(64, 19);
+            this.rbActivos.TabIndex = 7;
+            this.rbActivos.TabStop = true;
+            this.rbActivos.Text = "Activos";
+            this.rbActivos.UseVisualStyleBackColor = true;
+            // 
+            // rbTodos
+            // 
+            this.rbTodos.AutoSize = true;
+            this.rbTodos.Location = new System.Drawing.Point(707, 81);
+            this.rbTodos.Name = "rbTodos";
+            this.rbTodos.Size = new System.Drawing.Size(57, 19);
+            this.rbTodos.TabIndex = 8;
+            this.rbTodos.TabStop = true;
+            this.rbTodos.Text = "Todos";
+            this.rbTodos.UseVisualStyleBackColor = true;
+            this.rbTodos.CheckedChanged += new System.EventHandler(this.rbTodos_CheckedChanged);
+            // 
             // frmConsultaCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(799, 450);
+            this.Controls.Add(this.rbTodos);
+            this.Controls.Add(this.rbActivos);
+            this.Controls.Add(this.rbEliminado);
             this.Controls.Add(this.gbListaClientes);
             this.Controls.Add(this.gbBuscarCliente);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.btnLimpiar);
-            this.Controls.Add(this.chkTodos);
             this.Name = "frmConsultaCliente";
             this.Text = "Clientes";
             this.gbBuscarCliente.ResumeLayout(false);
@@ -370,7 +397,6 @@ namespace TP_Grupo5
 
         private System.Windows.Forms.GroupBox gbBuscarCliente;
         private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.CheckBox chkTodos;
         private System.Windows.Forms.Label lblCUIT;
         private System.Windows.Forms.TextBox txtCuit;
         private System.Windows.Forms.Label lblRazonS;
@@ -399,6 +425,9 @@ namespace TP_Grupo5
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaAlta;
         private System.Windows.Forms.DataGridViewTextBoxColumn contacto;
         private System.Windows.Forms.DataGridViewTextBoxColumn borrado;
+        private System.Windows.Forms.RadioButton rbEliminado;
+        private System.Windows.Forms.RadioButton rbActivos;
+        private System.Windows.Forms.RadioButton rbTodos;
     }
 }
 
