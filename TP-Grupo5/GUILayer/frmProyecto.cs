@@ -31,6 +31,7 @@ namespace TP_Grupo5.GUILayer
         private void frmProyecto_Load(object sender, EventArgs e)
         {
             enableComponents(true);
+            rbActivos.Checked = true;
             LlenarCombo(cboProducto,oProductoServicio.ObtenerTodos(),"Nombre","Id_producto");
             LlenarCombo(cboResponsable,oUsuarioServicio.ObtenerTodos(),"Nombre", "Id_usuario");
         }
@@ -42,27 +43,21 @@ namespace TP_Grupo5.GUILayer
             cbo.SelectedIndex = -1;
         }
 
-        private void chkTodos_CheckedChanged(object sender, EventArgs e)
-        {
-            {
-                if (chkTodos.Checked)
-                {
-                    cboProducto.Enabled = false;
-                    cboResponsable.Enabled = false;
-                }
-                else
-                {
-                    cboProducto.Enabled = true;
-                    cboResponsable.Enabled = true;
-                }
-            }
-        }
 
         private void btnConsultar_Click(object sender, EventArgs e)
         {   
             String condiciones = string.Empty;
-            if (!chkTodos.Checked)
+            if (!rbTodos.Checked)
             {
+                if (rbActivos.Checked)
+                    condiciones += " AND py.borrado=0";
+
+                if (rbEliminado.Checked)
+                    condiciones += " AND py.borrado=1";
+
+                if (txtDescripcion.Text != string.Empty)
+                    condiciones += " AND py.descripcion ='" + txtDescripcion.Text+"' ";
+
                 if (cboProducto.Text != string.Empty)
                     condiciones += " AND pd.id_producto=" + cboProducto.SelectedValue.ToString();
 
@@ -89,26 +84,29 @@ namespace TP_Grupo5.GUILayer
             {
                 grilla.Rows.Add(
                     lista[i].Id_proyecto,
-                    lista[i].Producto.Nombre,
                     lista[i].Descripcion,
                     lista[i].Version,
+                    lista[i].Alcance,
                     lista[i].Responsable.Nombre,
-                    lista[i].Alcance);
+                    lista[i].Producto.Nombre,
+                    lista[i].Borrado
+                    );
+                if (lista[i].Borrado == 1)
+                    grdProyecto.Rows[i].DefaultCellStyle.BackColor = Color.LightPink;
             }
 
         }
         private void btnNuevo_Click(object sender, EventArgs e)
         {
-            frmProyectoABM formulario = new frmProyectoABM();
-            formulario.Op = 1;
+            frmABMProyecto formulario = new frmABMProyecto();
             formulario.ShowDialog();
             btnConsultar_Click(sender, e);//Recargar nuevamente la grilla
         }
         private void btnEditar_Click(object sender, EventArgs e)
         {
             int valor = (int)grdProyecto.CurrentRow.Cells[0].Value;
-            frmProyectoABM formulario = new frmProyectoABM(valor);
-            formulario.Op = 2;
+            frmABMProyecto formulario = new frmABMProyecto();
+            formulario.SeleccionarProyecto(frmABMProyecto.FormMode.update, valor);
             formulario.ShowDialog();
             btnConsultar_Click(sender, e);//Recargar nuevamente la grilla
             for (int i = 0; i < grdProyecto.Rows.Count; i++)
@@ -119,12 +117,17 @@ namespace TP_Grupo5.GUILayer
                     break;
                 }
             }
-            
         }
         private void btnEliminar_Click(object sender, EventArgs e)
         {
-            frmProyectoABM formulario = new frmProyectoABM((int)grdProyecto.CurrentRow.Cells[0].Value);
-            formulario.Op = 3;
+            int id = (int)grdProyecto.CurrentRow.Cells[0].Value;
+
+            frmABMProyecto formulario = new frmABMProyecto();
+            if ((int)grdProyecto.CurrentRow.Cells["borrado"].Value == 0)
+                formulario.SeleccionarProyecto(frmABMProyecto.FormMode.delete, id);
+            else
+                formulario.SeleccionarProyecto(frmABMProyecto.FormMode.restore, id);
+
             formulario.ShowDialog();
             btnConsultar_Click(sender, e);//Recargar nuevamente la grilla
         }
@@ -138,14 +141,40 @@ namespace TP_Grupo5.GUILayer
             btnEliminar.Enabled = !x;
         }
 
-        private void grdProyecto_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void rbTodos_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbTodos.Checked)
+            {
+                cboProducto.Enabled = false;
+                cboResponsable.Enabled = false;
+                txtDescripcion.Enabled = false;
+            }
+            else
+            {
+                cboProducto.Enabled = true;
+                cboResponsable.Enabled = true;
+                txtDescripcion.Enabled = true;
+            }
+        }
+
+        private void grdProyecto_SelectionChanged(object sender, EventArgs e)
+        {
+            if ((int)grdProyecto.CurrentRow.Cells["borrado"].Value == 1)
+            {
+                btnEliminar.Text = "Recuperar";
+                btnEditar.Enabled = false;
+            }
+            else
+            {
+                btnEliminar.Text = "Eliminar";
+                btnEditar.Enabled = true;
+            }
         }
     }
 }

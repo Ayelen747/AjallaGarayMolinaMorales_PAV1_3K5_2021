@@ -18,7 +18,7 @@ namespace TP_Grupo5
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            //Application.Run(new frmABMContacto());
+            //Application.Run(new frmProyecto());
             //Application.Run(new frmConsultaCliente());
             //Application.Run(new frmLogin());
             Application.Run(new frmPrincipal());

@@ -1,6 +1,6 @@
 ﻿namespace TP_Grupo5.GUILayer
 {
-    partial class frmProyectoABM
+    partial class frmABMProyecto
     {
         /// <summary>
         /// Required designer variable.

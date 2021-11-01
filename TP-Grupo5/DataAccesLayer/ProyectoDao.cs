@@ -14,7 +14,7 @@ namespace TP_Grupo5.DataAccesLayer
             String consultaSQL = string.Concat(
                 "SELECT py.id_proyecto,py.id_producto,py.descripcion,py.version,py.alcance,py.id_responsable,py.borrado,pd.id_producto,pd.nombre as producto,u.id_usuario,u.usuario as responsable" +
                 " FROM Proyectos py,Productos pd ,Usuarios u" +
-                " WHERE py.id_producto=pd.id_producto and py.id_responsable=u.id_usuario and py.borrado ='0'");
+                " WHERE py.id_producto=pd.id_producto and py.id_responsable=u.id_usuario ");
 
             var resultado = DBHelper.GetDBHelper().ConsultaSQL(consultaSQL);
 
@@ -52,7 +52,7 @@ namespace TP_Grupo5.DataAccesLayer
             String consultaSQL = string.Concat(
                 "SELECT py.id_proyecto,py.id_producto,py.descripcion,py.version,py.alcance,py.id_responsable,py.borrado,pd.id_producto,pd.nombre as producto,u.id_usuario,u.usuario as responsable" +
                 " FROM Proyectos py,Productos pd ,Usuarios u" +
-                " WHERE py.id_producto=pd.id_producto and py.id_responsable=u.id_usuario and py.borrado ='0'");
+                " WHERE py.id_producto=pd.id_producto and py.id_responsable=u.id_usuario ");
 
             consultaSQL += " AND py.id_proyecto=" + "'" + idProyecto + "'";
 
@@ -98,13 +98,22 @@ namespace TP_Grupo5.DataAccesLayer
                                 " where id_proyecto = " + oProyecto.Id_proyecto + " AND borrado = '0'";
             return (DBHelper.GetDBHelper().EjecutarSQL(consultaSQL) == 1);
         }
+
+        public bool Restore(Proyecto oProyecto)
+        {
+            string consultaSQL = "UPDATE Proyectos" +
+                                " set borrado='0'" +
+                                " where id_proyecto = " + oProyecto.Id_proyecto + " AND borrado = '1'";
+            return (DBHelper.GetDBHelper().EjecutarSQL(consultaSQL) == 1);
+        }
+
         public IList<Proyecto> GetByFiltersSinParametros(String condiciones)
         {
             List<Proyecto> lst = new List<Proyecto>();
             String consultaSQL = string.Concat(
                 "SELECT py.id_proyecto,py.id_producto,py.descripcion,py.version,py.alcance,py.id_responsable,py.borrado,pd.id_producto,pd.nombre as producto,u.id_usuario,u.usuario as responsable" +
                 " FROM Proyectos py,Productos pd ,Usuarios u" +
-                " WHERE py.id_producto=pd.id_producto AND py.id_responsable=u.id_usuario and py.borrado='0'");
+                " WHERE py.id_producto=pd.id_producto AND py.id_responsable=u.id_usuario ");
 
             consultaSQL += condiciones;
 

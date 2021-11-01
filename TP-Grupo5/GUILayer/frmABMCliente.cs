@@ -84,7 +84,7 @@ namespace TP_Grupo5.GUILayer
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            this.Close();
+            this.Dispose();
         }
 
         private void btnAceptar_Click(object sender, EventArgs e)
@@ -118,7 +118,7 @@ namespace TP_Grupo5.GUILayer
                             if (valor)
                             {
                                 MessageBox.Show("Creado", "Notificación", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                this.Close();
+                                this.Dispose();
                             }
                             else
                             {
@@ -157,7 +157,7 @@ namespace TP_Grupo5.GUILayer
                             if (valor)
                             {
                                 MessageBox.Show("Actualizado", "Notificación", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                this.Close();
+                                this.Dispose();
                             }
                             else
                             {
@@ -180,7 +180,7 @@ namespace TP_Grupo5.GUILayer
                             if (valor)
                             {
                                 MessageBox.Show("Eliminado", "Notificación", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                this.Close();
+                                this.Dispose();
                             }
                             else
                             {
@@ -199,7 +199,7 @@ namespace TP_Grupo5.GUILayer
                         if (valor)
                         {
                             MessageBox.Show("Recuperado", "Notificación", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            this.Close();
+                            this.Dispose();
                         }
                         else
                         {

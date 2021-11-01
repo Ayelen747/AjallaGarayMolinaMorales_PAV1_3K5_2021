@@ -80,6 +80,8 @@ namespace TP_Grupo5
 
         private void habilitarCampos(Boolean valor)
         {
+            rbActivos.Checked = true;
+            rbActivos.Checked = valor;
             txtRazonSocial.Text = string.Empty;
             txtCuit.Text = string.Empty;
             dtpFechaDesde.Value = DateTime.Today;

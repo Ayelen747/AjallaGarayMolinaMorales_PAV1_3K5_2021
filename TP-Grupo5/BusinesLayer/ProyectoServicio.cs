@@ -39,6 +39,11 @@ namespace TP_Grupo5.BusinesLayer
         {
             return oProyectoDao.Delete(oProyecto);
         }
+        public bool RestaurarProyecto(Proyecto oProyecto)
+        {
+            return oProyectoDao.Restore(oProyecto);
+        }
+        
 
 
     }
