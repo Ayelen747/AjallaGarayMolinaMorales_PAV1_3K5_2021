@@ -126,9 +126,11 @@ namespace TP_Grupo5.GUILayer
             else
             {
                 frmABMContacto ofrmABMContacto = new frmABMContacto();
-                ofrmABMContacto.SeleccionarContacto(frmABMContacto.FormMode.delete, (int)dgvContactos.CurrentRow.Cells[0].Value);
-                ofrmABMContacto.borrar_contacto();
-                chbTodos.Checked = true;
+                if ((bool)dgvContactos.CurrentRow.Cells["borrado"].Value)
+                    ofrmABMContacto.SeleccionarContacto(frmABMContacto.FormMode.restored, (int)dgvContactos.CurrentRow.Cells[0].Value);
+                else
+                    ofrmABMContacto.SeleccionarContacto(frmABMContacto.FormMode.delete, (int)dgvContactos.CurrentRow.Cells[0].Value);
+                ofrmABMContacto.ShowDialog();
                 btnBuscar_Click(sender, e);
             }
         }
@@ -170,5 +172,14 @@ namespace TP_Grupo5.GUILayer
 
             ofrmABMContacto.bandera = true;
         }
+
+        private void dgvContactos_SelectionChanged(object sender, EventArgs e)
+        {
+            if ((bool)dgvContactos.CurrentRow.Cells["borrado"].Value)
+                btnEliminar.Text = "Recuperar";
+            else
+                btnEliminar.Text = "Eliminar";
+        }
     }
+
 }

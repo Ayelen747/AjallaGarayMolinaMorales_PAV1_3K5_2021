@@ -142,6 +142,7 @@ namespace TP_Grupo5.GUILayer
             this.dgvContactos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvContactos.Size = new System.Drawing.Size(543, 194);
             this.dgvContactos.TabIndex = 11;
+            this.dgvContactos.SelectionChanged += new System.EventHandler(this.dgvContactos_SelectionChanged);
             // 
             // Id_contacto
             // 

@@ -207,7 +207,7 @@ namespace TP_Grupo5.GUILayer
                         }
 
                         break;
-                    }
+                    };
 
             }
         }

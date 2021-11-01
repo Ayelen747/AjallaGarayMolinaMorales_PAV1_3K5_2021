@@ -32,7 +32,10 @@ namespace TP_Grupo5.BusinesLayer
         {
             return oContactoDao.Delete(contacto);
         }
-
+        public bool RecuperarContacto(Contacto contacto)
+        {
+            return oContactoDao.Restore(contacto);
+        }
     }
     
 

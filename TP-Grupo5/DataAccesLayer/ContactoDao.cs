@@ -19,7 +19,7 @@ namespace TP_Grupo5.DataAccesLayer
                                             "c.telefono,",
                                             "c.borrado",
                                             " FROM Contactos c ",
-                                            " WHERE c.borrado=0 OR c.borrado=1");
+                                            " WHERE (c.borrado=0 OR c.borrado=1)");
             var resConsulta=DBHelper.GetDBHelper().ConsultaSQL(consulta);
             foreach (DataRow row in resConsulta.Rows)
             {
@@ -38,7 +38,7 @@ namespace TP_Grupo5.DataAccesLayer
                                             "c.telefono,",
                                             "c.borrado",
                                             " FROM Contactos c ",
-                                            " WHERE c.borrado=0");
+                                            " WHERE (c.borrado=0 OR c.borrado=1)");
             consulta = consulta + filtro + " ORDER BY c.id_contacto";
             var resConsulta = DBHelper.GetDBHelper().ConsultaSQL(consulta);
             foreach (DataRow row in resConsulta.Rows)
@@ -95,6 +95,12 @@ namespace TP_Grupo5.DataAccesLayer
             return (DBHelper.GetDBHelper().EjecutarSQL(consulta) == 1);
         }
 
-
+        public bool Restore(Contacto contacto)
+        {
+            string consulta = "UPDATE Contactos " +
+                              "SET borrado=0" +
+                              " WHERE id_contacto=" + contacto.Id_Contacto;
+            return (DBHelper.GetDBHelper().EjecutarSQL(consulta) == 1);
+        }
     }
 }
