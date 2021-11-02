@@ -209,7 +209,7 @@ namespace TP_Grupo5.GUILayer
 
         private void btnCancelar_Click_1(object sender, EventArgs e)
         {
-            this.Close();
+            this.Dispose();
         }
     }
 }

@@ -49,6 +49,7 @@ namespace TP_Grupo5.GUILayer
             this.dtpFechaAlta = new System.Windows.Forms.DateTimePicker();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnAceptar = new System.Windows.Forms.Button();
+            this.chkSinNroCalle = new System.Windows.Forms.CheckBox();
             this.grbCliente.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -138,6 +139,7 @@ namespace TP_Grupo5.GUILayer
             // 
             // grbCliente
             // 
+            this.grbCliente.Controls.Add(this.chkSinNroCalle);
             this.grbCliente.Controls.Add(this.txtCuit);
             this.grbCliente.Controls.Add(this.lblCuit);
             this.grbCliente.Controls.Add(this.chkSinContacto);
@@ -244,6 +246,17 @@ namespace TP_Grupo5.GUILayer
             this.btnAceptar.UseVisualStyleBackColor = true;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
+            // chkSinNroCalle
+            // 
+            this.chkSinNroCalle.AutoSize = true;
+            this.chkSinNroCalle.Location = new System.Drawing.Point(220, 167);
+            this.chkSinNroCalle.Name = "chkSinNroCalle";
+            this.chkSinNroCalle.Size = new System.Drawing.Size(79, 19);
+            this.chkSinNroCalle.TabIndex = 17;
+            this.chkSinNroCalle.Text = "Sin definir";
+            this.chkSinNroCalle.UseVisualStyleBackColor = true;
+            this.chkSinNroCalle.CheckedChanged += new System.EventHandler(this.chkSinNroCalle_CheckedChanged);
+            // 
             // frmABMCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -283,5 +296,6 @@ namespace TP_Grupo5.GUILayer
         private System.Windows.Forms.Label lblContacto;
         private System.Windows.Forms.TextBox txtCuit;
         private System.Windows.Forms.Label lblCuit;
+        private System.Windows.Forms.CheckBox chkSinNroCalle;
     }
 }

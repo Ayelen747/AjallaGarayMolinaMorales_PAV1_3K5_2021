@@ -220,8 +220,13 @@ namespace TP_Grupo5.GUILayer
             txtCuit.Text = oCliente.Cuit.ToString();
             cboBarrio.SelectedValue = oCliente.Barrio.Id_Barrio;
             txtCalle.Text = oCliente.Calle;
-            txtNroCalle.Text = oCliente.Numero.ToString();
-            if(oCliente.Contacto!=null)
+
+            if (oCliente.Numero==-1)
+                chkSinNroCalle.Checked = true;
+            else
+                txtNroCalle.Text = oCliente.Numero.ToString();
+
+            if (oCliente.Contacto!=null)
                 cboContacto.SelectedValue = oCliente.Contacto.Id_Contacto;
             dtpFechaAlta.Value = oCliente.Fecha_alta;
         }
@@ -256,12 +261,16 @@ namespace TP_Grupo5.GUILayer
                 txtRazonSocial.Focus();
                 return false;
             }
-            if (txtNroCalle.Text == string.Empty)
+            if (!chkSinNroCalle.Checked)
             {
-                txtNroCalle.BackColor = Color.LightPink;
-                txtNroCalle.Focus();
-                return false;
+                if (txtNroCalle.Text == string.Empty)
+                {
+                    txtNroCalle.BackColor = Color.LightPink;
+                    txtNroCalle.Focus();
+                    return false;
+                }
             }
+            
             if (!chkSinContacto.Checked)
             {
                 if (cboContacto.SelectedIndex == -1)
@@ -320,6 +329,12 @@ namespace TP_Grupo5.GUILayer
             }
         }
 
-        
+        private void chkSinNroCalle_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chkSinNroCalle.Checked)
+                txtNroCalle.Enabled = false;
+            else
+                txtNroCalle.Enabled = true;
+        }
     }
 }

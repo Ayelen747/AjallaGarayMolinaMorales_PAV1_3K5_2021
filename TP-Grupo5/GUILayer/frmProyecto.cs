@@ -56,7 +56,7 @@ namespace TP_Grupo5.GUILayer
                     condiciones += " AND py.borrado=1";
 
                 if (txtDescripcion.Text != string.Empty)
-                    condiciones += " AND py.descripcion ='" + txtDescripcion.Text+"' ";
+                    condiciones += " AND py.descripcion LIKE '%" + txtDescripcion.Text+"%' ";
 
                 if (cboProducto.Text != string.Empty)
                     condiciones += " AND pd.id_producto=" + cboProducto.SelectedValue.ToString();
