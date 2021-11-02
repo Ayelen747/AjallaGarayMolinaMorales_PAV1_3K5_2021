@@ -36,6 +36,10 @@ namespace TP_Grupo5.BusinesLayer
         {
             return oContactoDao.Restore(contacto);
         }
+        public Contacto ContactoPorId(string id)
+        {
+            return oContactoDao.ContactoForId(id);
+        }
     }
     
 

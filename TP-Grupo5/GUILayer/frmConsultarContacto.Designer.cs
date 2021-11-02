@@ -29,7 +29,6 @@ namespace TP_Grupo5.GUILayer
         /// </summary>
         private void InitializeComponent()
         {
-            this.chbTodos = new System.Windows.Forms.CheckBox();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnLimpiar = new System.Windows.Forms.Button();
@@ -37,31 +36,23 @@ namespace TP_Grupo5.GUILayer
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.dgvContactos = new System.Windows.Forms.DataGridView();
+            this.grbContactos = new System.Windows.Forms.GroupBox();
+            this.lblApellido = new System.Windows.Forms.Label();
+            this.lblNombre = new System.Windows.Forms.Label();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.txtApellido = new System.Windows.Forms.TextBox();
+            this.rbActivos = new System.Windows.Forms.RadioButton();
+            this.rbEliminados = new System.Windows.Forms.RadioButton();
+            this.rbTodos = new System.Windows.Forms.RadioButton();
             this.Id_contacto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.borrado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.grbContactos = new System.Windows.Forms.GroupBox();
-            this.lblApellido = new System.Windows.Forms.Label();
-            this.lblNombre = new System.Windows.Forms.Label();
-            this.txtNombre = new System.Windows.Forms.TextBox();
-            this.txtApellido = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvContactos)).BeginInit();
             this.grbContactos.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // chbTodos
-            // 
-            this.chbTodos.AutoSize = true;
-            this.chbTodos.Location = new System.Drawing.Point(36, 172);
-            this.chbTodos.Name = "chbTodos";
-            this.chbTodos.Size = new System.Drawing.Size(57, 19);
-            this.chbTodos.TabIndex = 16;
-            this.chbTodos.Text = "Todos";
-            this.chbTodos.UseVisualStyleBackColor = true;
-            this.chbTodos.CheckedChanged += new System.EventHandler(this.chbTodos_CheckedChanged);
             // 
             // btnBuscar
             // 
@@ -140,46 +131,9 @@ namespace TP_Grupo5.GUILayer
             this.dgvContactos.ReadOnly = true;
             this.dgvContactos.RowTemplate.Height = 25;
             this.dgvContactos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvContactos.Size = new System.Drawing.Size(543, 194);
+            this.dgvContactos.Size = new System.Drawing.Size(543, 204);
             this.dgvContactos.TabIndex = 11;
             this.dgvContactos.SelectionChanged += new System.EventHandler(this.dgvContactos_SelectionChanged);
-            // 
-            // Id_contacto
-            // 
-            this.Id_contacto.HeaderText = "Id";
-            this.Id_contacto.Name = "Id_contacto";
-            this.Id_contacto.ReadOnly = true;
-            this.Id_contacto.Visible = false;
-            // 
-            // Nombre
-            // 
-            this.Nombre.HeaderText = "Nombre";
-            this.Nombre.Name = "Nombre";
-            this.Nombre.ReadOnly = true;
-            // 
-            // Apellido
-            // 
-            this.Apellido.HeaderText = "Apellido";
-            this.Apellido.Name = "Apellido";
-            this.Apellido.ReadOnly = true;
-            // 
-            // Email
-            // 
-            this.Email.HeaderText = "Email";
-            this.Email.Name = "Email";
-            this.Email.ReadOnly = true;
-            // 
-            // Telefono
-            // 
-            this.Telefono.HeaderText = "Telefono";
-            this.Telefono.Name = "Telefono";
-            this.Telefono.ReadOnly = true;
-            // 
-            // borrado
-            // 
-            this.borrado.HeaderText = "Borrado";
-            this.borrado.Name = "borrado";
-            this.borrado.ReadOnly = true;
             // 
             // grbContactos
             // 
@@ -226,12 +180,89 @@ namespace TP_Grupo5.GUILayer
             this.txtApellido.Size = new System.Drawing.Size(162, 23);
             this.txtApellido.TabIndex = 1;
             // 
+            // rbActivos
+            // 
+            this.rbActivos.AutoSize = true;
+            this.rbActivos.Location = new System.Drawing.Point(14, 147);
+            this.rbActivos.Name = "rbActivos";
+            this.rbActivos.Size = new System.Drawing.Size(64, 19);
+            this.rbActivos.TabIndex = 19;
+            this.rbActivos.TabStop = true;
+            this.rbActivos.Text = "Activos";
+            this.rbActivos.UseVisualStyleBackColor = true;
+            this.rbActivos.CheckedChanged += new System.EventHandler(this.rbActivos_CheckedChanged);
+            // 
+            // rbEliminados
+            // 
+            this.rbEliminados.AutoSize = true;
+            this.rbEliminados.Location = new System.Drawing.Point(14, 172);
+            this.rbEliminados.Name = "rbEliminados";
+            this.rbEliminados.Size = new System.Drawing.Size(72, 19);
+            this.rbEliminados.TabIndex = 20;
+            this.rbEliminados.TabStop = true;
+            this.rbEliminados.Text = "Borrados";
+            this.rbEliminados.UseVisualStyleBackColor = true;
+            this.rbEliminados.CheckedChanged += new System.EventHandler(this.rbEliminados_CheckedChanged);
+            // 
+            // rbTodos
+            // 
+            this.rbTodos.AutoSize = true;
+            this.rbTodos.Location = new System.Drawing.Point(14, 197);
+            this.rbTodos.Name = "rbTodos";
+            this.rbTodos.Size = new System.Drawing.Size(56, 19);
+            this.rbTodos.TabIndex = 21;
+            this.rbTodos.TabStop = true;
+            this.rbTodos.Text = "Todos";
+            this.rbTodos.UseVisualStyleBackColor = true;
+            this.rbTodos.CheckedChanged += new System.EventHandler(this.rbTodos_CheckedChanged);
+            // 
+            // Id_contacto
+            // 
+            this.Id_contacto.HeaderText = "Id";
+            this.Id_contacto.Name = "Id_contacto";
+            this.Id_contacto.ReadOnly = true;
+            this.Id_contacto.Visible = false;
+            // 
+            // Nombre
+            // 
+            this.Nombre.HeaderText = "Nombre";
+            this.Nombre.Name = "Nombre";
+            this.Nombre.ReadOnly = true;
+            // 
+            // Apellido
+            // 
+            this.Apellido.HeaderText = "Apellido";
+            this.Apellido.Name = "Apellido";
+            this.Apellido.ReadOnly = true;
+            // 
+            // Email
+            // 
+            this.Email.HeaderText = "Email";
+            this.Email.Name = "Email";
+            this.Email.ReadOnly = true;
+            this.Email.Width = 200;
+            // 
+            // Telefono
+            // 
+            this.Telefono.HeaderText = "Telefono";
+            this.Telefono.Name = "Telefono";
+            this.Telefono.ReadOnly = true;
+            // 
+            // borrado
+            // 
+            this.borrado.HeaderText = "Borrado";
+            this.borrado.Name = "borrado";
+            this.borrado.ReadOnly = true;
+            this.borrado.Visible = false;
+            // 
             // frmConsultarContacto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(854, 332);
-            this.Controls.Add(this.chbTodos);
+            this.Controls.Add(this.rbTodos);
+            this.Controls.Add(this.rbEliminados);
+            this.Controls.Add(this.rbActivos);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnLimpiar);
@@ -252,8 +283,6 @@ namespace TP_Grupo5.GUILayer
         }
 
         #endregion
-
-        private System.Windows.Forms.CheckBox chbTodos;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnLimpiar;
@@ -266,6 +295,9 @@ namespace TP_Grupo5.GUILayer
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtApellido;
+        private System.Windows.Forms.RadioButton rbActivos;
+        private System.Windows.Forms.RadioButton rbEliminados;
+        private System.Windows.Forms.RadioButton rbTodos;
         private System.Windows.Forms.DataGridViewTextBoxColumn Id_contacto;
         private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;
