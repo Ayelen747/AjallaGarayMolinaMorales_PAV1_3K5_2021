@@ -29,8 +29,6 @@ namespace TP_Grupo5.GUILayer
         /// </summary>
         private void InitializeComponent()
         {
-            this.NroFactura = new System.Windows.Forms.Label();
-            this.txtNroFactura = new System.Windows.Forms.TextBox();
             this.lblFecha = new System.Windows.Forms.Label();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.lblCliente = new System.Windows.Forms.Label();
@@ -62,26 +60,10 @@ namespace TP_Grupo5.GUILayer
             this.gbDetalle.SuspendLayout();
             this.SuspendLayout();
             // 
-            // NroFactura
-            // 
-            this.NroFactura.AutoSize = true;
-            this.NroFactura.Location = new System.Drawing.Point(12, 15);
-            this.NroFactura.Name = "NroFactura";
-            this.NroFactura.Size = new System.Drawing.Size(91, 15);
-            this.NroFactura.TabIndex = 0;
-            this.NroFactura.Text = "Nro. de Factura:";
-            // 
-            // txtNroFactura
-            // 
-            this.txtNroFactura.Location = new System.Drawing.Point(109, 12);
-            this.txtNroFactura.Name = "txtNroFactura";
-            this.txtNroFactura.Size = new System.Drawing.Size(89, 23);
-            this.txtNroFactura.TabIndex = 1;
-            // 
             // lblFecha
             // 
             this.lblFecha.AutoSize = true;
-            this.lblFecha.Location = new System.Drawing.Point(506, 15);
+            this.lblFecha.Location = new System.Drawing.Point(518, 15);
             this.lblFecha.Name = "lblFecha";
             this.lblFecha.Size = new System.Drawing.Size(41, 15);
             this.lblFecha.TabIndex = 2;
@@ -90,7 +72,7 @@ namespace TP_Grupo5.GUILayer
             // dtpFecha
             // 
             this.dtpFecha.Enabled = false;
-            this.dtpFecha.Location = new System.Drawing.Point(553, 12);
+            this.dtpFecha.Location = new System.Drawing.Point(565, 12);
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(215, 23);
             this.dtpFecha.TabIndex = 3;
@@ -98,7 +80,7 @@ namespace TP_Grupo5.GUILayer
             // lblCliente
             // 
             this.lblCliente.AutoSize = true;
-            this.lblCliente.Location = new System.Drawing.Point(56, 44);
+            this.lblCliente.Location = new System.Drawing.Point(16, 15);
             this.lblCliente.Name = "lblCliente";
             this.lblCliente.Size = new System.Drawing.Size(47, 15);
             this.lblCliente.TabIndex = 4;
@@ -108,7 +90,7 @@ namespace TP_Grupo5.GUILayer
             // 
             this.cboCliente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCliente.FormattingEnabled = true;
-            this.cboCliente.Location = new System.Drawing.Point(109, 41);
+            this.cboCliente.Location = new System.Drawing.Point(69, 12);
             this.cboCliente.Name = "cboCliente";
             this.cboCliente.Size = new System.Drawing.Size(185, 23);
             this.cboCliente.TabIndex = 5;
@@ -178,7 +160,6 @@ namespace TP_Grupo5.GUILayer
             this.grbFacturaDetalle.Size = new System.Drawing.Size(376, 165);
             this.grbFacturaDetalle.TabIndex = 7;
             this.grbFacturaDetalle.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.grbFacturaDetalle_RowPostPaint);
-            
             // 
             // descripcion
             // 
@@ -299,7 +280,7 @@ namespace TP_Grupo5.GUILayer
             // 
             this.cboUCreador.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboUCreador.FormattingEnabled = true;
-            this.cboUCreador.Location = new System.Drawing.Point(484, 41);
+            this.cboUCreador.Location = new System.Drawing.Point(318, 12);
             this.cboUCreador.Name = "cboUCreador";
             this.cboUCreador.Size = new System.Drawing.Size(185, 23);
             this.cboUCreador.TabIndex = 13;
@@ -307,7 +288,7 @@ namespace TP_Grupo5.GUILayer
             // lblUCreador
             // 
             this.lblUCreador.AutoSize = true;
-            this.lblUCreador.Location = new System.Drawing.Point(426, 44);
+            this.lblUCreador.Location = new System.Drawing.Point(260, 15);
             this.lblUCreador.Name = "lblUCreador";
             this.lblUCreador.Size = new System.Drawing.Size(52, 15);
             this.lblUCreador.TabIndex = 12;
@@ -315,7 +296,7 @@ namespace TP_Grupo5.GUILayer
             // 
             // btnNuevoCliente
             // 
-            this.btnNuevoCliente.Location = new System.Drawing.Point(300, 40);
+            this.btnNuevoCliente.Location = new System.Drawing.Point(69, 40);
             this.btnNuevoCliente.Name = "btnNuevoCliente";
             this.btnNuevoCliente.Size = new System.Drawing.Size(75, 23);
             this.btnNuevoCliente.TabIndex = 14;
@@ -338,11 +319,9 @@ namespace TP_Grupo5.GUILayer
             this.Controls.Add(this.lblCliente);
             this.Controls.Add(this.dtpFecha);
             this.Controls.Add(this.lblFecha);
-            this.Controls.Add(this.txtNroFactura);
-            this.Controls.Add(this.NroFactura);
             this.Name = "frmTransaccionFactura";
             this.Text = "frmTransaccionFactura";
-            this.Load += new System.EventHandler(this.frmTransaccionFactura_Load);
+
             this.gbFacturaDetalle.ResumeLayout(false);
             this.gbGrilla.ResumeLayout(false);
             this.gbGrilla.PerformLayout();
@@ -355,9 +334,6 @@ namespace TP_Grupo5.GUILayer
         }
 
         #endregion
-
-        private System.Windows.Forms.Label NroFactura;
-        private System.Windows.Forms.TextBox txtNroFactura;
         private System.Windows.Forms.Label lblFecha;
         private System.Windows.Forms.DateTimePicker dtpFecha;
         private System.Windows.Forms.Label lblCliente;
@@ -379,9 +355,9 @@ namespace TP_Grupo5.GUILayer
         private System.Windows.Forms.ComboBox cboUCreador;
         private System.Windows.Forms.Label lblUCreador;
         private System.Windows.Forms.Button btnNuevoCliente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn precio;
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.TextBox txtTotal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn precio;
     }
 }

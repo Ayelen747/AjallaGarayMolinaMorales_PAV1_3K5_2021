@@ -44,18 +44,18 @@ namespace TP_Grupo5.GUILayer
         {
             if (validarCamposDetalle())
             {
-                var objeto = new Object();
+                Object objeto ;
                 if (cboProyecto.SelectedIndex != -1)
                     objeto = cboProyecto.SelectedItem;
                 else
                     objeto = cboProducto.SelectedItem;
                 grbFacturaDetalle.Rows.Add(new object[] { objeto, txtPrecio.Text });
                 limpiarCamposDetalle();
-                sumarDetalles();
+                SumarDetalles();
             }
         }
 
-        private void sumarDetalles()
+        private void SumarDetalles()
         {
             int total = 0;
             if (grbFacturaDetalle.Rows.Count > 0)
@@ -75,6 +75,7 @@ namespace TP_Grupo5.GUILayer
         {
             if (cboProyecto.SelectedIndex == -1)
             {
+                
                 if (cboProducto.SelectedIndex == -1)
                 {
                     MessageBox.Show("Sleccecione un Producto o un Proyecto", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -82,6 +83,25 @@ namespace TP_Grupo5.GUILayer
                     return false;
                 }
             }
+
+            if (cboProyecto.SelectedIndex != -1)
+            {
+                if (ExisteEnGrilla(cboProyecto.SelectedItem))
+                {
+                    MessageBox.Show("El proyecto ya se encuentra en la lista del detalle", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return false;
+                }
+
+            }
+            if (cboProducto.SelectedIndex != -1)
+            {
+                if (ExisteEnGrilla(cboProducto.SelectedItem))
+                {
+                    MessageBox.Show("El producto ya se encuentra en la lista del detalle", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return false;
+                }
+            }
+
             if (txtPrecio.Text == string.Empty)
             {
                 MessageBox.Show("Ingrese monto", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -90,6 +110,19 @@ namespace TP_Grupo5.GUILayer
                 return false;
             }
             return true;
+
+        }
+
+        private bool ExisteEnGrilla(Object objeto)
+        {
+            for (int i = 0; i < grbFacturaDetalle.RowCount; i++)
+            {
+                if (grbFacturaDetalle.Rows[i].Cells["Descripcion"].Value.Equals(objeto))
+                {
+                    return true;
+                }
+            }
+            return false;
         }
 
         private void limpiarCamposDetalle()
@@ -99,12 +132,6 @@ namespace TP_Grupo5.GUILayer
             txtPrecio.Text = string.Empty;
             txtPrecio.BackColor = Color.White;
         }
-
-        private void frmTransaccionFactura_Load(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnSalir_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -134,7 +161,7 @@ namespace TP_Grupo5.GUILayer
             {
                 grbFacturaDetalle.Rows.Remove(row);
             }
-            sumarDetalles();
+            SumarDetalles();
         }
 
         private void btnGuardar_Click(object sender, EventArgs e)
@@ -143,7 +170,6 @@ namespace TP_Grupo5.GUILayer
             {
                 Factura oFactura = new Factura
                 {
-                    NroFactura = Convert.ToInt32(txtNroFactura.Text),
                     Cliente = (Cliente)cboCliente.SelectedItem,
                     Creador = (Usuario)cboUCreador.SelectedItem
                 };
@@ -173,7 +199,6 @@ namespace TP_Grupo5.GUILayer
 
         public void limpiarCampos()
         {
-            txtNroFactura.Text = string.Empty;
             cboCliente.SelectedIndex = -1;
             cboUCreador.SelectedIndex = -1;
             grbFacturaDetalle.Rows.Clear();
@@ -181,13 +206,6 @@ namespace TP_Grupo5.GUILayer
         }
         private bool validarCamposFactura()
         {
-            if (txtNroFactura.Text == string.Empty)
-            {
-                MessageBox.Show("Ingrese el numero de Factura ", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                txtNroFactura.BackColor = Color.LightPink;
-                txtNroFactura.Focus();
-                return false;
-            }
             if (cboCliente.SelectedIndex == -1)
             {
                 MessageBox.Show("Seleccione un Cliente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);

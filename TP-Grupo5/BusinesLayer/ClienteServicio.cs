@@ -37,7 +37,7 @@ namespace TP_Grupo5.BusinesLayer
 
         public bool RecuperarCliente(Cliente cliente)
         {
-            return oClienteDao.Restore(cliente);
+            return oClienteDao.Restored(cliente);
         }
 
         public Cliente ClientePorId(string id)

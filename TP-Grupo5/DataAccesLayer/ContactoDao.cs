@@ -19,7 +19,8 @@ namespace TP_Grupo5.DataAccesLayer
                                             "c.telefono,",
                                             "c.borrado",
                                             " FROM Contactos c ",
-                                            " WHERE c.borrado=0");
+                                            " WHERE (c.borrado=0 OR c.borrado=1)",
+                                            " ORDER BY c.nombre");
             var resConsulta=DBHelper.GetDBHelper().ConsultaSQL(consulta);
             foreach (DataRow row in resConsulta.Rows)
             {
@@ -27,6 +28,23 @@ namespace TP_Grupo5.DataAccesLayer
             }
             return listaCliente;
         }
+
+        public Contacto ContactoForId(string id)
+        {
+            string consulta = string.Concat(" SELECT ",
+                                            "c.id_contacto,",
+                                            "c.apellido,",
+                                            "c.email,",
+                                            "c.nombre,",
+                                            "c.telefono,",
+                                            "c.borrado",
+                                            " FROM Contactos c",
+                                            " WHERE c.id_contacto=");
+            consulta = consulta + id;
+            var resConsulta = DBHelper.GetDBHelper().ConsultaSQL(consulta);
+            return ObjectMapping(resConsulta.Rows[0]);
+        }
+
         public IList<Contacto> consultWithFilter(string filtro)
         {
             List<Contacto> listaCliente = new List<Contacto>();
@@ -37,9 +55,8 @@ namespace TP_Grupo5.DataAccesLayer
                                             "c.nombre,",
                                             "c.telefono,",
                                             "c.borrado",
-                                            " FROM Contactos c ",
-                                            " WHERE c.borrado=0");
-            consulta = consulta + filtro + " ORDER BY c.id_contacto";
+                                            " FROM Contactos c ");
+            consulta = consulta + "WHERE" + filtro + " ORDER BY c.nombre";
             var resConsulta = DBHelper.GetDBHelper().ConsultaSQL(consulta);
             foreach (DataRow row in resConsulta.Rows)
             {
@@ -57,6 +74,7 @@ namespace TP_Grupo5.DataAccesLayer
                 Email = row["email"].ToString(),
                 Nombre= row["nombre"].ToString(),
                 Telefono=row["telefono"].ToString(),
+                Borrado = Convert.ToBoolean(row["borrado"].ToString())
             };
             return oContacto;
         }
@@ -94,6 +112,12 @@ namespace TP_Grupo5.DataAccesLayer
             return (DBHelper.GetDBHelper().EjecutarSQL(consulta) == 1);
         }
 
-
+        public bool Restore(Contacto contacto)
+        {
+            string consulta = "UPDATE Contactos " +
+                              "SET borrado=0" +
+                              " WHERE id_contacto=" + contacto.Id_Contacto;
+            return (DBHelper.GetDBHelper().EjecutarSQL(consulta) == 1);
+        }
     }
 }

@@ -171,11 +171,11 @@ namespace TP_Grupo5.DataAccesLayer
             return (DBHelper.GetDBHelper().EjecutarSQL(consulta) == 1);
         }
 
-        public bool Restore(Cliente cliente)
+        public bool Restored(Cliente cliente)
         {
             string consulta = "UPDATE Clientes " +
-                                  "SET borrado=0" +
-                                  " WHERE id_cliente=" + cliente.Id_cliente;
+                              "SET borrado=0" +
+                              " WHERE id_cliente=" + cliente.Id_cliente;
             return (DBHelper.GetDBHelper().EjecutarSQL(consulta) == 1);
         }
     }

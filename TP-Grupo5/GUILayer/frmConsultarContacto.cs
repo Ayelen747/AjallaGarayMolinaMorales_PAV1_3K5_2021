@@ -10,19 +10,21 @@ using TP_Grupo5.Entities;
 
 namespace TP_Grupo5.GUILayer
 {
-    public partial class frmConsultarContactocs : Form
+    public partial class frmConsultarContacto : Form
     {
         private ContactoServicio oContactoServicio;
-        public frmConsultarContactocs()
+        public frmConsultarContacto()
         {
             InitializeComponent();
             oContactoServicio = new ContactoServicio();
+            habilitarCampos(true);
         }
 
         
 
         private void habilitarCampos(Boolean valor)
         {
+            rbActivos.Checked = true;
             grbContactos.Enabled = true;
             txtNombre.Text = string.Empty;
             txtApellido.Text = string.Empty;
@@ -44,10 +46,12 @@ namespace TP_Grupo5.GUILayer
                         lista[i].Nombre,
                         lista[i].Apellido,
                         lista[i].Email,
-                        lista[i].Telefono
+                        lista[i].Telefono,
+                        lista[i].Borrado
                         );
+                    if (lista[i].Borrado == true)
+                        dgvContactos.Rows[i].DefaultCellStyle.BackColor = Color.LightPink;
                 }
-                dgvContactos.CurrentRow.Selected = false;
                 btnActualizar.Enabled = true;
                 btnEliminar.Enabled = true;
             }
@@ -61,9 +65,6 @@ namespace TP_Grupo5.GUILayer
 
         }
 
-        
-
-        
 
 
         private void frmConsultarContactocs_Load(object sender, EventArgs e)
@@ -75,47 +76,33 @@ namespace TP_Grupo5.GUILayer
         {
             string filtro = string.Empty;
 
-            if (!chbTodos.Checked)
+            if (!rbTodos.Checked)
             {
-                if (txtNombre.Text == string.Empty && txtApellido.Text == string.Empty)
-                {
-                    MessageBox.Show("ingrese datos", "adv");
-                }
-                else
-                {
-                    if (txtNombre.Text != string.Empty)
-                    {
-                        filtro = filtro + " AND c.nombre LIKE '%" + txtNombre.Text + "%'";
-                        llenarGrilla(dgvContactos, oContactoServicio.consultaConFiltros(filtro));
-                    }
 
-                    if (txtApellido.Text != string.Empty)
-                    {
-                        filtro = filtro + " AND c.apellido LIKE '%" + txtApellido.Text + "%'";
-                        llenarGrilla(dgvContactos, oContactoServicio.consultaConFiltros(filtro));
-                    }
+                if (rbEliminados.Checked)
+                {
+                    filtro = filtro + " c.borrado=1";
+                }
+                if (rbActivos.Checked)
+                {
+                    filtro = filtro + " c.borrado=0";
                 }
 
+                if (txtNombre.Text != string.Empty)
+                {
+                    filtro = filtro + " AND c.nombre LIKE '%" + txtNombre.Text + "%'";
+                }
 
+                if (txtApellido.Text != string.Empty)
+                {
+                    filtro = filtro + " AND c.apellido LIKE '%" + txtApellido.Text + "%'";
+                }
+                llenarGrilla(dgvContactos, oContactoServicio.consultaConFiltros(filtro));
             }
             else
-            {
                 llenarGrilla(dgvContactos, oContactoServicio.dameTodo());
-            }
         }
 
-        private void chbTodos_CheckedChanged(object sender, EventArgs e)
-        {
-            if (chbTodos.Checked)
-            {
-                txtNombre.Text = string.Empty;
-                txtApellido.Text = string.Empty;
-                grbContactos.Enabled = false;
-            }
-
-            else
-                grbContactos.Enabled = true;
-        }
         private void btnEliminar_Click(object sender, EventArgs e)
         {
             if (dgvContactos.CurrentRow == null)
@@ -123,9 +110,11 @@ namespace TP_Grupo5.GUILayer
             else
             {
                 frmABMContacto ofrmABMContacto = new frmABMContacto();
-                ofrmABMContacto.SeleccionarContacto(frmABMContacto.FormMode.delete, (int)dgvContactos.CurrentRow.Cells[0].Value);
-                ofrmABMContacto.borrar_contacto();
-                chbTodos.Checked = true;
+                if ((bool)dgvContactos.CurrentRow.Cells["borrado"].Value)
+                    ofrmABMContacto.SeleccionarContacto(frmABMContacto.FormMode.restored, (int)dgvContactos.CurrentRow.Cells[0].Value);
+                else
+                    ofrmABMContacto.SeleccionarContacto(frmABMContacto.FormMode.delete, (int)dgvContactos.CurrentRow.Cells[0].Value);
+                ofrmABMContacto.ShowDialog();
                 btnBuscar_Click(sender, e);
             }
         }
@@ -136,15 +125,15 @@ namespace TP_Grupo5.GUILayer
             else
             {
                 frmABMContacto ofrmABMContacto = new frmABMContacto();
-                ofrmABMContacto.SeleccionarContacto(frmABMContacto.FormMode.update, (int)dgvContactos.CurrentRow.Cells[0].Value);
+                int id = (int)dgvContactos.CurrentRow.Cells[0].Value;
+                ofrmABMContacto.SeleccionarContacto(frmABMContacto.FormMode.update, id);
                 ofrmABMContacto.ShowDialog();
-                chbTodos.Checked = true;
                 btnBuscar_Click(sender, e);
+
             }
         }
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
-            chbTodos.Checked = false;
             habilitarCampos(true);
 
         }
@@ -158,8 +147,57 @@ namespace TP_Grupo5.GUILayer
         {
             frmABMContacto ofrmABMContacto = new frmABMContacto();
             ofrmABMContacto.ShowDialog();
-            chbTodos.Checked = true;
+            if (ofrmABMContacto.bandera)
+            {
+                btnBuscar_Click(sender, e);
+            }
+
+            ofrmABMContacto.bandera = true;
+        }
+
+        private void dgvContactos_SelectionChanged(object sender, EventArgs e)
+        {
+            if ((bool)dgvContactos.CurrentRow.Cells["borrado"].Value)
+            {
+                btnEliminar.Text = "Recuperar";
+                btnActualizar.Enabled = false;
+            }
+
+
+            else
+            {
+                btnEliminar.Text = "Eliminar";
+                btnActualizar.Enabled = true;
+            }
+                
+        }
+
+        private void rbTodos_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbTodos.Checked)
+            {
+                txtNombre.Text = string.Empty;
+                txtApellido.Text = string.Empty;
+                grbContactos.Enabled = false;
+                btnBuscar.Enabled = false;
+            }
+
+            else
+            {
+                grbContactos.Enabled = true;
+                btnBuscar.Enabled = true;
+            }
+        }
+
+        private void rbActivos_CheckedChanged(object sender, EventArgs e)
+        {
+            btnBuscar_Click(sender, e);
+        }
+
+        private void rbEliminados_CheckedChanged(object sender, EventArgs e)
+        {
             btnBuscar_Click(sender, e);
         }
     }
+
 }

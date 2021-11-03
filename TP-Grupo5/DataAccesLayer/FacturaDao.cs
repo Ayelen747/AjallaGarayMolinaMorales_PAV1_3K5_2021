@@ -57,8 +57,14 @@ namespace TP_Grupo5.DataAccesLayer
             {
                 cnn.Open();
                 transaction = cnn.BeginTransaction();
+
+                SqlCommand cmdNFactura = new SqlCommand("SELECT MAX(f.numero_factura) FROM Facturas f", cnn, transaction);
+                string NroFactura = cmdNFactura.ExecuteScalar().ToString();
+                if (NroFactura == string.Empty)
+                    NroFactura ="0";
+
                 SqlCommand cmdMaestro = new SqlCommand("INSERT INTO Facturas(numero_factura,id_cliente,fecha,id_usuario_creador,borrado) VALUES(@numfactura,@id_cliente,@fecha,@id_creador,0)", cnn, transaction);
-                cmdMaestro.Parameters.AddWithValue("@numfactura", factura.NroFactura);
+                cmdMaestro.Parameters.AddWithValue("@numfactura", Convert.ToInt32(NroFactura) + 1);
                 cmdMaestro.Parameters.AddWithValue("@id_cliente", factura.Cliente.Id_cliente);
                 cmdMaestro.Parameters.AddWithValue("@fecha", DateTime.Today);
                 cmdMaestro.Parameters.AddWithValue("@id_creador", factura.Creador.Id_Usuario);

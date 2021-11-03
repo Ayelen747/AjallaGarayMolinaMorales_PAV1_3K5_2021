@@ -121,14 +121,14 @@ namespace TP_Grupo5.GUILayer
             this.txtApellido.Location = new System.Drawing.Point(61, 99);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(136, 23);
-            this.txtApellido.TabIndex = 3;
+            this.txtApellido.TabIndex = 2;
             // 
             // txtEmail
             // 
             this.txtEmail.Location = new System.Drawing.Point(61, 128);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(136, 23);
-            this.txtEmail.TabIndex = 2;
+            this.txtEmail.TabIndex = 3;
             // 
             // txtNombre
             // 
@@ -149,7 +149,7 @@ namespace TP_Grupo5.GUILayer
             this.btnAceptar.Location = new System.Drawing.Point(134, 235);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(75, 23);
-            this.btnAceptar.TabIndex = 1;
+            this.btnAceptar.TabIndex = 5;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = true;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click_1);
@@ -159,7 +159,7 @@ namespace TP_Grupo5.GUILayer
             this.btnCancelar.Location = new System.Drawing.Point(218, 235);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 2;
+            this.btnCancelar.TabIndex = 0;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click_1);

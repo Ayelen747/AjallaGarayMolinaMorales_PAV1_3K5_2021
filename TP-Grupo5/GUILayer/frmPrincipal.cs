@@ -54,7 +54,7 @@ namespace TP_Grupo5.GUILayer
 
         private void consultarContactosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmConsultarContactocs fm = new frmConsultarContactocs();
+            frmConsultarContacto fm = new frmConsultarContacto();
             fm.ShowDialog();
         }
     }

@@ -21,9 +21,10 @@ namespace TP_Grupo5
             //Application.Run(new frmProyecto());
             //Application.Run(new frmConsultaCliente());
             //Application.Run(new frmLogin());
-            Application.Run(new frmPrincipal());
+            //Application.Run(new frmConsultarContacto());
             //Application.Run(new frmConsultarBarrio());
             //Application.Run(new frmTransaccionFactura());
+            Application.Run(new frmPrincipal());
         }
     }
 }

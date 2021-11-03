@@ -15,6 +15,7 @@ namespace TP_Grupo5.GUILayer
         private ContactoServicio oContactoServicio;
         private int idContacto;
         private FormMode formMode = FormMode.insert;
+        public bool bandera { get; set; }
         public frmABMContacto()
         {
             InitializeComponent();
@@ -26,6 +27,7 @@ namespace TP_Grupo5.GUILayer
             insert,
             update,
             delete,
+            restored
         }
 
         public void SeleccionarContacto(FormMode op, int id)
@@ -43,7 +45,7 @@ namespace TP_Grupo5.GUILayer
                     {
                         this.Text = "Nuevo Contacto";
                         break;
-                    }
+                    };
                 case FormMode.update:
                     {
                         this.Text = "Actualizar Contacto";
@@ -56,13 +58,20 @@ namespace TP_Grupo5.GUILayer
                         LlenarCampos();
                         grbContacto.Enabled = false;
                         break;
-                    }
+                    };
+                case FormMode.restored:
+                    {
+                        this.Text = "Recuperar Contacto";
+                        LlenarCampos();
+                        grbContacto.Enabled = false;
+                        break;
+                    };
             }
         }
 
         private void LlenarCampos()
         {
-            Contacto oContacto = oContactoServicio.consultaConFiltros(" AND c.id_contacto=" + idContacto)[0];
+            Contacto oContacto = oContactoServicio.ContactoPorId(idContacto.ToString());
             txtID.Text = oContacto.Id_Contacto.ToString();
             txtNombre.Text = oContacto.Nombre;
             txtApellido.Text = oContacto.Apellido;
@@ -70,10 +79,6 @@ namespace TP_Grupo5.GUILayer
             txtTelefono.Text = oContacto.Telefono.ToString();
         }
 
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
 
 
         private bool validarCampos()
@@ -96,6 +101,11 @@ namespace TP_Grupo5.GUILayer
                 txtEmail.Focus();
                 return false;
             }
+            if (BuscarEmailDistintos(txtEmail.Text, txtID.Text))
+            {
+                MessageBox.Show("El Email ya existe", "Notificación", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                return false;
+            }
             if (txtTelefono.Text == string.Empty)
             {
                 txtTelefono.BackColor = Color.LightPink;
@@ -105,33 +115,22 @@ namespace TP_Grupo5.GUILayer
             return true;
         }
 
-        public void borrar_contacto()
 
+        private bool BuscarEmailDistintos(string email, string id)
         {
-            Contacto oContacto = new Contacto
+            if (id != string.Empty)
             {
-                Id_Contacto = idContacto
-            };
-            var info = MessageBox.Show("¿Esta seguro que desea eliminar este contacto?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-            if (info == DialogResult.Yes)
-            {
-                bool valor = oContactoServicio.EliminarContacto(oContacto);
-                if (valor)
-                {
-                    MessageBox.Show("Eliminado", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.Close();
-                }
-                else
-                {
-                    MessageBox.Show("Error", "Información", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                id = " AND c.id_contacto !=" + id;
             }
-
+            IList<Contacto> lista = oContactoServicio.consultaConFiltros(" c.email='" + email + "'" + id);
+            if (lista.Count > 0)
+                return true;
+            return false;
         }
 
         private void btnAceptar_Click_1(object sender, EventArgs e)
         {
-
+            bandera = true;
             switch (formMode)
             {
                 case FormMode.insert:
@@ -150,7 +149,7 @@ namespace TP_Grupo5.GUILayer
                             if (valor)
                             {
                                 MessageBox.Show("Creado", "Notificación", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                this.Close();
+                                this.Dispose();
                             }
                             else
                             {
@@ -176,7 +175,7 @@ namespace TP_Grupo5.GUILayer
                             if (valor)
                             {
                                 MessageBox.Show("Actualizado", "Notificación", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                this.Close();
+                                this.Dispose();
                             }
                             else
                             {
@@ -191,18 +190,40 @@ namespace TP_Grupo5.GUILayer
                         {
                             Id_Contacto = idContacto
                         };
-                        bool valor = oContactoServicio.EliminarContacto(oContacto);
+                        var info = MessageBox.Show("¿Esta seguro que desea eliminar este ontacto?", "Advertencia", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+                        if (info == DialogResult.Yes)
+                        {
+                            bool valor = oContactoServicio.EliminarContacto(oContacto);
+                            if (valor)
+                            {
+                                MessageBox.Show("Eliminado", "Notificación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                this.Dispose();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Error", "Notificación", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                        }
+                        break;
+                    }
+                case FormMode.restored:
+                    {
+                        Contacto oContacto = new Contacto
+                        {
+                            Id_Contacto = idContacto
+                        };
+                        bool valor = oContactoServicio.RecuperarContacto(oContacto);
                         if (valor)
                         {
-                            MessageBox.Show("Eliminado", "Notificación", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            this.Close();
+                            MessageBox.Show("Recuperado", "Notificación", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.Dispose();
                         }
                         else
                         {
                             MessageBox.Show("Error", "Notificación", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                         break;
-
                     }
             }
         }
@@ -210,7 +231,9 @@ namespace TP_Grupo5.GUILayer
         private void btnCancelar_Click_1(object sender, EventArgs e)
         {
             this.Dispose();
+            bandera = false;
         }
+
     }
 }
 
